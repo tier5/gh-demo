@@ -1,0 +1,43 @@
+/*
+Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.
+        on line 34 of freelancer.less
+
+29: 	font-weight: 700;
+30: }
+31: 
+32: hr.star-light,
+33: hr.star-primary {
+34:     padding: 0;
+35:     border: none;
+36:     border-top: solid 5px;
+37:     text-align: center;
+38:     max-width: 250px;
+39:     margin: 25px auto 30px;
+
+Backtrace:
+freelancer.less:34
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:486:in `block in tabulate'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each_with_index'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:444:in `tabulate'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:409:in `_to_tree'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:294:in `watch'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/plugin.rb:109:in `method_missing'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: 4 spaces were used for indentation, but the rest of the document was indented using 1 tab.\A         on line 34 of freelancer.less\A \A 29: 	font-weight: 700;\A 30: }\A 31: \A 32: hr.star-light,\A 33: hr.star-primary {\A 34:     padding: 0;\A 35:     border: none;\A 36:     border-top: solid 5px;\A 37:     text-align: center;\A 38:     max-width: 250px;\A 39:     margin: 25px auto 30px;"; }
