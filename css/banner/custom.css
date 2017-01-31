@@ -43,11 +43,21 @@ h2, h3, h4{
 #mainNav{
 	background: none;
 	padding-top: 0;
+	z-index: 9999;
 }
 
 .affix#mainNav{
     background: rgba(0, 0, 0, 0.8);
     padding-top: 0;
+}
+
+.container>.navbar-header{
+	margin: 0 !important; 
+}
+
+.navbar-custom .navbar-toggle{
+	border: none !important;
+	background: none !important;
 }
 
 .navbar-default .navbar-nav>li>a{
@@ -151,6 +161,7 @@ a.logo{
 
 section.success#about{
 	background: url('../../img/image1.jpg') no-repeat top center;
+	background-size: cover;
 }
 
 .success h2{
@@ -199,6 +210,10 @@ section.success#about{
 	font-family:'Montserrat-Regular';
 }
 
+.tab-box img{
+	margin: auto;
+}
+
 .customers h2{
 	background: url(../../img/21.png) no-repeat bottom center;
     padding: 20px 0;
@@ -207,11 +222,11 @@ section.success#about{
     color: #3d3f4f;
 }
 
-
 .customers p{
-font-family: 'Montserrat-Hairline';
+	font-family: 'Montserrat-Hairline';
     font-size: 18px;
     color: #232323;
+    margin-bottom: 30px;
 }
 
 .customers strong{
@@ -266,6 +281,7 @@ font-family: 'Montserrat-Hairline';
 .categories{
 	background: #000;
     padding: 20px 0;
+    margin-top: 40px;
 }
 
 .categories ul{
@@ -284,6 +300,12 @@ font-family: 'Montserrat-Hairline';
     padding: 8px 20px;
     border-radius: 20px;
     margin-left: 10px;
+    text-decoration: none;
+}
+
+.categories ul li a:hover{
+	border: 1px solid #00b9e8;
+	background: #00b9e8;
 }
 
 .categories ul li:first-child{
@@ -293,7 +315,9 @@ font-family: 'Montserrat-Hairline';
 
 .contact#contact{
 	background: url('../../img/image2.jpg') no-repeat top center;
+	background-size: cover;
 }
+
 
 .contact h2{
 	background: url(../../img/19.png) no-repeat bottom center;
@@ -321,6 +345,11 @@ font-family: 'Montserrat-Hairline';
     font-family: 'Montserrat-Regular';
     font-size: 11px;
     font-weight: normal;
+}
+
+.contact .control-group{
+	display: inline-block;
+	width: 100%;
 }
 
 .contact .form-group{
@@ -365,6 +394,105 @@ font-family: 'Montserrat-Hairline';
     margin-bottom: 50px;
 }
 
+/* checkbox style */
+.middle-box .control {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 25px;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.control input:disabled ~ .control__indicator {
+    pointer-events: none;
+    opacity: .6;
+    background: #e6e6e6;
+}
+
+.control__indicator:after {
+    position: absolute;
+    display: none;
+    content: '';
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+	top: 1px;
+    left: 4px;
+    width: 4px;
+    height: 10px;
+    transform: rotate(45deg);
+    border: solid #dc5194;
+    border-width: 0 2px 2px 0;
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+/* checkbox style end*/
+
+.divider{
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 70px;
+}
+
+.blog-details{
+    position: absolute;
+    z-index: 999;
+    bottom: 5px;
+    left: 20px;
+    color: #fff;
+}
+
+.blog-details h4{
+	font-size: 16px;
+}
+
+.blog-details .posted_date{
+	color: #999;
+	font-size: 11px;
+}
+
+.blog-details ul{
+	padding: 0;
+	list-style-type: none;
+}
+
+.blog-details ul li{
+	display: inline-block;
+	margin-right: 2px;
+	font-size: 11px;
+}
+
+.blog-details ul li a{
+	color: #fff;
+    border: 1px solid #fff;
+    padding: 1px 4px;
+    font-size: 9px;
+    text-decoration: none;
+}
+
 .blog h2{
 	background: url(../../img/18.png) no-repeat bottom center;
     padding: 20px 0;
@@ -377,6 +505,27 @@ font-family: 'Montserrat-Hairline';
 	font-family:'Montserrat-Light';
 	color: #3d3f4f;
 	text-transform: uppercase;
+}
+
+.blog .carousel-indicators .active {
+    background-color: #00b9e8;
+    width: 17px;
+    margin: 1px;
+    height: 17px;
+}
+
+.blog .carousel-indicators li {
+    border: 1px solid #00b9e8;
+    width: 15px;
+    height: 15px;
+}
+
+.blog .carousel-indicators {
+    bottom: -60px;
+}
+
+.blog img{
+	width: 100%;
 }
 
 footer.footer .footer-above {
@@ -486,6 +635,7 @@ footer.footer .footer-below {
 	height: 100%;
 	top: 0;
 	left: 0;
+	right: 0;
 }
 
 .demo-2 .sl-slider-wrapper {
@@ -547,22 +697,20 @@ footer.footer .footer-below {
 /* Custom navigation arrows */
 
 .nav-arrows span {
-	position: absolute;
-	z-index: 2000;
-	top: 50%;
-	width: 40px;
-	height: 40px;
-	border: 8px solid #ddd;
-	border: 8px solid rgba(150,150,150,0.4);
-	text-indent: -90000px;
-	margin-top: -40px;
-	cursor: pointer;
-	
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
+    position: absolute;
+    z-index: 2000;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    /*border: 3px solid #fff;*/
+    text-indent: -90000px;
+    margin-top: -40px;
+    cursor: pointer;
+    /*-webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);*/
 }
 
 .nav-arrows span:hover {
@@ -705,6 +853,7 @@ footer.footer .footer-below {
 	bottom: 50%;
 	margin: 0 0 -75px 0;
 	padding: 0;
+	border: none;
 }
 
 .demo-1 .sl-slide blockquote p{
@@ -1007,7 +1156,7 @@ footer.footer .footer-below {
 /* Media Queries for custom slider */
 
 @media screen and (max-width: 660px) {
-	.demo-1 .deco {
+	/*.demo-1 .deco {
 		width: 130px;
 		height: 130px;
 		margin-left: -65px;
@@ -1051,6 +1200,307 @@ footer.footer .footer-below {
 
 	.demo-2 .sl-slider blockquote {
 		font-size: 16px;
-	}
+	}*/
 
 }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.navbar-default .navbar-nav>li>a {
+	    padding: 20px 8px;
+	    font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.navbar-custom .navbar-nav{
+		background: #000;
+	}
+
+	.demo-1 .sl-slide h2, .demo-1 .sl-slide blockquote{
+		bottom: 50%;
+	}
+
+	.scroller,.categories{
+		display: none;
+	}
+
+	.demo-1 {
+	    height: 600px;
+	}
+
+	.nav-dots{
+		bottom: 30px;
+	}
+
+	#portfolio p {
+	    padding: 0 15px;
+	}
+
+	.tab-box{
+		text-align: center;
+	}
+
+	.success h4 {
+	    background: url(../../img/small-border.png) no-repeat bottom center;
+	}
+
+	.contact .row.control-group{
+		margin: 0;
+	}
+
+	.divider{
+		display: none;
+	}
+
+	.footer-below .col-md-6{
+		text-align: center !important;
+	}
+
+	.footer-below a {
+	    margin-top: 20px;
+	}
+
+	.blog p {
+	    font-size: 15px;
+	    margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.demo-1 .sl-slide h2{
+		font-size: 30px;
+	}
+
+	#portfolio h2, .success h2, .customers h2, .contact h2, .blog h2 {
+	    font-size: 35px;
+	}
+}
+
+
+
+/*slider start*/
+
+.transparent-layer{
+	position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 90%;
+}
+
+.clicked .transparent-layer{
+	display: none;
+}
+
+.carousel{
+	margin-bottom:2%;
+}
+
+.carousel-inner {
+	margin-bottom:10%;
+}
+
+.carousel-indicators {
+	position: absolute;
+	bottom: -15%;
+	left: 50%;
+	z-index: 15;
+	width: 60%;
+	padding-left: 0;
+	margin-left: -30%;
+	text-align: center;
+	list-style: none;
+}
+
+.carousel-indicators li {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 1px;
+	text-indent: -999px;
+	cursor: pointer;
+	background-color: #fff \9;
+	background-color: rgba(255, 255, 255, 0);
+	border: 1px solid #ff0000;
+	border-radius: 10px;
+}
+
+.carousel-indicators .active {
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	background-color: #ff0000;
+}
+
+.carousel-control{
+	cursor:pointer;
+}
+
+.carousel-inner .active.left{
+	left: -25%;
+}
+
+.carousel-inner .next{
+	left:25%;
+}
+
+.carousel-inner .prev{
+	left:-25%;
+}
+
+.carousel-control{
+	width:4%;
+}
+
+.carousel-control.left{
+	margin-left:0;
+	background-image:none;
+}
+
+.carousel-control.right{
+	margin-right:0;
+	background-image:none;
+}
+
+.thumb-inner .thumb2-inner{
+	background:#fff;
+}
+
+/*Display Carousel Controls on hover*/
+.carousel:hover .carousel-control{
+	display:block;
+}
+
+#thumb-inner > .item{
+	position:relative;
+	overflow:hidden;
+}
+
+#thumb-inner > .item > a img{
+	position:relative;
+	overflow:hidden;
+}
+
+.caption{
+	display:none;
+	position:absolute;
+	top:0;
+	left:5.5%;
+	right:2%;
+	bottom:0;
+	background:rgba(0, 0, 0, 0.65);
+	color:#fff !important;
+	margin-top:0;
+	z-index:1000;
+	padding-left:2%;
+	padding-right:2%;
+	text-align:center;
+}
+
+.caption p{
+	padding:2%;
+}
+
+.carousel > .thumb-inner{
+	width:90%;
+	position:relative;
+	left:0;
+	right:0;
+	margin:auto;
+}
+
+.thumb-carousel-navbar{
+	position:relative;
+	float:none;
+	margin:2% auto;
+	width:80%;
+	background:#444;
+}
+
+.thumb-carousel-navbar{
+	position:relative;
+	float:none;
+	margin:0 auto;
+	width:90%;
+	background:#444;
+	text-align:center;
+}
+
+.thumb-carousel-navbar a > img{
+	position:relative;
+	left:65%;
+	margin:0 auto;
+	float:none;
+	text-align:center;
+	border:#fff solid 1px;				
+}
+
+.thumb-carousel-navbar .active{
+	opacity:.5;
+	border:#f00 solid 1px;		
+}
+
+.nav-carousel{
+	padding-bottom:0%;
+	width: 90%;
+	z-index:101;
+	-webkit-transition: all 3s ease-in-out;
+	transition: all 3s ease-in-out;
+	float:none;
+	margin:0 5%;
+	height:auto;
+	position:absolute;
+	top:100%;
+	bottom:0;
+	border-bottom: .5px #ededed solid;
+	border-top: .5px #ededed solid;
+}
+
+.nav-carousel li{
+	background:#000;
+}
+
+.nav-carousel li > a{
+	color:#f00;
+	font-weight:800;
+}
+
+.nav-carousel li > a:hover{
+	background:#f00;
+	color:#fff;
+}
+
+.carousel-border{
+	border-right:2px solid #fff;
+}
+
+.nav-carousel > .active > a, .nav-carousel > .active > a:hover, .nav-carousel > .active > a:focus, #carousel a:hover, #carousel a:focus{
+	background-color: #ff0000;
+	color: #fff;
+	outline:none;
+	cursor:pointer;
+}
+
+.nav-carousel.affix{
+	width: 100%;
+	position: static;
+	z-index:101;
+	height:auto;
+	padding-bottom:0%;
+}
+
+.nav-carousel > li{
+	z-index:100;
+	padding-bottom:0%;
+}
+
+.carousel-control{
+	opacity: 1;
+}
+
+.carousel-control img{
+	position: relative;
+    top: 32%;
+}
+
+/* slider end */
