@@ -20,7 +20,7 @@
 
 @font-face {
     font-family:'NotoSerif-Bold';
-    src:url('../fonts/NotoSerif-Bold.otf') format('truetype');
+    src:url('../fonts/NotoSerif-Bold.ttf') format('truetype');
 }
 
 p{
@@ -177,18 +177,25 @@ section.success#about{
 
 .tab-head ul li{
     display: inline-block;
-    border: 1px solid #FF7225;
-    font-size: 11px;
-    padding: 18px;
-    border-radius: 25px;
     margin-left: 10px;
     cursor: pointer;
     margin-bottom: 20px;
  
 }
 
-.tab-head ul li.active{
-	background: #FF7225;
+.tab-head ul li a{
+	border: 1px solid #FF7225;
+    border-radius: 25px;
+    font-size: 11px;
+    padding: 18px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+    background: #FF7225;
+}
+
+.tab-head ul li a.inactive{
+	background: none;
 }
 
 .success h4{
@@ -301,6 +308,10 @@ section.success#about{
     border-radius: 20px;
     margin-left: 10px;
     text-decoration: none;
+}
+
+.categories ul li a.visible{
+	background: #00b9e8;
 }
 
 .categories ul li a:hover{
@@ -455,6 +466,10 @@ section.success#about{
     position: absolute;
     right: 0;
     top: 70px;
+}
+
+.blog{
+	padding-bottom: 0;
 }
 
 .blog-details{

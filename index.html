@@ -188,17 +188,47 @@
             </div>
             <div class="row">
                 <div class="tab-head text-center">
-                    <ul>
-                        <li class="active">ADIPISCING CONSECTETUR</li>
-                        <li>ADIPISCING CONSECTETUR</li>
-                        <li>ADIPISCING CONSECTETUR</li>
-                        <li>ADIPISCING CONSECTETUR</li>
+                    <ul id="tabs">
+                        <li><a href="#" id="tab1">ADIPISCING CONSECTETUR</a></li>
+                        <li><a href="#" id="tab2">ADIPISCING CONSECTETUR</a></li>
+                        <li><a href="#" id="tab3">ADIPISCING CONSECTETUR</a></li>
+                        <li><a href="#" id="tab4">ADIPISCING CONSECTETUR</a></li>
                     </ul>
                 </div>
                 <div class="clear"></div>
-                <div class="tab-box">
+                <div class="tab-box" id="tab1C">
                     <div class="col-md-4">
                         <img src="img/human.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-8">
+                        <h4>Ryan Ryke</h4>
+                        <p><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five </p>
+                        <p>centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="tab-box" id="tab2C">
+                    <div class="col-md-4">
+                        <img src="img/tab2.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-8">
+                        <h4>Ryan Ryke</h4>
+                        <p><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five </p>
+                        <p>centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="tab-box" id="tab3C">
+                    <div class="col-md-4">
+                        <img src="img/tab3.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-8">
+                        <h4>Ryan Ryke</h4>
+                        <p><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five </p>
+                        <p>centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="tab-box" id="tab4C">
+                    <div class="col-md-4">
+                        <img src="img/tab4.png" class="img-responsive">
                     </div>
                     <div class="col-md-8">
                         <h4>Ryan Ryke</h4>
@@ -496,20 +526,19 @@
                 <div class="categories">
                     <ul>
                         <li>Categories</li>
-                        <li><a href="#">All(67)</a></li>
-                        <li><a href="#">cloud(67)</a></li>
-                        <li><a href="#">cool(67)</a></li>
-                        <li><a href="#">All(67)</a></li>
-                        <li><a href="#">All(67)</a></li>
-                        <li><a href="#">All(67)</a></li>
-                        <li><a href="#">All(67)</a></li>
+                        <li><a href="#" class="allcat visible">All</a></li>
+                        <li><a href="#" class="aws">AWS</a></li>
+                        <li><a href="#" class="docker">DOCKER</a></li>
+                        <li><a href="#" class="howto">HOW TO</a></li>
+                        <li><a href="#" class="iaas">IAAS</a></li>
                     </ul>
                 </div>
             </div>
             <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div id="Carousel" class="carousel slide">
+                    <!-- All Category Start -->
+                    <div id="Carousel" class="carousel slide allcat">
                         <ol class="carousel-indicators">
                             <li data-target="#Carousel" data-slide-to="0" class="active"></li>
                             <li data-target="#Carousel" data-slide-to="1"></li>
@@ -547,8 +576,7 @@
                                             <div class="tagged">
                                                 <ul>
                                                     <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
-                                                    <li><a href="#">DOCKER</a></li>
+                                                    <li><a href="#">AWS</a></li> 
                                                     <li><a href="#">HOW TO</a></li>
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
@@ -567,7 +595,6 @@
                                                     <li>Tagged</li>
                                                     <li><a href="#">AWS</a></li>     
                                                     <li><a href="#">DOCKER</a></li>
-                                                    <li><a href="#">HOW TO</a></li>
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
@@ -586,7 +613,6 @@
                                                     <li><a href="#">AWS</a></li>     
                                                     <li><a href="#">DOCKER</a></li>
                                                     <li><a href="#">HOW TO</a></li>
-                                                    <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -623,8 +649,6 @@
                                             <div class="tagged">
                                                 <ul>
                                                     <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
-                                                    <li><a href="#">DOCKER</a></li>
                                                     <li><a href="#">HOW TO</a></li>
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
@@ -641,10 +665,7 @@
                                             <div class="tagged">
                                                 <ul>
                                                     <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
-                                                    <li><a href="#">DOCKER</a></li>
-                                                    <li><a href="#">HOW TO</a></li>
-                                                    <li><a href="#">IAAS</a></li>
+                                                    <li><a href="#">AWS</a></li>  
                                                 </ul>
                                             </div>
                                         </div>
@@ -677,9 +698,7 @@
                                             <div class="tagged">
                                                 <ul>
                                                     <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
-                                                    <li><a href="#">DOCKER</a></li>
-                                                    <li><a href="#">HOW TO</a></li>
+                                                    <li><a href="#">AWS</a></li>   
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
@@ -694,11 +713,9 @@
                                             <div class="posted_date">Posted on September 17, 2015</div>
                                             <div class="tagged">
                                                 <ul>
-                                                    <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
+                                                    <li>Tagged</li>  
                                                     <li><a href="#">DOCKER</a></li>
                                                     <li><a href="#">HOW TO</a></li>
-                                                    <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -716,10 +733,8 @@
                                             <div class="posted_date">Posted on September 17, 2015</div>
                                             <div class="tagged">
                                                 <ul>
-                                                    <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
+                                                    <li>Tagged</li>   
                                                     <li><a href="#">DOCKER</a></li>
-                                                    <li><a href="#">HOW TO</a></li>
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
@@ -756,7 +771,6 @@
                                                     <li><a href="#">AWS</a></li>     
                                                     <li><a href="#">DOCKER</a></li>
                                                     <li><a href="#">HOW TO</a></li>
-                                                    <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -771,8 +785,7 @@
                                             <div class="tagged">
                                                 <ul>
                                                     <li>Tagged</li>
-                                                    <li><a href="#">AWS</a></li>     
-                                                    <li><a href="#">DOCKER</a></li>
+                                                    <li><a href="#">AWS</a></li> 
                                                     <li><a href="#">HOW TO</a></li>
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
@@ -791,7 +804,6 @@
                                                     <li>Tagged</li>
                                                     <li><a href="#">AWS</a></li>     
                                                     <li><a href="#">DOCKER</a></li>
-                                                    <li><a href="#">HOW TO</a></li>
                                                     <li><a href="#">IAAS</a></li>
                                                 </ul>
                                             </div>
@@ -801,7 +813,527 @@
                                 </div><!--.row-->
                             </div><!--.item-->
                         </div><!--.carousel-inner-->
-                    </div><!--.Carousel-->
+                    </div>
+                    <!-- All Category end -->
+                    <!-- AWS Category Start -->
+                    <div id="Carousel2" class="carousel slide aws">
+                        <ol class="carousel-indicators">
+                            <li data-target="#Carousel2" data-slide-to="0" class="active"></li>
+                            <li data-target="#Carousel2" data-slide-to="1"></li>
+                        </ol>
+                     
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                  <div class="col-md-15 col-sm-3">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1a.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1b.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1c.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/d.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/e.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li>  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!--.row-->
+                            </div><!--.item-->
+                            <div class="item">
+                                <div class="row">
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1a.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1b.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li>  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1c.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/d.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">AWS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/e.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>  
+                                                    <li><a href="#">AWS</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!--.row-->
+                            </div><!--.item-->
+                        </div><!--.carousel-inner-->
+                    </div>
+                    <!-- AWS Category End -->
+                    <!-- DOCKER Category Start -->
+                    <div id="Carousel3" class="carousel slide docker">
+                        <ol class="carousel-indicators">
+                            <li data-target="#Carousel3" data-slide-to="0" class="active"></li>
+                        </ol>
+                     
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                  <div class="col-md-15 col-sm-3">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1a.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">DOCKER</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1b.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">DOCKER</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1c.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">DOCKER</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/d.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">DOCKER</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/e.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">DOCKER</a></li>  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!--.row-->
+                            </div><!--.item-->
+                        </div><!--.carousel-inner-->
+                    </div>
+                    <!-- HOWTO Category End -->
+                    <div id="Carousel4" class="carousel slide howto">
+                        <ol class="carousel-indicators">
+                            <li data-target="#Carousel4" data-slide-to="0" class="active"></li>
+                        </ol>
+                     
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                  <div class="col-md-15 col-sm-3">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1a.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">HOW TO</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1b.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">HOW TO</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1c.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">HOW TO</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/d.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">HOW TO</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/e.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">HOW TO</a></li>  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!--.row-->
+                            </div><!--.item-->
+                        </div><!--.carousel-inner-->
+                    </div>
+                    <!-- HOWTO Category Start -->
+                    <!-- IAAS Category Start -->
+                    <div id="Carousel5" class="carousel slide iaas">
+                        <ol class="carousel-indicators">
+                            <li data-target="#Carousel5" data-slide-to="0" class="active"></li>
+                            <li data-target="#Carousel5" data-slide-to="1"></li>
+                        </ol>
+                     
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                  <div class="col-md-15 col-sm-3">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1a.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1b.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1c.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/d.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/e.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li>  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!--.row-->
+                            </div><!--.item-->
+                            <div class="item">
+                                <div class="row">
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1a.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1b.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li>  
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/1c.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 col-sm-3 hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/d.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>
+                                                    <li><a href="#">IAAS</a></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-15 hidden-sm hidden-xs">
+                                    <div class="row">
+                                        <a href="#"><img src="img/e.jpg" alt="Image" style="max-width:100%;"></a>
+                                        <div class="blog-details text-left">
+                                            <h4>Using a VPN with AWS</h4>
+                                            <div class="posted_date">Posted on September 17, 2015</div>
+                                            <div class="tagged">
+                                                <ul>
+                                                    <li>Tagged</li>  
+                                                    <li><a href="#">IAAS</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!--.row-->
+                            </div><!--.item-->
+                        </div><!--.carousel-inner-->
+                    </div>
+                    <!-- IAAS Category End -->
                 </div>
             </div>
     </div>
@@ -870,234 +1402,10 @@
     </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <div class="scroll-top page-scroll">
         <a class="btn btn-primary" href="#page-top">
             <i class="fa fa-chevron-up"></i>
         </a>
-    </div>
-
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- jQuery -->
@@ -1185,22 +1493,6 @@
                 })();
 
                 Page.init();
-
-                /**
-                 * Notes: 
-                 * 
-                 * example how to add items:
-                 */
-
-                /*
-                
-                var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
-                
-                // call the plugin's add method
-                ss.add($items);
-
-                */
-            
             });
     </script>
     <script type="text/javascript">
@@ -1234,8 +1526,74 @@
                     scrollTop: $("#blog").offset().top
                 }, 1000);
             });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            $('#tabs li a:not(:first)').addClass('inactive');
+            $('.tab-box').hide();
+            $('.tab-box:first').show();
+                
+            $('#tabs li a').click(function(e){
+                var t = $(this).attr('id');
+                if($(this).hasClass('inactive')){  
+                    $('#tabs li a').addClass('inactive');           
+                    $(this).removeClass('inactive');
+                    
+                    $('.tab-box').hide();
+                    $('#'+ t + 'C').fadeIn('slow');
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.categories ul li:first-child a').addClass("visible");
+            $('.carousel.aws').hide();
+            $('.carousel.docker').hide();
+            $('.carousel.howto').hide();
+            $('.carousel.iaas').hide();
 
+            $('.allcat').click(function(e){
+                $('.carousel.allcat').fadeIn();
+                $(this).addClass("visible");
+                $('.categories ul li a').not($(this)).removeClass("visible");
+                $('.blog .carousel').not($('.allcat')).fadeOut();
+                e.preventDefault();
+            });
 
+            $('.aws').click(function(e){
+                $('.carousel.aws').fadeIn();
+                $(this).addClass("visible");
+                $('.categories ul li a').not($(this)).removeClass("visible");
+                $('.blog .carousel').not($('.aws')).fadeOut();
+                e.preventDefault();
+            });
+
+            $('.docker').click(function(e){
+                $('.carousel.docker').fadeIn();
+                $(this).addClass("visible");
+                $('.categories ul li a').not($(this)).removeClass("visible");
+                $('.blog .carousel').not($('.docker')).fadeOut();
+                e.preventDefault();
+            });
+
+            $('.howto').click(function(e){
+                $('.carousel.howto').fadeIn();
+                $(this).addClass("visible");
+                $('.categories ul li a').not($(this)).removeClass("visible");
+                $('.blog .carousel').not($('.howto')).fadeOut();
+                e.preventDefault();
+            });
+
+            $('.iaas').click(function(e){
+                $('.carousel.iaas').fadeIn();
+                $(this).addClass("visible");
+                $('.categories ul li a').not($(this)).removeClass("visible");
+                $('.blog .carousel').not($('.iaas')).fadeOut();
+                e.preventDefault();
+            });
         });
     </script>
 
