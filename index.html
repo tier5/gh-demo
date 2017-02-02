@@ -408,7 +408,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="form-group col-xs-12 controls">
-                                    <input type="text" class="form-control" placeholder="Company" id="name" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="Company" id="company" required data-validation-required-message="Please enter your company.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -429,7 +429,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                             <div class="col-md-12">
+                            <div class="col-md-12">
                                 <h5>which services are you interested?</h5>
                             </div>
                             <div class="col-md-12">
@@ -437,19 +437,19 @@
                                     <div class="col-md-6 col-xs-6">
                                         <div class="form-group">
                                             <label class="control control--checkbox">cloud voice
-                                                <input type="checkbox" checked="checked">
+                                                <input type="checkbox" name="services[]" id="cloud_voice" checked="checked" value="cloud voice">
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label class="control control--checkbox">cloud servers
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="services[]" id="cloud_servers" value="cloud servers">
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label class="control control--checkbox">cloud support
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="services[]" id="cloud_support" value="cloud support">
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
@@ -457,19 +457,19 @@
                                     <div class="col-md-6 col-xs-6">
                                         <div class="form-group">
                                             <label class="control control--checkbox">cloud collaboration
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="services[]" id="cloud_collaboration" value="cloud collaboration">
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label class="control control--checkbox">cloud service
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="services[]" id="cloud_service" value="cloud service">
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
                                         <div class="form-group">
                                             <label class="control control--checkbox">careers
-                                                <input type="checkbox">
+                                                <input type="checkbox" name="services[]" id="careers" value="careers">
                                                 <div class="control__indicator"></div>
                                             </label>
                                         </div>
@@ -486,17 +486,18 @@
                                     <h5>message</h5>
                                 </div>
                                 <div class="form-group col-xs-12 controls">
-                                    <textarea class="form-control" placeholder="write your comments here" id="phone" required data-validation-required-message="Please enter your phone number." rows="10"></textarea>
+                                    <textarea class="form-control" placeholder="write your comments here" id="msg" required data-validation-required-message="Please enter your message." rows="10"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group text-center">
-                                <input type="submit" value="submit">
+                                <input type="submit" value="submit" id="submit">
                             </div>
+                            <div id="success"></div>
                         </div>
-                        <div id="success"></div>
+                        
                     </form>
                 </div>
             </div>
@@ -1530,196 +1531,8 @@
     <script src="js/freelancer.min.js"></script>
 
 </body>
-    <script type="text/javascript" src="js/banner/modernizr.custom.79639.js"></script>
-    <script type="text/javascript" src="js/banner/jquery.ba-cond.min.js"></script>
-    <script type="text/javascript" src="js/banner/jquery.slitslider.js"></script>
-    <script type="text/javascript"> 
-            $(function() {
-            
-                var Page = (function() {
-
-                    var $navArrows = $( '#nav-arrows' ),
-                        $nav = $( '#nav-dots > span' ),
-                        slitslider = $( '#slider' ).slitslider( {
-                            onBeforeChange : function( slide, pos ) {
-
-                                $nav.removeClass( 'nav-dot-current' );
-                                $nav.eq( pos ).addClass( 'nav-dot-current' );
-
-                            }
-                        } ),
-
-                        init = function() {
-
-                            initEvents();
-                            
-                        },
-                        initEvents = function() {
-
-                            // add navigation events
-                            $navArrows.children( ':last' ).on( 'click', function() {
-
-                                slitslider.next();
-                                return false;
-
-                            } );
-
-                            $navArrows.children( ':first' ).on( 'click', function() {
-                                
-                                slitslider.previous();
-                                return false;
-
-                            } );
-
-                            $nav.each( function( i ) {
-                            
-                                $( this ).on( 'click', function( event ) {
-                                    
-                                    var $dot = $( this );
-                                    
-                                    if( !slitslider.isActive() ) {
-
-                                        $nav.removeClass( 'nav-dot-current' );
-                                        $dot.addClass( 'nav-dot-current' );
-                                    
-                                    }
-                                    
-                                    slitslider.jump( i + 1 );
-                                    return false;
-                                
-                                } );
-                                
-                            } );
-
-                        };
-
-                        return { init : init };
-
-                })();
-
-                Page.init();
-            });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $(".scroller a.toportfolio").click(function() {
-                $('html, body').animate({
-                    scrollTop: $("#portfolio").offset().top
-                }, 1000);
-            });
-
-            $(".scroller a.tosuccess").click(function() {
-                $('html, body').animate({
-                    scrollTop: $("#about").offset().top
-                }, 1000);
-            });
-
-            $(".scroller a.tocustomers").click(function() {
-                $('html, body').animate({
-                    scrollTop: $("#customers").offset().top
-                }, 1000);
-            });
-
-            $(".scroller a.tocontact").click(function() {
-                $('html, body').animate({
-                    scrollTop: $("#contact").offset().top
-                }, 1000);
-            });
-
-            $(".scroller a.toblog").click(function() {
-                $('html, body').animate({
-                    scrollTop: $("#blog").offset().top
-                }, 1000);
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() { 
-            $('#tabs li a:not(:first)').addClass('inactive');
-            $('.tab-box').hide();
-            $('.tab-box:first').show();
-                
-            $('#tabs li a').click(function(e){
-                var t = $(this).attr('id');
-                if($(this).hasClass('inactive')){  
-                    $('#tabs li a').addClass('inactive');           
-                    $(this).removeClass('inactive');
-                    
-                    $('.tab-box').hide();
-                    $('#'+ t + 'C').fadeIn('slow');
-                    e.preventDefault();
-                }
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.categories ul li:first-child a').addClass("visible");
-            $('.carousel.aws').hide();
-            $('.carousel.docker').hide();
-            $('.carousel.howto').hide();
-            $('.carousel.iaas').hide();
-
-
-            $('.categories ul li .allcat').click(function(e){
-                $('.carousel.allcat').fadeIn();
-                $(this).addClass("visible");
-                $('.categories ul li a').not($(this)).removeClass("visible");
-                $('.blog .carousel').not($('.allcat')).fadeOut();
-                e.preventDefault();
-            });
-
-            $('.categories ul li .aws').click(function(e){
-                $('.carousel.aws').fadeIn();
-                $(this).addClass("visible");
-                $('.categories ul li a').not($(this)).removeClass("visible");
-                $('.blog .carousel').not($('.aws')).fadeOut();
-                e.preventDefault();
-            });
-
-            $('.categories ul li .docker').click(function(e){
-                $('.carousel.docker').fadeIn();
-                $(this).addClass("visible");
-                $('.categories ul li a').not($(this)).removeClass("visible");
-                $('.blog .carousel').not($('.docker')).fadeOut();
-                e.preventDefault();
-            });
-
-            $('.categories ul li .howto').click(function(e){
-                $('.carousel.howto').fadeIn();
-                $(this).addClass("visible");
-                $('.categories ul li a').not($(this)).removeClass("visible");
-                $('.blog .carousel').not($('.howto')).fadeOut();
-                e.preventDefault();
-            });
-
-            $('.categories ul li .iaas').click(function(e){
-                $('.carousel.iaas').fadeIn();
-                $(this).addClass("visible");
-                $('.categories ul li a').not($(this)).removeClass("visible");
-                $('.blog .carousel').not($('.iaas')).fadeOut();
-                e.preventDefault();
-            });
-
-            $('.aws-tag').click(function(e){
-                $('.categories ul li .aws').click();
-                e.preventDefault();
-            });
-            $('.docker-tag').click(function(e){
-                $('.categories ul li .docker').click();
-                e.preventDefault();
-            });
-            $('.howto-tag').click(function(e){
-                $('.categories ul li .howto').click();
-                e.preventDefault();
-            });
-            $('.iaas-tag').click(function(e){
-                $('.categories ul li .iaas').click();
-                e.preventDefault();
-            });
-
-             
-        });
-    </script>
-
+<script type="text/javascript" src="js/banner/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="js/banner/jquery.ba-cond.min.js"></script>
+<script type="text/javascript" src="js/banner/jquery.slitslider.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 </html>

@@ -405,6 +405,14 @@ section.success#about{
     margin-bottom: 50px;
 }
 
+#success{
+	color: green;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 /* checkbox style */
 .middle-box .control {
     position: relative;
