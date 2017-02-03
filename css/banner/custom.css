@@ -46,9 +46,14 @@ h2, h3, h4{
 	z-index: 9999;
 }
 
+#mainNav.inner-nav{
+	background-color: #262626;
+}
+
 .affix#mainNav{
     background: rgba(0, 0, 0, 0.8);
     padding-top: 0;
+    width: 100%;
 }
 
 .container>.navbar-header{
@@ -431,7 +436,7 @@ section.success#about{
     position: absolute;
     top: 0;
     left: 0;
-    width: 16px;
+    width: 16px; 
     height: 16px;
     background: none;
     border: 1px solid #ccc;
@@ -884,26 +889,10 @@ footer.footer .footer-below {
 	font-family:'Montserrat-Hairline';	
 	margin: 0 auto;
 	width: 65%;
-	/*max-width: 400px;*/
 	position: relative;
 	line-height: 24px;
     font-size: 16px;
 }
-
-/*.demo-1 .sl-slide blockquote p:before {
-	color: #f0f0f0;
-	color: rgba(244,244,244,0.65);
-	font-family: "Bookman Old Style", Bookman, Garamond, serif;
-	position: absolute;
-	line-height: 60px;
-	width: 75px;
-	height: 75px;
-	font-size: 200px;
-	z-index: -1;
-	left: -80px;
-	top: 35px;
-	content: '\201C';
-}*/
 
 .demo-1 .sl-slide blockquote cite {
 	font-size: 10px;
@@ -1177,6 +1166,52 @@ footer.footer .footer-below {
 }
 
 
+/* Inner Pages  */
+
+section.cloud-inner{
+	padding: 20px 0 100px;
+}
+
+.cloud-inner h2{
+	background: url(../../img/bottom-border.jpg) no-repeat bottom left;
+	padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.top-statement{
+    border-top: 1px solid #FF7225;
+    border-bottom: 1px solid #FF7225;
+    padding: 15px 50px;
+    margin: 20px 0 20px;
+    font-style: italic;
+}
+
+.top-statement p{
+	font-size: 18px;
+    color: #0087b7;
+}
+
+.cloud-inner h3{
+	background: #f1f1f1;
+    color: #333;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.cloud-inner ul{
+    padding: 0 25px;
+    list-style-type: square;
+}
+
+.cloud-inner ul li{
+    font-family: 'Montserrat-Hairline';
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+
 /* Media Queries for custom slider */
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1253,8 +1288,20 @@ footer.footer .footer-below {
 		font-size: 30px;
 	}
 
-	#portfolio h2, .success h2, .customers h2, .contact h2, .blog h2 {
+	#portfolio h2, .success h2, .customers h2, .contact h2, .blog h2, .cloud-inner h2 {
 	    font-size: 35px;
+	}
+
+	.top-statement {
+	    padding: 15px 10px;
+	}
+
+	.logo img{
+		width: 60%;
+	}
+
+	.blog .carousel-indicators {
+	    bottom: -45px;
 	}
 }
 

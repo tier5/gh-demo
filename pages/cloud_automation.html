@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Freelancer - Cloud Architecture</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
+    
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="inner-nav navbar navbar-default navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <!-- <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i> -->
+                    <img src="../img/1.png" class="img-responsive">
+                </button>
+                <a class="logo" href="../index.html"><img src="../img/logo.png" class="img-responsive"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#about">Who we are</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#portfolio">what we do</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#customers">satisfied customers</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#contact">contact us</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#blog">blog</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    
+    <!-- Portfolio Grid Section -->
+    <section class="cloud-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Cloud Automation</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <div class="top-statement">
+                        <p>Automation allows businesses to truly unlock the power of the cloud, turning a monolithic application into a mesh of easy-to-maintain parts that can be scaled, tested and updated independently.</p>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Decoupling</h3>
+                    <p>A common challenge, facing many of our customers, is breaking down their existing monolithic infrastructure, running on just one server, into manageable individual parts. We’re often called on to deliver this decoupling process for our clients, and have a track record of delivering solutions that:</p>
+                    <ul>
+                        <li>
+                            <strong>Scale Independently:</strong> As business needs change, different parts of your infrastructure will require increased capacity, or upgrades to code. A decoupled application allows you to apply that extra resource to the specific bottlenecks, and keep the entire process running smoothly.
+                        </li>
+                        <li>
+                            <strong>Scale Automatically:</strong> Through the power of Chef (<a href="www.chef.io"><strong>www.chef.io</strong></a>) we’re able to automate both building servers, and bringing servers into the computer pool on the fly. This means that as user demand increases, servers are added gracefully and without the need for any intervention or additional planning. We call this <i>‘host level automation’</i>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Blue-Green Deployment</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <div class="top-statement">
+                        <p>Maintaining two identical production environments, where only one is live at any given time, significantly reduces downtime risk for your business. Automation in the cloud can simplify these deployments, allowing you to update your infrastructure safely, and quickly.</p>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>We combine our experience working with the powerful AWS CloudFormation platform, used to build the larger parts of your infrastructure, with CloudFront to manage smaller parts, to ensure your cloud infrastructure is ideally suited to your development requirements.</p>
+                    <p>In a typical blue-green deployment, CloudFormation would be used to build out an elastic load balancer, and a number of servers to support the front end servers. Chef is then used to configure those machines, and slot them into the live environment.</p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Continuous Delivery and Integration</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Developing in an automated cloud environment allows code updates, pushed by one of your team, to go through testing automatically. Only if the tests are passed is that code then pushed directly to a production environment.</p>
+                    <p>This automated delivery is among the latest cloud innovations, that we’re excited to be bringing to our clients’ projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-15 col-sm-3 footer-col col-xs-6">
+                        <h3>who we are</h3>
+                        <ul>
+                            <li><a href="#">our history</a></li>
+                            <li><a href="#">our mission</a></li>
+                            <li><a href="#">our team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-15 col-sm-3 footer-col col-xs-6">
+                        <h3>what we do</h3>
+                        <ul>
+                            <li><a href="#">cloud architecture</a></li>
+                            <li><a href="#">cloud migrations</a></li>
+                            <li><a href="#">cloud automation</a></li>
+                            <li><a href="#">managed services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-15 col-sm-3 footer-col col-xs-6">
+                        <h3>blog</h3>
+                        <ul>
+                            <li><a href="#">categories</a></li>
+                            <li><a href="#">tags</a></li>
+                            <li><a href="#">by date</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-15 col-sm-3 footer-col col-xs-6">
+                        <h3>contact us</h3>
+                        <ul>
+                            <li><a href="#">adipiscing</a></li>
+                            <li><a href="#">consectetur aliqua</a></li>
+                            <li><a href="#">amberyelimea</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-15 col-sm-3 footer-col">
+                        <h3>subscribe newsletter</h3>
+                        <form>
+                            <input type="email" placeholder="Email address" class="form-control">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        ©2015 CloudLife Consulting All rights reserved. 
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a href="#"><img src="../img/tweet-footer.png" class="img-responsive"></a>
+                        <a href="#"><img src="../img/gplus-footer.png" class="img-responsive"></a>
+                        <a href="#"><img src="../img/linked-footer.png" class="img-responsive"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    
+</body>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/freelancer.min.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+</html>
