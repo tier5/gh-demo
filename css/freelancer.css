@@ -481,6 +481,80 @@ section.success {
 .blog img {
   width: 100%;
 }
+section.cloud-inner {
+  padding: 20px 0 100px;
+}
+section.cloud-inner h2 {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+section.cloud-inner h3 {
+  background: #f1f1f1;
+  color: #333333;
+  display: inline-block;
+  padding: 10px;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+section.cloud-inner .top-statement {
+  border-top: 1px solid #FF7225;
+  border-bottom: 1px solid #FF7225;
+  padding: 15px 50px;
+  margin: 20px 0 20px;
+  font-style: italic;
+}
+section.cloud-inner .top-statement p {
+  font-size: 18px;
+  color: #0087b7;
+}
+section.cloud-inner ul {
+  padding: 0 25px;
+  list-style-type: square;
+}
+section.cloud-inner ul li {
+  font-family: 'Montserrat-Hairline';
+  font-size: 20px;
+  margin: 20px 0;
+}
+section.cloud-inner .inner-banner {
+  position: relative;
+}
+section.cloud-inner .inner-banner .transparent {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+section.cloud-inner .inner-banner img {
+  width: 100%;
+  margin: auto;
+}
+section.cloud-inner .inner-banner h1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 20px;
+  line-height: 50px;
+}
+section.cloud-inner a {
+  font-family: 'Montserrat-Light';
+  color: #ff7225;
+}
+.criticalnavi.navbar {
+  margin-bottom: 0;
+}
+section.cloud-inner.critical {
+  padding-top: 0;
+}
 .floating-label-form-group {
   position: relative;
   margin-bottom: 0;
