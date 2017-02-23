@@ -241,13 +241,15 @@ $(document).ready(function(){
                 headers: {
                     'Content-Type':'application/json'
                 },
+                crossDomain: true,
                 dataType: "json",
-                data : {
+                data : JSON.stringify({
                     name: name,
                     phone: phone,
                     email: email,
                     msg: msg
-                },
+                }),
+                cache: false,
                 success: function(result){
                         $('#success').text("Thank you for contacting us!");
                 },
