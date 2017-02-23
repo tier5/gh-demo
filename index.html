@@ -1565,13 +1565,13 @@
             $.ajax({
                 url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
-                contentType: "application/json; charset=utf-8",
-                data : JSON.stringify({
+                contentType: "application/form-data",
+                data : {
                     name: name,
                     phone: phone,
                     email: email,
                     message: message
-                }),
+                },
                 cache: false,
                 success: function() {
                     // Enable button & show success message
