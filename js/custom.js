@@ -244,7 +244,7 @@ $(document).ready(function(){
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    msg: msg
                 },
                 success: function(result){
                         $('#success').text("Thank you for contacting us!");
