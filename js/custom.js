@@ -237,7 +237,7 @@ $(document).ready(function(){
         // AJAX Code To Submit Form.
             $.ajax({
                 type: "POST",
-                url: "ajaxsubmit.php",
+                url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 data: dataString,
                 cache: false,
                 success: function(result){
