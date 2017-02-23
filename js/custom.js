@@ -240,12 +240,12 @@ $(document).ready(function(){
                 url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
                 dataType: "json",
-                data : JSON.stringify({
+                data : {
                     name: name,
                     phone: phone,
                     email: email,
                     msg: msg
-                }),
+                },
                 success: function(result){
                         $('#success').text("Thank you for contacting us!");
                 },
