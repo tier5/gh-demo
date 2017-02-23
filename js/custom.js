@@ -241,7 +241,7 @@ $(document).ready(function(){
                 headers: {
                     'Content-Type':'application/json'
                 },
-                dataType: "jsonp",
+                dataType: "json",
                 data : {
                     name: name,
                     phone: phone,
