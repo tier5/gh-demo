@@ -238,9 +238,7 @@ $(document).ready(function(){
             $.ajax({
                 url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
-                headers: {
-                    'Content-Type':'application/json'
-                },
+                contentType: 'application/json',
                 crossDomain: true,
                 dataType: "json",
                 data : JSON.stringify({
