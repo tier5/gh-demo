@@ -239,17 +239,18 @@ $(document).ready(function(){
                 contentType: "application/json",
                 url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
-                data : {
+                dataType: "json",
+                data : JSON.stringify({
                     name: name,
                     phone: phone,
                     email: email,
                     msg: msg
-                },
+                }),
                 success: function(result){
                         $('#success').text("Thank you for contacting us!");
                 },
                 error: function(err){
-                            console.log(err);
+                        console.log(err);
                 }
             });
         }
