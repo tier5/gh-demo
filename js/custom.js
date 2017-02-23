@@ -236,10 +236,12 @@ $(document).ready(function(){
         
         // AJAX Code To Submit Form.
             $.ajax({
-                contentType: "application/json",
                 url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
-                dataType: "json",
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                dataType: "jsonp",
                 data : {
                     name: name,
                     phone: phone,
