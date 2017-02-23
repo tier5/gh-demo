@@ -21,15 +21,16 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
+                contentType: "application/json",
                 url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
-                data: {
+                dataType: 'jsonp',
+                data : {
                     name: name,
                     phone: phone,
                     email: email,
                     message: message
                 },
-                cache: false,
                 success: function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
