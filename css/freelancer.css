@@ -508,7 +508,7 @@ section.cloud-inner h3 {
 section.cloud-inner .top-statement {
   padding: 25px 45px;
   margin: 20px 0;
-  border: 1px solid #0381ae;
+  border: 1px solid #0086bb;
   box-shadow: 0 2px 5px 0 #ccc;
   -webkit-box-shadow: 0 2px 5px 0 #ccc;
   -moz-box-shadow: 0 2px 5px 0 #ccc;
@@ -516,7 +516,21 @@ section.cloud-inner .top-statement {
 }
 section.cloud-inner .top-statement p {
   font-size: 16px;
-  line-height: 30px;
+  line-height: 24px;
+  color: #000;
+  letter-spacing: 0;
+}
+section.cloud-inner .top-sec {
+  padding: 50px 0;
+  display: inline-block;
+  width: 100%;
+}
+section.cloud-inner .top-sec img {
+  border: 5px solid #0086bb;
+}
+section.cloud-inner .top-sec p {
+  letter-spacing: 0;
+  font-size: 16px;
 }
 section.cloud-inner ul {
   padding: 0 25px;
@@ -590,6 +604,31 @@ section.cloud-inner .remote-backup .image img {
   height: 370px;
   width: 435px;
 }
+section.cloud-inner .remote-backup.physical-protection img {
+  width: 100%;
+  margin: 20px auto;
+}
+section.cloud-inner .remote-backup.physical-protection ul {
+  list-style-type: none;
+  padding: 0;
+}
+section.cloud-inner .remote-backup.physical-protection ul li {
+  display: inline-block;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #666;
+  vertical-align: top;
+}
+section.cloud-inner .remote-backup.physical-protection ul li img {
+  margin: 0;
+}
+section.cloud-inner .remote-backup.breach {
+  padding: 0;
+  background: #f2f2f2;
+}
+section.cloud-inner .remote-backup.breach h3 {
+  margin: 30px 0;
+}
 section.cloud-inner .instant-backup {
   padding: 100px 0;
 }
@@ -598,6 +637,11 @@ section.cloud-inner .instant-backup h3 {
 }
 section.cloud-inner .instant-backup p {
   color: #fff;
+}
+section.cloud-inner .instant-backup.tech-protection img {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 .criticalnavi.navbar {
   margin-bottom: 0;
@@ -677,6 +721,9 @@ footer .footer-above ul li {
   text-align: left;
   margin-bottom: 5px;
   text-transform: capitalize;
+}
+footer .footer-above ul li.active a {
+  color: #FF7225;
 }
 footer .footer-above ul li a {
   font-family: 'Montserrat-Light';

@@ -242,6 +242,17 @@ section.success#about{
 	background-size: cover;
 }
 
+.protecting-client{
+	background: url(../../img/inner-pages/protecting-bg.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.tech-protection{
+	background: url(../../img/inner-pages/tech-bg.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+
 .col-xs-15,
 .col-sm-15,
 .col-md-15,
@@ -934,6 +945,10 @@ section.success#about{
 	section.cloud-inner .cloud-storage,section.cloud-inner .remote-backup, section.cloud-inner .instant-backup {
 	    padding: 20px 0;
 	}
+
+	section.cloud-inner .remote-backup.physical-protection img, section.cloud-inner .instant-backup.tech-protection img {
+	    width: auto;
+	}
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -989,6 +1004,11 @@ section.success#about{
 	margin-bottom:2%;
 }
 
+.tech-protection .carousel {
+    margin: 20px;
+    padding: 10px 0;
+}
+
 .carousel-inner {
 	margin-bottom:10%;
 }
@@ -1005,6 +1025,13 @@ section.success#about{
 	list-style: none;
 }
 
+.tech-protection .carousel-indicators {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+}
+
 .carousel-indicators li {
 	display: inline-block;
 	width: 10px;
@@ -1018,11 +1045,26 @@ section.success#about{
 	border-radius: 10px;
 }
 
+.tech-protection .carousel-indicators li {
+	width: 15px;
+	height: 15px;
+	background-color: #ccc;
+	border: 1px solid #ccc;
+}
+
 .carousel-indicators .active {
 	width: 12px;
 	height: 12px;
 	margin: 0;
 	background-color: #ff0000;
+}
+
+.tech-protection .carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    margin: 1px;
+    background-color: #fff;
+    border: 1px solid #fff;
 }
 
 .carousel-control{
