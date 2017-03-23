@@ -540,35 +540,44 @@ section.success {
 
 section.cloud-inner{
 	padding: 20px 0 100px;
+	p{
+		font-family: 'OpenSans-Regular';
+		font-size: 15px;
+	    letter-spacing: 1px;
+	    color: @innerbody-fontcolor;
+	}
 	h2{
+		font-family: 'OpenSans-Regular';
 		padding-bottom: 20px;
 	    margin-bottom: 20px;
 	    font-size:32px;
 	}
 	h3{
-		background: @off-white;
+		font-family:'OpenSans-Light';
 	    color: @gray-dark;
-	    display: inline-block;
-	    padding: 10px;
 	    margin-bottom: 25px;
-	    font-size: 20px;
+    	font-size: 30px;
+    	letter-spacing: 2px;
+    	line-height: 45px;
+    	margin-top: 0;
 	}
 	.top-statement{
-	    border-top: 1px solid @blue;
-	    border-bottom: 1px solid @blue;
-	    padding: 15px 50px;
-	    margin: 20px 0 20px;
-	    font-style: italic;
+	    padding: 25px 45px;
+	    margin: 20px 0;
+	    border: 1px solid #0381ae;
+	    box-shadow: 0 2px 5px 0 #ccc;
+	    -webkit-box-shadow: 0 2px 5px 0 #ccc;
+	    -moz-box-shadow: 0 2px 5px 0 #ccc;
+	    border-bottom: 0;
 	    p{
-			font-size: 18px;
-		    color: #0087b7;
-		}
+	    	font-size: 16px;
+	    	line-height: 30px;
+	    }
 	}
 	ul{
 	    padding: 0 25px;
 	    list-style-type: square;
 	    li{
-		    font-family: 'Montserrat-Hairline';
 		    font-size: 20px;
 		    margin: 20px 0;
 		}
@@ -584,6 +593,8 @@ section.cloud-inner{
 		    right: 0;
 		    top: 0;
    			bottom: 0;
+		}& .blue{
+			background: rgba(3, 129, 174, 0.8);
 		}
 		img{
 			width:100%;
@@ -597,13 +608,51 @@ section.cloud-inner{
 		    width: 100%;
 		    color: #fff;
 		    text-align: center;
-		    padding-bottom: 20px;
+		    padding-bottom: 40px;
 		    line-height: 50px;
 		}
 	}
 	a{
-		font-family: 'Montserrat-Light';
-    	color: #ff7225;
+    	color: @light-blue;
+	}
+	img{
+		margin: auto;
+	}
+	.cloud-storage{
+		background: #F7F7F7;
+		padding: 100px 0;
+	}
+	.remote-backup{
+		padding: 100px 0;
+		.content{
+			border-left: 1px solid @dark-blue;
+    		padding-left: 20px;
+		}
+		.image{
+			position: relative;
+			.img-border{
+				border:	10px solid @dark-blue;
+				position: absolute;
+			    left: 30px;
+			    right: 0;
+			    top: -60px;
+			    height: 400px;
+			    width: 400px;
+			}
+			img{
+				height: 370px;
+    			width: 435px;
+			}
+		}
+	}
+	.instant-backup{
+		padding: 100px 0;
+		h3{
+			color: #fff;
+		}
+		p{
+			color: #fff;
+		}
 	}
 }
 
@@ -845,4 +894,10 @@ footer {
     	display: none;
     }
 }
+
+
+
+
+
+
 

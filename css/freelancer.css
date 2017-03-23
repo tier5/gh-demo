@@ -484,36 +484,45 @@ section.success {
 section.cloud-inner {
   padding: 20px 0 100px;
 }
+section.cloud-inner p {
+  font-family: 'OpenSans-Regular';
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #666;
+}
 section.cloud-inner h2 {
+  font-family: 'OpenSans-Regular';
   padding-bottom: 20px;
   margin-bottom: 20px;
   font-size: 32px;
 }
 section.cloud-inner h3 {
-  background: #f1f1f1;
+  font-family: 'OpenSans-Light';
   color: #333333;
-  display: inline-block;
-  padding: 10px;
   margin-bottom: 25px;
-  font-size: 20px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 45px;
+  margin-top: 0;
 }
 section.cloud-inner .top-statement {
-  border-top: 1px solid #FF7225;
-  border-bottom: 1px solid #FF7225;
-  padding: 15px 50px;
-  margin: 20px 0 20px;
-  font-style: italic;
+  padding: 25px 45px;
+  margin: 20px 0;
+  border: 1px solid #0381ae;
+  box-shadow: 0 2px 5px 0 #ccc;
+  -webkit-box-shadow: 0 2px 5px 0 #ccc;
+  -moz-box-shadow: 0 2px 5px 0 #ccc;
+  border-bottom: 0;
 }
 section.cloud-inner .top-statement p {
-  font-size: 18px;
-  color: #0087b7;
+  font-size: 16px;
+  line-height: 30px;
 }
 section.cloud-inner ul {
   padding: 0 25px;
   list-style-type: square;
 }
 section.cloud-inner ul li {
-  font-family: 'Montserrat-Hairline';
   font-size: 20px;
   margin: 20px 0;
 }
@@ -530,6 +539,9 @@ section.cloud-inner .inner-banner .transparent {
   top: 0;
   bottom: 0;
 }
+section.cloud-inner .inner-banner .blue {
+  background: rgba(3, 129, 174, 0.8);
+}
 section.cloud-inner .inner-banner img {
   width: 100%;
   margin: auto;
@@ -542,12 +554,50 @@ section.cloud-inner .inner-banner h1 {
   width: 100%;
   color: #fff;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   line-height: 50px;
 }
 section.cloud-inner a {
-  font-family: 'Montserrat-Light';
-  color: #ff7225;
+  color: #00b9e8;
+}
+section.cloud-inner img {
+  margin: auto;
+}
+section.cloud-inner .cloud-storage {
+  background: #F7F7F7;
+  padding: 100px 0;
+}
+section.cloud-inner .remote-backup {
+  padding: 100px 0;
+}
+section.cloud-inner .remote-backup .content {
+  border-left: 1px solid #0086bb;
+  padding-left: 20px;
+}
+section.cloud-inner .remote-backup .image {
+  position: relative;
+}
+section.cloud-inner .remote-backup .image .img-border {
+  border: 10px solid #0086bb;
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: -60px;
+  height: 400px;
+  width: 400px;
+}
+section.cloud-inner .remote-backup .image img {
+  height: 370px;
+  width: 435px;
+}
+section.cloud-inner .instant-backup {
+  padding: 100px 0;
+}
+section.cloud-inner .instant-backup h3 {
+  color: #fff;
+}
+section.cloud-inner .instant-backup p {
+  color: #fff;
 }
 .criticalnavi.navbar {
   margin-bottom: 0;
