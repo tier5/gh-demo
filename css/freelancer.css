@@ -18,6 +18,9 @@ p.small {
   display: inline-block;
   width: 100%;
 }
+.nobg {
+  background: none !important;
+}
 a,
 a:hover,
 a:focus,
@@ -25,6 +28,12 @@ a:active,
 a.active {
   color: #18BC9C;
   outline: none;
+}
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 h1,
 h2,
@@ -507,7 +516,7 @@ section.cloud-inner h3 {
 }
 section.cloud-inner .top-statement {
   padding: 25px 45px;
-  margin: 20px 0;
+  margin: 50px 0;
   border: 1px solid #0086bb;
   box-shadow: 0 2px 5px 0 #ccc;
   -webkit-box-shadow: 0 2px 5px 0 #ccc;
@@ -519,6 +528,9 @@ section.cloud-inner .top-statement p {
   line-height: 24px;
   color: #000;
   letter-spacing: 0;
+}
+section.cloud-inner .top-statement.middle-content {
+  margin-bottom: 0;
 }
 section.cloud-inner .top-sec {
   padding: 50px 0;
@@ -580,6 +592,38 @@ section.cloud-inner img {
 section.cloud-inner .cloud-storage {
   background: #F7F7F7;
   padding: 100px 0;
+}
+section.cloud-inner .cloud-storage.decoupling {
+  background: #edf2f5;
+}
+section.cloud-inner .cloud-storage.decoupling img {
+  width: 100%;
+}
+section.cloud-inner .cloud-storage.decoupling h3 {
+  font-family: OpenSans-Regular;
+  color: #fff;
+}
+section.cloud-inner .cloud-storage.decoupling p {
+  color: #fff;
+}
+section.cloud-inner .cloud-storage.decoupling .content {
+  position: absolute;
+  left: 40%;
+  bottom: -50px;
+  top: -50px;
+  padding: 100px 30px 20px;
+  right: 0;
+}
+section.cloud-inner .cloud-storage.decoupling .scale {
+  margin-top: 100px;
+}
+section.cloud-inner .cloud-storage.decoupling .scale h3 {
+  font-family: 'OpenSans-Light';
+  text-transform: capitalize;
+  color: #333333;
+}
+section.cloud-inner .cloud-storage.decoupling .scale p {
+  color: #333333;
 }
 section.cloud-inner .remote-backup {
   padding: 100px 0;
@@ -645,6 +689,18 @@ section.cloud-inner .instant-backup.tech-protection img {
   border: 1px solid #fff;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+section.cloud-inner .instant-backup.deployment {
+  background: none;
+  padding-bottom: 0;
+}
+section.cloud-inner .instant-backup.deployment img {
+  width: 100%;
+}
+section.cloud-inner .instant-backup.deployment .content {
+  padding: 150px 200px 50px;
+  position: relative;
+  top: -170px;
 }
 .criticalnavi.navbar {
   margin-bottom: 0;

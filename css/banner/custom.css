@@ -257,6 +257,16 @@ section.success#about{
 	background-size: cover;
 }
 
+.decoupling .content{
+	background: url(../../img/inner-pages/cloud_auto5.png) no-repeat top center;
+	background-size: cover;
+}
+
+.deployment .content{
+	background: url(../../img/inner-pages/cloud_auto7.png) no-repeat top center;
+	background-size: cover;
+}
+
 
 .col-xs-15,
 .col-sm-15,
@@ -843,6 +853,17 @@ section.success#about{
 	section.cloud-inner .remote-backup.breach h3 {
 	    margin: 20px 0;
 	}
+
+	section.cloud-inner .cloud-storage.decoupling .content {
+	    left: 20%;
+	    padding: 50px 30px 20px;
+	}
+
+	section.cloud-inner .instant-backup.deployment .content {
+	    padding: 100px 200px 30px;
+	    top: -100px;
+	}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -861,9 +882,36 @@ section.success#about{
 	    height: 230px;
 	    width: 270px;
 	}
+
+	section.cloud-inner .cloud-storage.decoupling .content {
+	    left: 15%;
+	    padding: 50px 10px 20px;
+	}
+
+	section.cloud-inner .cloud-storage.decoupling h3 {
+	    font-size: 24px;
+	    margin-bottom: 0;
+	}
+
+	section.cloud-inner .cloud-storage.decoupling p {
+	    font-size: 12px;
+	}
+
+	section.cloud-inner .instant-backup.deployment .content {
+	    padding: 120px 50px 50px;
+	    top: -95px;
+	}
+	
+	section.cloud-inner .remote-backup.breach h3 {
+	    margin: 0 0 20px;
+	    font-size: 20px;
+	}
 }
 
 @media screen and (max-width: 767px) {
+	.row-eq-height{
+		display: block;
+	}
 
 	.navbar-custom .navbar-nav{
 		background: #000;
@@ -957,6 +1005,35 @@ section.success#about{
 
 	section.cloud-inner .remote-backup.physical-protection img, section.cloud-inner .instant-backup.tech-protection img {
 	    width: auto;
+	}
+
+	section.cloud-inner .cloud-storage.decoupling .content {
+	    position: relative;
+	    left: 0;
+	    bottom: 0;
+	    top: 0;
+	    padding: 20px;
+	    right: 0;
+	    background: #0086ba;
+	}
+
+	section.cloud-inner .cloud-storage.decoupling {
+	    background: #edf2f5;
+	    padding-top: 0;
+	}
+
+	section.cloud-inner .cloud-storage.decoupling .scale {
+	    margin-top: 0px;
+	}
+
+	section.cloud-inner .top-statement.middle-content {
+	    margin: 0;
+	}
+
+	section.cloud-inner .instant-backup.deployment .content {
+	    padding: 20px;
+	    top: 0;
+	    background: #0086ba;
 	}
 }
 
