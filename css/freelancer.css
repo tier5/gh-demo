@@ -627,7 +627,10 @@ section.cloud-inner .remote-backup.breach {
   background: #f2f2f2;
 }
 section.cloud-inner .remote-backup.breach h3 {
-  margin: 30px 0;
+  margin: 60px 0 40px;
+}
+section.cloud-inner .remote-backup.breach img {
+  width: 100%;
 }
 section.cloud-inner .instant-backup {
   padding: 100px 0;

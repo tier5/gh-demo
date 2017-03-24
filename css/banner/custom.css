@@ -252,6 +252,11 @@ section.success#about{
 	background-size: cover;
 }
 
+.adv-analytics{
+	background: url(../../img/inner-pages/fleet4.jpg) no-repeat top center;
+	background-size: cover;
+}
+
 
 .col-xs-15,
 .col-sm-15,
@@ -833,6 +838,10 @@ section.success#about{
 	section.cloud-inner .remote-backup .image img {
 	    height: 330px;
 	    width: 385px;
+	}
+
+	section.cloud-inner .remote-backup.breach h3 {
+	    margin: 20px 0;
 	}
 }
 
