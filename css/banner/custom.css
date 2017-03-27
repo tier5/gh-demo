@@ -71,6 +71,10 @@
     background: url(../../img/inner-pages/bottom-border.jpg) no-repeat bottom center;
 }
 
+section.cloud-inner .remote-backup.ourvalues ul li{
+	background: url(../../img/inner-pages/arr-black.png) no-repeat left center;
+}
+
 .blocks a.orange{
 	border: 1px solid #ff7225;
 }

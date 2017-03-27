@@ -683,6 +683,20 @@ section.cloud-inner .remote-backup.breach h3 {
 section.cloud-inner .remote-backup.breach img {
   width: 100%;
 }
+section.cloud-inner .remote-backup.our-purpose {
+  background: #f7f7f7;
+}
+section.cloud-inner .remote-backup.ourvalues ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+section.cloud-inner .remote-backup.ourvalues ul li {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #666;
+  padding-left: 30px;
+}
 section.cloud-inner .instant-backup {
   padding: 100px 0;
 }
