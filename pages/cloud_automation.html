@@ -37,7 +37,7 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="inner-nav navbar navbar-default navbar-custom">
+    <nav id="mainNav" class="inner-nav navbar navbar-default navbar-custom criticalnavi">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -81,68 +81,108 @@
 
     
     <!-- Portfolio Grid Section -->
-    <section class="cloud-inner">
-        <div class="container">
+    <section class="cloud-inner critical">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <h2>Cloud Automation</h2>
+                <div class="inner-banner">
+                    <div class="transparent blue"></div>
+                    <img src="../img/inner-pages/cloud_auto1.jpg" class="img-responsive">
+                    <div class="banner-txt">
+                        <h1>cloud automation</h1>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 text-center">
+                <div class="col-md-12 text-center">
                     <div class="top-statement">
                         <p>Automation allows businesses to truly unlock the power of the cloud, turning a monolithic application into a mesh of easy-to-maintain parts that can be scaled, tested and updated independently.</p>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
-            <div class="clear"></div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Decoupling</h3>
-                    <p>A common challenge, facing many of our customers, is breaking down their existing monolithic infrastructure, running on just one server, into manageable individual parts. We’re often called on to deliver this decoupling process for our clients, and have a track record of delivering solutions that:</p>
-                    <ul>
-                        <li>
-                            <strong>Scale Independently:</strong> As business needs change, different parts of your infrastructure will require increased capacity, or upgrades to code. A decoupled application allows you to apply that extra resource to the specific bottlenecks, and keep the entire process running smoothly.
-                        </li>
-                        <li>
-                            <strong>Scale Automatically:</strong> Through the power of Chef (<a href="www.chef.io">www.chef.io</a>) we’re able to automate both building servers, and bringing servers into the computer pool on the fly. This means that as user demand increases, servers are added gracefully and without the need for any intervention or additional planning. We call this <i>‘host level automation’</i>.
-                        </li>
-                    </ul>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <div class="cloud-storage decoupling">
+            <div class="container-fluid">
+                <div class="row row-eq-height">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="row">
+                            <div class="content">
+                                <h3>Decoupling</h3>
+                                <p>A common challenge, facing many of our customers, is breaking down their existing monolithic infrastructure, running on just one server, into manageable individual parts. We’re often called on to deliver this decoupling process for our clients, and have a track record of delivering solutions that:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                        <div class="row">
+                            <img src="../img/inner-pages/cloud_auto2.jpg" alt="inner-image" class="img-responsive"> 
+                        </div>  
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Blue-Green Deployment</h3>
+            <div class="clear">&nbsp;</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 hidden-sm hidden-xs"></div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="scale">
+                            <h3>Scale Independently:</h3> 
+                            <p>As business needs change, different parts of your infrastructure will require increased capacity, or upgrades to code. A decoupled application allows you to apply that extra resource to the specific bottlenecks, and keep the entire process running smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="scale">
+                            <h3>Scale Automatically:</h3> 
+                            <p>Through the power of Chef (<a href="www.chef.io">www.chef.io</a>) we’re able to automate both building servers, and bringing servers into the computer pool on the fly. This means that as user demand increases, servers are added gracefully and without the need for any intervention or additional planning. We call this <i>‘host level automation’</i>.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 hidden-sm hidden-xs"></div>
                 </div>
             </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 text-center">
-                    <div class="top-statement">
+                 <div class="col-md-12 text-center">
+                    <div class="top-statement middle-content">
                         <p>Maintaining two identical production environments, where only one is live at any given time, significantly reduces downtime risk for your business. Automation in the cloud can simplify these deployments, allowing you to update your infrastructure safely, and quickly.</p>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>We combine our experience working with the powerful AWS CloudFormation platform, used to build the larger parts of your infrastructure, with CloudFront to manage smaller parts, to ensure your cloud infrastructure is ideally suited to your development requirements.</p>
-                    <p>In a typical blue-green deployment, CloudFormation would be used to build out an elastic load balancer, and a number of servers to support the front end servers. Chef is then used to configure those machines, and slot them into the live environment.</p>
+        </div>
+        <div class="instant-backup deployment">
+            <div class="container-fluid">
+                <div class="row">
+                    <img src="../img/inner-pages/cloud_auto4.png" alt="inner-image" class="img-responsive"> 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="content">
+                                <h3>Blue green deployment</h3>
+                                <p>We combine our experience working with the powerful AWS CloudFormation platform, used to build the larger parts of your infrastructure, with CloudFront to manage smaller parts, to ensure your cloud infrastructure is ideally suited to your development requirements.</p>
+                                <p>In a typical blue-green deployment, CloudFormation would be used to build out an elastic load balancer, and a number of servers to support the front end servers. Chef is then used to configure those machines, and slot them into the live environment.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Continuous Delivery and Integration</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Developing in an automated cloud environment allows code updates, pushed by one of your team, to go through testing automatically. Only if the tests are passed is that code then pushed directly to a production environment.</p>
-                    <p>This automated delivery is among the latest cloud innovations, that we’re excited to be bringing to our clients’ projects.</p>
+        </div>
+        <div class="remote-backup breach nobg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-4">
+                        <div class="row">
+                            <img src="../img/inner-pages/cloud_auto6.jpg" alt="icon" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-8">
+                        <h3>Continuous Delivery and Integration</h3>
+                        <p>Developing in an automated cloud environment allows code updates, pushed by one of your team, to go through testing automatically. Only if the tests are passed is that code then pushed directly to a production environment.</p>
+                        <p>This automated delivery is among the latest cloud innovations, that we’re excited to be bringing to our clients’ projects.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,7 +197,7 @@
                         <h3>who we are</h3>
                         <ul>
                             <li><a href="#">our history</a></li>
-                            <li><a href="#">our mission</a></li>
+                            <li><a href="our_mission.html">our mission</a></li>
                             <li><a href="#">our team</a></li>
                         </ul>
                     </div>
@@ -166,7 +206,7 @@
                         <ul>
                             <li><a href="cloud_architecture.html">cloud architecture</a></li>
                             <li><a href="cloud_migration.html">cloud migrations</a></li>
-                            <li><a href="cloud_automation.html">cloud automation</a></li>
+                            <li class="active"><a href="cloud_automation.html">cloud automation</a></li>
                             <li><a href="managed_services.html">managed services</a></li>
                         </ul>
                     </div>
