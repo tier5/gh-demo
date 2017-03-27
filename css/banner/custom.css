@@ -67,7 +67,7 @@
 	background: url('../../img/bottom-border.jpg') no-repeat bottom center;
 }
 
-.inner-banner h1 {
+.inner-banner .banner-txt {
     background: url(../../img/inner-pages/bottom-border.jpg) no-repeat bottom center;
 }
 
@@ -239,6 +239,16 @@ section.success#about{
 
 .business-use{
 	background: url(../../img/inner-pages/14.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.prohibit{
+	background: url(../../img/inner-pages/health2.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.dedicated-hardware{
+	background: url(../../img/inner-pages/health5.jpg) no-repeat top center;
 	background-size: cover;
 }
 
@@ -971,6 +981,14 @@ section.success#about{
 	    line-height: 25px;
 	    font-size: 20px;
 	    margin-top: 0;
+	}
+
+	section.cloud-inner .inner-banner .banner-txt h2 {
+	    font-size: 18px;
+	}
+
+	section.cloud-inner .inner-banner .banner-txt{
+		padding-bottom: 20px;
 	}
 
 	section.cloud-inner p, section.cloud-inner .top-statement p, section.cloud-inner ul li{

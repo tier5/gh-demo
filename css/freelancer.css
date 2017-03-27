@@ -566,13 +566,13 @@ section.cloud-inner .inner-banner .transparent {
   bottom: 0;
 }
 section.cloud-inner .inner-banner .blue {
-  background: rgba(3, 129, 174, 0.8);
+  background: rgba(0, 134, 186, 0.9);
 }
 section.cloud-inner .inner-banner img {
   width: 100%;
   margin: auto;
 }
-section.cloud-inner .inner-banner h1 {
+section.cloud-inner .inner-banner .banner-txt {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -582,6 +582,13 @@ section.cloud-inner .inner-banner h1 {
   text-align: center;
   padding-bottom: 40px;
   line-height: 50px;
+}
+section.cloud-inner .inner-banner .banner-txt h2 {
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 28px;
 }
 section.cloud-inner a {
   color: #00b9e8;
