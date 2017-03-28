@@ -1057,6 +1057,10 @@ section.success#about{
 	    top: 0;
 	    background: #0086ba;
 	}
+
+	section.cloud-inner .remote-backup.architecture .block .image img {
+	    border: none;
+	}
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -1357,8 +1361,15 @@ background:#fff; bottom:-18px; margin:0 auto; content: ''; left: 0; right: 0}
 .map-area{position: relative; background-size: cover;}
 .map-area:before{content: ''; position: absolute; background: rgba(0, 0, 0, 0.2);
 width: 100%; height: 100%; z-index: 7777; }
-.contant-left h4:after{position: absolute; content: ''; position: absolute; background: rgba(0, 0, 0, 0.2);
-height: 2px;}
+.contant-left h4:after{
+	content: '';
+    position: absolute;
+    background: #0086bb;
+    height: 4px;
+    width: 55px;
+    display: block;
+    margin-top: 10px;
+}
 .contact-info-sechead h2::after {
   background: #fff none repeat scroll 0 0;
   bottom: -11px;
@@ -1377,13 +1388,11 @@ height: 2px;}
 .contact-info-sec1 .contact-info-sechead{background:#0086BB; padding: 29px 0; text-align:center;}
 
 .contact-info-sec1 .contact-info-sechead	h2{color:#fff; font-family:OpenSans-Regular; font-size:21px; position:relative;}
-.contact-info-main h5{color:#fff; font-size:15px; font-weight:300; text-tranform: none;}
-p{color:#fff; font-size:13px; font-weight:600;}
-	.contact-info-main ul{margin:0; padding:0;}
-			.contact-info-main li{margin:0; padding:0; display:inline-block; list-style:none; width:35px;
-				height:35px;}
 
-			.contact-info-main img{max-width:100%;}
+.contact-info-main ul{margin:0; padding:0;}
+.contact-info-main li{margin:0; padding:0; display:inline-block; list-style:none; width:35px;
+				height:35px;}
+.contact-info-main img{max-width:100%;}
 		
 
 
