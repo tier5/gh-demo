@@ -735,6 +735,70 @@ section.cloud-inner .remote-backup.architecture .block:hover {
 section.cloud-inner .remote-backup.architecture .block:hover p {
   color: #fff;
 }
+section.cloud-inner .remote-backup.learn-history .content-block {
+  background: #f7f7f7;
+  border: 10px solid #0086bb;
+  border-right: 0;
+  padding: 100px 80px 100px 150px;
+  position: relative;
+}
+section.cloud-inner .remote-backup.learn-history .content-block h3 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: OpenSans-Regular;
+  font-size: 26px;
+}
+section.cloud-inner .remote-backup.learn-history .content-block h4 {
+  font-size: 14px;
+  padding-left: 20px;
+  margin-top: 40px;
+}
+section.cloud-inner .remote-backup.learn-history .content-block p {
+  letter-spacing: 0;
+}
+section.cloud-inner .remote-backup.learn-history .content-block img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 0;
+  height: 65%;
+}
+section.cloud-inner .remote-backup.learn-history .image img {
+  width: auto;
+  height: auto;
+}
+section.cloud-inner .remote-backup.history .year p {
+  font-family: century-gothic-bold;
+  font-size: 50px;
+  color: #a5a5a5;
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  right: -30px;
+  top: 35%;
+}
+section.cloud-inner .remote-backup.history .history-inner {
+  position: relative;
+}
+section.cloud-inner .remote-backup.history .history-inner .image {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: -50%;
+  width: 45%;
+  box-shadow: 0 1px 10px 0 #999;
+}
+section.cloud-inner .remote-backup.history .history-inner .image img {
+  width: 100%;
+  height: auto;
+}
+section.cloud-inner .remote-backup.history .history-inner .text {
+  display: inline-block;
+  width: 55%;
+  background: #f7f7f7;
+  padding: 50px;
+}
 section.cloud-inner .instant-backup {
   padding: 100px 0;
 }
