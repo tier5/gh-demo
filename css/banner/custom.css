@@ -236,6 +236,16 @@ section.success#about{
 	background-size: cover;
 }
 
+.customization{ 
+	background: url(../../img/inner-pages/driving2.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.life-cycle{ 
+	background: url(../../img/inner-pages/driving5.jpg) no-repeat top center;
+	background-size: cover;
+}
+
 .encrypted-data{ 
 	background: url(../../img/inner-pages/9.jpg) no-repeat top center;
 	background-size: cover;
