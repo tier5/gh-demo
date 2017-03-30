@@ -1446,8 +1446,8 @@ font-family: 'OpenSans-Regular'; color: #000;
 .team-person img{max-width: 100%;}
 .team-person-info p{font-size: 11px;}
 .arrow-lft{background: url(../../img/lft-arrow.jpg) no-repeat left; padding-left: 24px;}
-
-
+.grey-box{background: #F0F0F0; padding: 25px 40px;}
+.our-team-page{padding: 40px 0;}
 
 
 @media screen and (max-width: 991px) {
