@@ -105,33 +105,34 @@
                                     <div class="row form-group">
                                         <div class="col-sm-2">Name:</div>
                                         <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="name">
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">Phone:</div>
                                         <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="phone">
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">Email:</div>
                                         <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="email">
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">Comments:</div>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control"></textarea>
+                                            <textarea class="form-control" id="msg"></textarea>
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">&nbsp;</div>
                                         <div class="col-sm-10">
-                                            <input class="btn submit-btn" value="Send" type="submit" name="submit">
-                                        </div>    
-                                    </div>    
+                                            <input class="btn submit-btn" value="Send" type="submit" name="submit" id="submit">
+                                        </div>
+                                    </div>
+                                    <div id="success" class="alert alert-success"> Thank you for contacting us!</div>    
                                 </div>
                             </div>  
                         </div>
@@ -299,6 +300,62 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/freelancer.min.js"></script>
+    <script type="text/javascript">
+        /* Contact form */
+
+        $(document).ready(function(){
+            $('#success').hide();
+            $("#submit").click(function(){
+                $(this).attr('disabled','disabled');
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var msg = $("#msg").val();
+
+                // Returns successful data submission message when the entered information is stored in database.
+                var dataString = 'name1='+ name + '&email1='+ email + '&phone1='+ phone + '&msg1=' + msg ;
+
+                if(name==''||email==''||phone=='' ||msg == '')
+                    {
+                        alert("Please Fill All Fields");
+                    }
+                else
+                {
+                
+                // AJAX Code To Submit Form.
+                    $.ajax({
+                        url: "https://e3q50rznqj.execute-api.us-east-1.amazonaws.com/prod",
+                        type: "POST",
+                        contentType: 'application/json',
+                        crossDomain: true,
+                        dataType: "json",
+                        data : JSON.stringify({
+                            name: name,
+                            phone: phone,
+                            email: email,
+                            msg: msg
+                        }),
+                        cache: false,
+                        success: function(result){
+                            $('#success').show();
+                            $("#name").val('');
+                            $("#email").val('');
+                            $("#phone").val('');
+                            $("#msg").val('');
+                            $("#submit").removeAttr('disabled');
+                            setTimeout(function(){
+                                $('#success').hide();
+                            }, 5000);
+                        },
+                        error: function(err){
+                                console.log(err);
+                        }
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
 </body>
     
 </html>
