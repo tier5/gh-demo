@@ -34,6 +34,11 @@
 }
 
 @font-face {
+    font-family:'OpenSans-Bold';
+    src:url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
     font-family:'century-gothic-bold';
     src:url('../fonts/century-gothic-bold.ttf') format('truetype');
 }
@@ -120,6 +125,11 @@ section.cloud-inner .learn-history .content-block h4 {
     background: url(../../img/inner-pages/black_dot.png) no-repeat left;
 }
 
+
+.client-review{
+	display: none;
+}
+
 .thumbnail-details {
 	padding: 0 60px;
 }
@@ -130,6 +140,7 @@ section.cloud-inner .learn-history .content-block h4 {
     line-height: 20px;
     font-size: 15px;
 }
+
 
 #thumbnail-slider ul li:after{
 	display: none !important;
@@ -247,6 +258,11 @@ section.cloud-inner .learn-history .content-block h4 {
 
 .customization{ 
 	background: url(../../img/inner-pages/driving2.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.compliance{ 
+	background: url(../../img/inner-pages/ms5.jpg) no-repeat top center;
 	background-size: cover;
 }
 
@@ -897,6 +913,14 @@ section.cloud-inner .learn-history .content-block h4 {
 	    top: -100px;
 	}
 
+	section.cloud-inner .remote-backup.learn-history .content-block {
+	    padding: 20px 20px 20px 80px;
+	}
+
+	section.cloud-inner .remote-backup.learn-history .content-block img {
+	    height: 55%;
+	}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -938,6 +962,34 @@ section.cloud-inner .learn-history .content-block h4 {
 	section.cloud-inner .remote-backup.breach h3 {
 	    margin: 0 0 20px;
 	    font-size: 20px;
+	}
+
+	section.cloud-inner .remote-backup.learn-history .content-block {
+	    border: 10px solid #0086bb;
+	    padding: 20px;
+	}
+
+	section.cloud-inner .remote-backup.learn-history .content-block img {
+	    position: relative;
+	    transform: translate(0);
+	    top: 50%;
+	    height: auto;
+	}
+
+	section.cloud-inner .remote-backup.history .year p {
+	    position: relative;
+	}
+
+	section.cloud-inner .remote-backup.history .history-inner .image {
+	    top: 0;
+	}
+
+	section.cloud-inner .remote-backup.history .history-inner .text {
+	    padding: 20px 40px 20px 20px;
+	}
+
+	section.cloud-inner .remote-backup.history.img-left .text {
+	    padding: 20px 20px 20px 40px;
 	}
 }
 
@@ -1080,6 +1132,55 @@ section.cloud-inner .learn-history .content-block h4 {
 	section.cloud-inner .remote-backup.architecture .block .image img {
 	    border: none;
 	}
+
+	section.cloud-inner .remote-backup.learn-history .content-block {
+	    border: 10px solid #0086bb;
+	    padding: 20px;
+	}
+
+	section.cloud-inner .remote-backup.learn-history .content-block img {
+	    position: relative;
+	    transform: translate(0);
+	    top: 50%;
+	    height: auto;
+	}
+
+	section.cloud-inner .remote-backup.history .history-inner .image {
+	    position: relative;
+	    left: 0;
+	    right: 0;
+	    top: 0;
+	    width: 50%;
+	}
+
+	section.cloud-inner .remote-backup.history .history-inner .text {
+	    padding: 20px;
+	    width: 100%;
+	}
+
+	section.cloud-inner .remote-backup.history .year p{
+		position: relative;
+	    transform: rotate(0);
+	    right: 0;
+	    left: 0;
+	}
+
+	section.cloud-inner .remote-backup.history.img-left .year p{
+		left: 0;
+	}
+
+	.year{
+		text-align: center;
+	}
+
+	.history{
+		border-bottom: 1px solid #00b9e8;
+		margin-bottom: 20px;
+	}
+
+	section.cloud-inner .remote-backup.changable .corner-img {
+	    margin: 20px 0;
+	}
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -1124,7 +1225,7 @@ section.cloud-inner .learn-history .content-block h4 {
 	position: absolute;
     background: rgba(0, 0, 0, 0.7);
     height: 100%;
-    width: 90%;
+    width: 91%;
 }
 
 .clicked .transparent-layer{
@@ -1154,6 +1255,10 @@ section.cloud-inner .learn-history .content-block h4 {
 	margin-left: -30%;
 	text-align: center;
 	list-style: none;
+}
+
+.cust-slider .slide1{
+	cursor: pointer;
 }
 
 .tech-protection .carousel-indicators {
@@ -1231,6 +1336,17 @@ section.cloud-inner .learn-history .content-block h4 {
 .thumb-inner .thumb2-inner{
 	background:#fff;
 }
+
+.cust-slider .item a{
+	display: block;
+}
+
+.cust-slider .item img{
+	display: block;
+	margin: auto;
+	height: 100%;
+}
+
 
 /*Display Carousel Controls on hover*/
 .carousel:hover .carousel-control{

@@ -21,6 +21,9 @@ p.small {
 .nobg {
   background: none !important;
 }
+.notopmargin {
+  margin-top: 0 !important;
+}
 a,
 a:hover,
 a:focus,
@@ -496,7 +499,8 @@ section.cloud-inner {
 section.cloud-inner p {
   font-family: 'OpenSans-Regular';
   font-size: 15px;
-  letter-spacing: 1px;
+  /*letter-spacing: 1px;*/
+  line-height: 24px;
   color: #666;
 }
 section.cloud-inner h2 {
@@ -780,6 +784,8 @@ section.cloud-inner .remote-backup.history .year p {
 }
 section.cloud-inner .remote-backup.history .history-inner {
   position: relative;
+  display: inline-block;
+  width: 100%;
 }
 section.cloud-inner .remote-backup.history .history-inner .image {
   display: inline-block;
@@ -797,7 +803,97 @@ section.cloud-inner .remote-backup.history .history-inner .text {
   display: inline-block;
   width: 55%;
   background: #f7f7f7;
-  padding: 50px;
+  padding: 50px 100px 50px 50px;
+}
+section.cloud-inner .remote-backup.history .history-inner .text a {
+  font-family: OpenSans-Bold;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: block;
+  color: #333333;
+}
+section.cloud-inner .remote-backup.history .history-inner .text a:hover {
+  text-decoration: none;
+  color: #0086bb;
+}
+section.cloud-inner .remote-backup.history .history-inner .text p {
+  letter-spacing: 0;
+  line-height: 26px;
+}
+section.cloud-inner .remote-backup.history.img-left .image {
+  left: 30px;
+  top: -120px;
+}
+section.cloud-inner .remote-backup.history.img-left .text {
+  float: right;
+  padding: 50px 50px 50px 100px;
+}
+section.cloud-inner .remote-backup.history.img-left .year p {
+  left: -30px;
+  right: auto;
+}
+section.cloud-inner .remote-backup.scalability {
+  background: #f7f7f7;
+}
+section.cloud-inner .remote-backup.scalability h3 {
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: #000;
+}
+section.cloud-inner .remote-backup.changable {
+  background: #eaeaea;
+  background: -moz-linear-gradient(top, #eaeaea 0%, #ffffff 69%);
+  background: -webkit-linear-gradient(top, #eaeaea 0%, #ffffff 69%);
+  background: linear-gradient(to bottom, #eaeaea 0%, #ffffff 69%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#ffffff', GradientType=0);
+}
+section.cloud-inner .remote-backup.changable .text {
+  margin-top: 10px;
+}
+section.cloud-inner .remote-backup.changable .text strong {
+  text-transform: uppercase;
+}
+section.cloud-inner .remote-backup.changable .corner-img {
+  margin-top: 100px;
+}
+section.cloud-inner .remote-backup.changable .tab1,
+section.cloud-inner .remote-backup.changable .tab2,
+section.cloud-inner .remote-backup.changable .tab3 {
+  display: none;
+}
+section.cloud-inner .remote-backup.changable .tab1.show,
+section.cloud-inner .remote-backup.changable .tab2.show,
+section.cloud-inner .remote-backup.changable .tab3.show {
+  display: block;
+}
+section.cloud-inner .remote-backup.changable .tabs ul {
+  list-style-type: none;
+  border-left: 5px solid #0086bb;
+  text-transform: uppercase;
+}
+section.cloud-inner .remote-backup.changable .tabs ul li {
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+}
+section.cloud-inner .remote-backup.changable .tabs ul li.active {
+  color: #000;
+}
+section.cloud-inner .remote-backup.changable .tabs ul li.tab2 {
+  display: block;
+}
+section.cloud-inner .remote-backup.changable .tabs ul li.tab3 {
+  display: block;
+}
+section.cloud-inner .remote-backup.slas {
+  background: none;
+  padding: 100px 0;
+}
+section.cloud-inner .remote-backup.slas h3 {
+  border-bottom: 4px solid #0086bb;
+  display: inline-block;
+  padding-bottom: 10px;
 }
 section.cloud-inner .instant-backup {
   padding: 100px 0;
@@ -824,6 +920,29 @@ section.cloud-inner .instant-backup.deployment .content {
   padding: 150px 200px 50px;
   position: relative;
   top: -170px;
+}
+section.cloud-inner .instant-backup.compliance h3 {
+  border-bottom: 4px solid #0086bb;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+section.cloud-inner .contact-block a {
+  color: #fff;
+  background: #0086bb;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+section.cloud-inner .contact-block a:hover {
+  text-decoration: none;
+}
+section.cloud-inner .contact-block p {
+  letter-spacing: 0;
+  color: #000;
+  font-size: 16px;
 }
 .criticalnavi.navbar {
   margin-bottom: 0;
