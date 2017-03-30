@@ -33,6 +33,11 @@
     src:url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
 
+@font-face {
+    font-family:'century-gothic-bold';
+    src:url('../fonts/century-gothic-bold.ttf') format('truetype');
+}
+
 .sl-slide-inner h2{
 	background: url('../../img/bottom-border.jpg') no-repeat bottom center;
 }
@@ -109,6 +114,10 @@ section.success#about{
 
 .customers h2{
 	background: url(../../img/21.png) no-repeat bottom center;
+}
+
+section.cloud-inner .learn-history .content-block h4 {
+    background: url(../../img/inner-pages/black_dot.png) no-repeat left;
 }
 
 .thumbnail-details {
@@ -534,7 +543,7 @@ section.success#about{
 	border-radius: 50%;
 }
 
-.demo-1 .sl-slide h2 {
+.demo-1 .sl-slide h1 {
 	color: #fff;
 	text-shadow: 0 0 1px #000;
 	padding: 20px;
@@ -1415,24 +1424,119 @@ width: 100%; height: 100%; content: ''; top: 0; z-index: 5;
 
 .relative{position:relative;}
 .grey-box{min-height: 400px;}
-.grey-box h2{font-weight: 300; text-transform: none;}
-.grey-box p{font-size:14px; color:#000; font-weight: 600;}
+.grey-box h2{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';}
+.grey-box p{font-size:14px; color:#000;  font-family: 'OpenSans-Regular'}
 .first-step{padding-bottom:70px;}
 .teams-cabin{background: #F7F7F7; padding: 25px 0;}
 .align-center{text-align: center;}
-.teams-cabin h2{font-weight: 300; text-transform: none;}
-.teams-cabin p{font-size: 13px; font-weight: 600;}
-.two-colum{padding-top:40px;}
+.teams-cabin h2{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';}
+.teams-cabin p{font-size: 13px; font-family: 'OpenSans-Regular'}
+.two-colum{padding-top:64px;}
 .blue-box{background: #0086BB; min-height: 400px; padding: 23px;}
 .blue-box a{color: #41C4F2;}
 .blue-box p{color: #fff; font-size: 21px;}
 .white-box{background: #fff; -moz-box-shadow: 0 0 5px #e1e1e1;
 -webkit-box-shadow: 0 0 5px#e1e1e1;
 box-shadow: 0 0 5px #e1e1e1; margin-bottom: 20px;}
-.team-person{padding-bottom: 5px; max-height: 149px;}
+.team-person{padding-bottom: 5px; max-height: 188px;}
 .team-person-info{padding: 2px 0; text-align: center;}
-.team-person-info h4{font-weight: 300; margin: 0; padding: 0; text-transform: none;}
+.team-person-info h5{font-weight: 300; margin: 0; padding: 0; text-transform: none;
+font-family: 'OpenSans-Regular'; color: #000;
+}
 .team-person img{max-width: 100%;}
+.team-person-info p{font-size: 11px;}
+.arrow-lft{background: url(../../img/lft-arrow.jpg) no-repeat left; padding-left: 24px;}
+.grey-box{background: #F0F0F0; padding: 25px 40px;}
+.our-team-page{padding: 40px 0;}
+
+
+#mainNav.blog-nav{position:absolute; width:100%; background-color:transparent;}
+
+.blog-banner{background: url(../../img/blog-banner.jpg) no-repeat top;
+background-size: cover;}
+
+.blog-area-main h2{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';
+font-size: 35px;}
+
+.blog-area-main h3{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';
+font-size: 20px; margin-bottom: 20px; font-weight: 600;}
+
+.blog-area-main p{font-family: 'OpenSans-Regular'; font-size: 16px;}
+
+.love{background: url(../../img/love.png) no-repeat left; padding-left: 20px;}
+.chat{background: url(../../img/chat.png) no-repeat left; padding-left: 20px;}
+
+.love1{background: url(../../img/love-white.png) no-repeat left; padding-left: 20px;}
+.chat1{background: url(../../img/chat-white.png) no-repeat left; padding-left: 20px;}
+
+.blog-box-main ul li a{color: #333;}
+.blog-side-pic {margin-top: 50px; position: relative;}
+.blog-side-txt{position: absolute; width: 100%; bottom: 0; padding: 25px;}
+.blog-side-txt p{color: #fff; font-size: 19px; }
+
+
+.blog-side-pic img{max-width: 100%;}
+.blog-graphics img{max-width: 100%;}
+.blog-pull-area {
+    font-family: OpenSans-Regular;
+    margin-bottom: 40px;
+    min-height: 2792px;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+.blog-graphics{margin-top: 50px;}
+.blog-graphics-main{margin-top: 50px; margin-bottom: 50px;}
+.blog-area-main img{max-width: 100%;}
+.blog-left2-pic{margin-bottom: 25px;}
+.blog-left2-main p{color: #747474}
+.blog-right h2{margin-top: 0;}
+
+.testimonial-part{background: url(../../img/coma.png) no-repeat #F8F8F8 left 10px top 10px;
+font-family: 'OpenSans-Regular'; font-size: 18px; color: #333333;}
+.testimonial-name{font-size: 16px; color: #000; padding-top: 15px;}
+.blog-share ul li{font-family: 'OpenSans-Regular'; font-weight: 600;}
+
+.comment-sec{ padding-top:40px;}
+.comment-head{text-align:center; padding-top:40px; font-family: 'OpenSans-Regular'; font-weight: 600;
+font-size: 21px; font-weight: 600; padding-bottom: 30px; 
+}
+.comment-head span{font-weight: 300;}
+.comment-block{border-top: 1px solid #eee; padding: 20px; font-family: 'OpenSans-Regular';
+font-size: 14px;
+}
+.blog-commenter{text-align: center;}
+.single-block{padding: 20px 0; }
+.clock{background: url(../../img/clock-icon.png) no-repeat left; 
+padding-left: 20px; margin-left: 30px; color: #999999;}
+.blog-commenter-head{font-family: 'OpenSans-Regular'; font-size: 17px; padding-bottom: 10px;}
+.reply-sec{background: #F8F8F8; overflow: hidden; padding-bottom: 50px;}
+a.reply{color: #E6E6E6;}
+.single-block .form-control{border: none; min-height: 100px; resize: none;}
+.add-comment{background: #0087B8; color: #fff; border-radius: 5px; 
+	padding: 8px 15px; border: none; float: right; margin-top: 15px;}
+
+.blog-banner{text-align: center; position: relative; min-height: 616px;}
+.banner-txt{position: absolute; left: 0; right: 0; top: 30%; z-index: 9999;
+color: #fff; font-size: 46px; font-family:'OpenSans-Regular';}
+
+.blog-side-txt ul {
+    margin: 0;
+    padding: 0;
+}
+.blog-side-txt ul li {
+    display: inline-block;
+    list-style: outside none none;
+    margin-right: 20px;
+}
+.blog-side-txt ul li a {
+    color: #fff !important;
+}
+.blog-area-main{
+border-top-left-radius:10px;
+    border-top-right-radius:10px;
+
+}
 
 
 
@@ -1444,6 +1548,9 @@ box-shadow: 0 0 5px #e1e1e1; margin-bottom: 20px;}
     text-align: center;
 }
 
+.main-pull-area .blog-area-main{position: relative;}
+.main-pull-area .blog-area-main .blog-box{margin-top: 25px;}
+
 }
 
 
@@ -1451,6 +1558,8 @@ box-shadow: 0 0 5px #e1e1e1; margin-bottom: 20px;}
 
 	.mobile-v{display: block;}
 	.contact-info-sec{display: none;}
+	.blog-side-pic img{width: 100%;}
+	.blog-left2-pic img{width: 100%;}
 
 
 }
