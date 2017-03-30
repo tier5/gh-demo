@@ -23,6 +23,9 @@ p.small {
 .nobg{
 	background: none !important;
 }
+.notopmargin{
+	margin-top: 0 !important;
+}
 
 a,
 a:hover,
@@ -554,7 +557,8 @@ section.cloud-inner{
 	p{
 		font-family: 'OpenSans-Regular';
 		font-size: 15px;
-	    letter-spacing: 1px;
+	    /*letter-spacing: 1px;*/
+	    line-height: 24px;
 	    color: @innerbody-fontcolor;
 	}
 	h2{
@@ -841,6 +845,8 @@ section.cloud-inner{
 			}
 			.history-inner{
 				position: relative;
+				display: inline-block;
+    			width: 100%;
 				.image{
 					display: inline-block;
 				    position: absolute;
@@ -857,11 +863,96 @@ section.cloud-inner{
 					display: inline-block;
 				    width: 55%;
 				    background: #f7f7f7;
-				    padding: 50px;
-				    strong{
-
+				    padding: 50px 100px 50px 50px;
+				    a{
+			    	    font-family: OpenSans-Bold;
+					    font-size: 26px;
+					    font-weight: 400;
+					    margin-bottom: 20px;
+					    display: block;
+					    color: @gray-dark;
+					    &:hover{
+					    	text-decoration: none;
+					    	color: @dark-blue;
+					    }
+				    }
+				    p{
+				    	letter-spacing: 0;
+    					line-height: 26px;
 				    }
 				}
+			}&.img-left{
+				.image{
+					left: 30px;
+    				top: -120px;
+				}
+				.text{
+					float: right;
+					padding: 50px 50px 50px 100px;
+				}
+				.year{
+					p{
+						left: -30px;
+    					right: auto;
+					}
+				}
+			}
+		}&.scalability{
+			background: #f7f7f7;
+			h3{
+				letter-spacing: 1px;
+			    text-transform: capitalize;
+			    color: #000;
+			}
+		}&.changable{
+			background: #eaeaea; 
+			background: -moz-linear-gradient(top, #eaeaea 0%, #ffffff 69%); 
+			background: -webkit-linear-gradient(top, #eaeaea 0%,#ffffff 69%); 
+			background: linear-gradient(to bottom, #eaeaea 0%,#ffffff 69%); 
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 );
+			.text{
+				margin-top:10px;
+				strong{
+					text-transform: uppercase;
+				}
+			}
+			.corner-img{
+				margin-top: 100px;
+			}
+			.tab1, .tab2, .tab3{
+				display:none;
+			}
+			.tab1.show, .tab2.show, .tab3.show{
+				display: block;
+			}
+			.tabs{
+				ul{
+					list-style-type: none;
+    				border-left: 5px solid @dark-blue;
+				    text-transform: uppercase;
+				    li{
+				    	color: @innerbody-fontcolor;
+				    	font-size: 14px;
+				    	cursor: pointer;
+				    	&.active{
+				    		color: #000;
+				    	}
+				    	&.tab2{
+							display:block;
+						}
+						&.tab3{
+							display:block;
+						}
+				    }
+				}
+			}
+		}&.slas{
+			background: none;
+			padding: 100px 0;
+			h3{
+				border-bottom: 4px solid @dark-blue;
+			    display: inline-block;
+			    padding-bottom: 10px;
 			}
 		}
 	}
@@ -892,6 +983,33 @@ section.cloud-inner{
 			    top: -170px;
 			}
 		}
+		&.compliance{
+			h3{
+				border-bottom: 4px solid @dark-blue;
+			    display: inline-block;
+			    padding-bottom: 10px;
+			}
+		}
+	}
+	.contact-block{
+		a{
+			color: #fff;
+			background: @dark-blue;
+		    display: inline-block;
+		    text-transform: uppercase;
+		    font-size: 18px;
+		    padding: 10px 20px;
+		    border-radius: 5px;
+		    margin-top: 20px;
+		    &:hover{
+		    	text-decoration: none;
+		    }
+		}
+		p{
+			letter-spacing: 0;
+		    color: #000;
+		    font-size: 16px;
+		}
 	}
 }
 
@@ -902,7 +1020,6 @@ section.cloud-inner{
 section.cloud-inner.critical{
 	padding-top:0;
 }
-
 
 
 .floating-label-form-group {
@@ -1231,3 +1348,61 @@ box-shadow: 0 0 5px #888; padding-bottom:35px;
 
 }
 
+.our-team-page{
+		padding-top:70px;
+
+		.grey-box{background:#F0F0F0; padding:24px; margin-bottom:40px;
+		position:relative; z-index:9999; min-height:400px;
+		}
+
+		.teams-cabin{padding:35px 0;
+
+		}
+		
+		
+
+}
+
+
+.main-pull-area{ 
+
+.blog-area-main{
+	
+	background: #fff none repeat scroll 0 0;
+    box-shadow: 0 0 5px #888;
+    left: 0;
+    padding-bottom: 35px;
+    position: absolute;
+    top: -234px;
+    width: 100%;
+    z-index: 8888;
+    padding:20px;
+    
+
+    .blog-box{border:6px solid #F8F8F8; padding:15px; margin-top:122px;
+    .blog-box-main{font-style:italic; font-size:16px;}
+
+    }
+    ul{margin:0; padding:25px 0 0;
+    li{display:inline-block; list-style:none; margin-right:20px;
+    a{color:#333; }
+    }
+    }
+    .blog-side-pic{position:relative;}
+
+
+.testimonial-part{padding:40px; font-style:italic; margin-top:40px; margin-bottom:40px;
+}
+.blog-share{margin:0; padding:30px;
+	ul{margin:0; padding:0;
+		li{display:inline-block; list-style:none; font-size:18px; color:#333;
+		}
+	}
+
+
+}
+
+
+}
+
+}

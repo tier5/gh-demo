@@ -260,4 +260,19 @@ $(document).ready(function(){
     });
 });
 
-/* Contact form Ends */
+
+/* Testimonial slider */
+
+$(document).ready(function() {
+    $('.cust-slider .carousel-inner .item .slide1').click(function(e){
+        $(this).parent().parent().find($('.slide1')).removeClass("clicked");
+        $(this).addClass("clicked");
+        var clientReview = $(this).find($('.client-review')).html();
+
+        var review_display = $(this).parent().parent().find(".thumbnail-details");
+        review_display.html(clientReview);
+
+        e.preventDefault();
+    });
+
+});
