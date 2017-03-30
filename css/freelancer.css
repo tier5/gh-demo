@@ -1411,3 +1411,72 @@ fieldset[disabled] .btn-success.active {
 .contact-info-sec1 .contact-info-main ul li img {
   max-width: 100%;
 }
+.our-team-page {
+  padding-top: 70px;
+}
+.our-team-page .grey-box {
+  background: #F0F0F0;
+  padding: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9999;
+  min-height: 400px;
+}
+.our-team-page .teams-cabin {
+  padding: 35px 0;
+}
+.main-pull-area .blog-area-main {
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 0 0 5px #888;
+  left: 0;
+  padding-bottom: 35px;
+  position: absolute;
+  top: -234px;
+  width: 100%;
+  z-index: 8888;
+  padding: 20px;
+}
+.main-pull-area .blog-area-main .blog-box {
+  border: 6px solid #F8F8F8;
+  padding: 15px;
+  margin-top: 122px;
+}
+.main-pull-area .blog-area-main .blog-box .blog-box-main {
+  font-style: italic;
+  font-size: 16px;
+}
+.main-pull-area .blog-area-main ul {
+  margin: 0;
+  padding: 25px 0 0;
+}
+.main-pull-area .blog-area-main ul li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 20px;
+}
+.main-pull-area .blog-area-main ul li a {
+  color: #333;
+}
+.main-pull-area .blog-area-main .blog-side-pic {
+  position: relative;
+}
+.main-pull-area .blog-area-main .testimonial-part {
+  padding: 40px;
+  font-style: italic;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.main-pull-area .blog-area-main .blog-share {
+  margin: 0;
+  padding: 30px;
+}
+.main-pull-area .blog-area-main .blog-share ul {
+  margin: 0;
+  padding: 0;
+}
+.main-pull-area .blog-area-main .blog-share ul li {
+  display: inline-block;
+  list-style: none;
+  font-size: 18px;
+  color: #333;
+}
