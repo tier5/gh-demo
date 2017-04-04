@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cloudlife Consulting</title>
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
+     <style type="text/css">
+        .blog-banner {
+  background: rgba(0, 0, 0, 0) url("../img/blog-banner.jpg") no-repeat scroll center top / cover ;
+}
+
+    </style>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="inner-nav navbar navbar-default navbar-custom criticalnavi blog-nav">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <!-- <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i> -->
+                    <img src="../img/1.png" class="img-responsive" alt="mobile-icon">
+                </button>
+                <a class="logo" href="../index.html"><img src="../img/logo.png" class="img-responsive" alt="Cloudlife Consulting Logo"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#about">Who we are</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#portfolio">what we do</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#customers">satisfied customers</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#contact">contact us</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="../index.html#blog">blog</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="blog-banner">
+    <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
+    <div class="banner-txt">Using SoftNAS for Docker</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="main-pull-area blog-pull-area">
+                <div class="blog-area-main">
+                    <div class="relative-area">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="blog-box">
+                                <div class="blog-box-main">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </div>
+                                <ul>
+                                    <li><a class="love" href="#">47</a></li>
+                                    <li><a class="chat" href="#">9</a></li>
+                                </ul>
+                            </div>
+                            <div class="blog-side-pic">
+                            <img src="../img/blog-side.png" alt="img">
+                                <div class="blog-side-txt">
+                                <p>
+                                    Lorem ipsum sit amet since
+                                </p>
+                                <ul>
+                                    <li><a href="#" class="love1">47</a></li>
+                                    <li><a href="#" class="chat1">9</a></li>
+                                </ul>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                           <div class="align-center blog-logo">
+                                <img src="../img/Attachment-1.png" alt="img">
+                           </div>
+                           <hr>
+                            <p>
+                                So I’ve been doing some testing with Docker and <a target="blank" href="http://www.softnas.com">SoftNAS</a>. This brief tutorial will show you how to connect docker to SoftNAS. This will give you a couple of pretty neat options for storage while using Docker.
+                            </p>
+                            <p>
+                                First a couple of cool things you can do with SoftNAS and Docker:
+                            </p>
+                            <div class="blog-normal-list">
+                                <ul>
+                                    <li>Share persistent storage between Docker containers.</li>
+                                    <li>
+                                    Snapshot storage to S3 or elsewhere to save after Docker container has exited.
+                                    </li>    
+                                </ul>
+                            </div>
+                            <p>
+                            Before I start, I’m going to assume you have a SoftNAS instance running from the <a href="https://aws.amazon.com/marketplace/pp/B00EQE493U/ref=_ptnr_web_prodpage">AWS Marketplace</a>. In my case, I used the ephemeral storage to run the storage pool (obviously persistent storage like EBS or S3 should be used for production deployments). The ephemeral storage is free :) There’s also a free micro instance available to DevOps, along with AWS Free Tier support.  There are two important parts of setting up this instance in AWS.
+                            </p>
+                            <div class="blog-normal-list">
+                                <ul>
+                                    <li>Make sure you write down the storage share</li>
+                                    <li>Make sure you pay attention to the security groups. In my testing scenario I allowed all traffic between the two instances. This is not ideal for production at all. But, it allowed me to build in a test scenario quickly.</li>
+                                    <li>When you create a volume, make sure that you have the “Export NFS Share” check box selected</li>
+                                </ul>    
+                            </div>
+                            <p>
+                              I used the SoftNAS installation instructions located <a href="https://www.softnas.com/wp/support/documentation/" target="blank">here</a>.  
+                            </p>
+                            <p>
+                               Once the SoftNAS instance is set up and running, make sure to launch another instance to run Docker on. In my case, I used Ubuntu. Once Ubuntu is up and running, we will want to create a folder to mount the NFS storage from SoftNAS to. 
+                            </p>
+                            <pre class="x-code"><code>sudo mkdir /softnas</code></pre>
+                            <p>
+                                Once the directory is made, I will mount the NFS share from SoftNAS to my Ubuntu instance.
+                            </p>
+                            <pre class="x-code"><code>sudo mount SOFTNAS_IP_ADDRESS:/SOFTNAS_SHARE&nbsp; /softnas </code></pre>
+                            <p>
+                                At this point, its good to test that you are connected between both the SoftNAS instance and your Ubuntu instance.
+                            </p>
+                            <pre class="x-code"><code>sudo touch /softnas/touch.file</code></pre>
+                            <p>
+                                Make sure that the file is written without a problem, then look through the SoftNAS File System to make sure that the file is where it’s supposed to be.
+                            </p>
+                            <p>
+                            If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a href="http://www.cloudlifeconsulting.com/install-docker-on-aws/">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:
+                            </p>
+                            <pre class="x-code"><code>sudo apt-get update<p></p>
+<p>sudo apt-get install docker.io</p>
+<p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p>
+<p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p>
+<p>source /etc/bash_completion.d/docker.io</p>
+</code></pre>
+                            <p>You can find a link to the Docker instructions here</p>
+                            <p>
+                            It’s easy to test to make sure you have Docker installed correctly by running the following command
+                            </p>
+                            <pre class="x-code"><code>docker --version.</code></pre>
+                            <p>Finally, to make sure we can access the NFS SoftNAS share, we are going to run an Ubuntu container, and mount the /softnas directory from our host Ubuntu server to our Docker container.</p>
+                            <pre class="x-code"><code>sudo docker run -i -t --name ubuntu -v /softnas:/softnas ubuntu /bin/bash </code></pre>
+                            <p>This command will launch a Docker container based on the Ubuntu image. It’s going to name it Ubuntu. It is going to mount the volume /softnas from the local host to the /softnas container file system. Last, it’s going to automatically log us in to a bash command. At that point we can cd to our directory, and test again. Just for reference the -v command is structured host filesystem: container file system.</p>
+                            <p>More on attaching host volumes to Docker containers
+                            <a target="blank" href="https://docs.docker.com/userguide/dockervolumes/"> here.</a></p>
+                            <p>At this point &nbsp;you have a running Docker container that can share data across containers, but also across hosts. This data can be snapshot for later use, or any multitude of other things.</p>
+                            
+                        </div>
+
+                    </div>
+                    <div class="clearfix">
+                    <!-- <div class="blog-graphics">
+                    
+                        <div class="col-md-12 col-sm-12 blog-graphics-main">
+                            <div class="blog-left2-pic">
+                            <img src="../img/blog-graphics.jpg" alt="img">
+                            </div>
+                        </div>
+                       
+                    </div> --> 
+
+                </div>
+                    <!-- <div class="row1">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="blog-left2-pic">
+                            <img src="../img/blog-graphics2.png" alt="img">
+                            </div>
+                            <div class="blog-left2-main">
+                            <p>
+                                It is a long established fact that a reader will be distracted by the readable content lookinout. 
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 blog-right">
+                            <h2>Lorem Ipsum is simply dummy text of the printing 
+                            </h2>
+                            <br>
+                            <p>
+                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
+                            </p>
+                            <div class="testimonial-part">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it The point of using Lorem Ipsum is that it
+                            <div class="testimonial-name">David Guetta</div>
+                            </div> 
+                            <p>
+                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
+                            </p>
+                            <div class="blog-share">
+                                <ul>
+                                    <li>Share</li>
+                                    <li>
+                                    <a href="#">    
+                                        <img src="../img/tweet.jpg" alt="img">
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">    
+                                        <img src="../img/facebook.jpg" alt="img">
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">    
+                                        <img src="../img/google.jpg" alt="img">
+                                    </a>
+                                    </li>
+                                </ul>    
+                            </div>
+
+                        </div>
+
+                    </div> -->
+                    <div class="comment-sec">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="comment-head">Comments <span>(0)</span></div>
+                            <div class="comment-block">
+                                <div class="row">
+                                    <!-- <div class="single-block">
+                                    <div class="col-md-1 col-sm-1">
+                                        <div class="blog-commenter">
+                                        <img src="../img/blog-commenter.jpg" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-11 col-sm-11">
+                                        <div class="blog-commenter-head">
+                                        Franco Santoro <span class="clock">4 hours ago</span>
+                                        </div>
+                                        <p>
+                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                        </p>
+                                        <p><a class="reply" href="#"> Reply</a></p>
+                                    </div>
+                                    </div> -->
+                                    <div class="clearfix"></div>
+                                    <div class="reply-sec">
+                                        <div class="col-md-1 col-sm-1">&nbsp;</div>
+                                        <div class="col-md-11 col-sm-11">
+                                <!-- <div class="single-block">
+                                    <div class="col-md-1 col-sm-1">
+                                        <div class="blog-commenter">
+                                        <img src="../img/blog-commenter.jpg" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-11 col-sm-11">
+                                        <div class="blog-commenter-head">
+                                        Franco Santoro <span class="clock">4 hours ago</span>
+                                        </div>
+                                        <p>
+                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                        </p>
+                                        <p><a class="reply" href="#"> Reply</a></p>
+                                    </div>
+                                </div> -->
+
+                                        </div>
+
+                                <!-- <div class="single-block">
+                                    <div class="col-md-1 col-sm-1">
+                                        <div class="blog-commenter">
+                                        <img src="../img/blog-commenter.jpg" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-11 col-sm-11">
+                                        <div class="blog-commenter-head">
+                                        Franco Santoro <span class="clock">4 hours ago</span>
+                                        </div>
+                                        <p>
+                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                        </p>
+                                        <p><a class="reply" href="#"> Reply</a></p>
+                                    </div>
+                                </div> -->
+                                    <div class="single-block">
+                                    <div class="col-md-1 col-sm-1">
+                                        <div class="blog-commenter">
+                                        <img src="../img/demo-pic.png" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-11 col-sm-11">
+                                       <textarea class="form-control put-comments"></textarea>
+                                       <input class="add-comment" value="ADD COMMENT" type="submit" name="">
+                                    </div>
+                                    </div>
+
+
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                    </div>
+                </div> 
+                
+            </div>
+        </div>    
+    </div>    
+</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                        <h3>who we are</h3>
+                        <ul>
+                            <li><a href="#">our history</a></li>
+                            <li class="active"><a href="our_mission.html">our mission</a></li>
+                            <li><a href="#">our team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                        <h3>what we do</h3>
+                        <ul>
+                            <li class="active"><a href="cloud_architecture.html">cloud architecture</a></li>
+                            <li><a href="#">cloud migrations</a></li>
+                            <li class="active"><a href="cloud_automation.html">cloud automation</a></li>
+                            <li><a href="#">managed services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                        <h3>blog</h3>
+                        <ul>
+                            <li><a href="#">categories</a></li>
+                            <li><a href="#">tags</a></li>
+                            <li><a href="#">by date</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                        <h3>Info</h3>
+                        <ul>
+                            <li class="active"><a href="healthcare.html">healthcare in the cloud</a></li>
+                            <li class="active"><a href="critical_system.html">backup & recovery of mission critical systems</a></li>
+                            <li class="active"><a href="driving_manufacturing.html">driving manufacturing efficiency</a></li>
+                            <li class="active"><a href="fleet_management.html">revolutionizing fleet management</a></li>
+                            <li class="active"><a href="legal_directory.html">applications for the legal industry</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                        <h3>contact us</h3>
+                        <ul>
+                            <li class="active"><a href="contact.html">Get in touch</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-3 footer-col col-xs-12">
+                        <h3>subscribe newsletter</h3>
+                        <form>
+                            <input type="email" placeholder="Email address" class="form-control">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        ©2015 CloudLife Consulting All rights reserved. 
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
+                        <a href="#"><img src="../img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
+                        <a href="#"><img src="../img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/freelancer.min.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+</body>
+    
+</html>
