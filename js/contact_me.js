@@ -6,6 +6,7 @@ $(function() {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
+            alert("here");
             // Prevent spam click and default submit behaviour
             $("#btnSubmit").attr("disabled", true);
             event.preventDefault();
@@ -21,15 +22,16 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                contentType: "application/json",
+                url: "https://3n4u8lvjk3.execute-api.us-east-1.amazonaws.com/Prod/",
                 type: "POST",
-                data: {
+                dataType: 'jsonp',
+                data : {
                     name: name,
                     phone: phone,
                     email: email,
                     message: message
                 },
-                cache: false,
                 success: function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);

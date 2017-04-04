@@ -236,17 +236,43 @@ $(document).ready(function(){
         
         // AJAX Code To Submit Form.
             $.ajax({
+                url: "https://e3q50rznqj.execute-api.us-east-1.amazonaws.com/prod",
                 type: "POST",
-                url: "ajaxsubmit.php",
-                data: dataString,
+                contentType: 'application/json',
+                crossDomain: true,
+                dataType: "json",
+                data : JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    msg: msg
+                }),
                 cache: false,
                 success: function(result){
                         $('#success').text("Thank you for contacting us!");
-                    }
+                },
+                error: function(err){
+                        console.log(err);
+                }
             });
         }
         return false;
     });
 });
 
-/* Contact form Ends */
+
+/* Testimonial slider */
+
+$(document).ready(function() {
+    $('.cust-slider .carousel-inner .item .slide1').click(function(e){
+        $(this).parent().parent().find($('.slide1')).removeClass("clicked");
+        $(this).addClass("clicked");
+        var clientReview = $(this).find($('.client-review')).html();
+
+        var review_display = $(this).parent().parent().find(".thumbnail-details");
+        review_display.html(clientReview);
+
+        e.preventDefault();
+    });
+
+});
