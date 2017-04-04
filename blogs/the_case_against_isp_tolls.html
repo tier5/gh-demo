@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
      <style type="text/css">
         .blog-banner {
-  background: rgba(0, 0, 0, 0) url("http://www.cloudlifeconsulting.com/wp-content/uploads/2014/08/docker.png") no-repeat scroll center top / cover ;
+  background: rgba(0, 0, 0, 0) url("http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/netflix-logo-862x484.png") no-repeat scroll center top / cover ;
 }
 
     </style>
@@ -86,7 +86,7 @@
     </nav>
     <div class="blog-banner">
     <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Install Docker On AWS</div>
+    <div class="banner-txt">The Case Against ISP Tolls</div>
     </div>
     <div class="container">
         <div class="row">
@@ -120,67 +120,40 @@
                         </div>
                         <div class="col-md-9 col-sm-9">
 
-                            http://www.cloudlifeconsulting.com/install-docker-on-aws/
+                           http://www.cloudlifeconsulting.com/the-case-against-isp-tolls/
 
-                        <div class="entry-wrap">
-                           <header class="entry-header">
-                              <h1 class="entry-title">Install Docker on AWS</h1>
-                           </header>
                            <div class="entry-content content">
-                              <div class="x-author-box cf">
-                                 <h6 class="h-about-the-author">About</h6>
-                                 <img alt="" src="http://0.gravatar.com/avatar/f31d7f6030a8b052718cf1dd57ebbc5d?s=180&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/f31d7f6030a8b052718cf1dd57ebbc5d?s=360&amp;d=mm&amp;r=g 2x" class="avatar avatar-180 photo" height="180" width="180">
-                                 <div class="x-author-info">
-                                    <h4 class="h-author mtn">Ryan Ryke</h4>
-                                    <a href="http://twitter.com/itsacloudlife99" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://twitter.com/itsacloudlife99', ' Twitter');" class="x-author-social" title="Visit the Twitter Profile for Ryan Ryke" target="_blank"><i class="x-icon-twitter-square"></i> Twitter</a><a href="https://plus.google.com/u/0/105922719332670658556/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://plus.google.com/u/0/105922719332670658556/', ' Google+');" class="x-author-social" title="Visit the Google+ Profile for Ryan Ryke" target="_blank"><i class="x-icon-google-plus-square"></i> Google+</a>
-                                    <p class="p-author mbn"></p>
-                                 </div>
-                              </div>
-                              <p>This post will cover how to install docker on AWS using <strong>Ubuntu 14.04</strong>. Overall the process is pretty simple, but we will go over a couple of parts that are good to know. This is assuming you know the basics about Amazon Web Services enough so that you can setup a basic instance. This will be the first building block&nbsp;in a series of posts on how to utilize Docker. If you need a little bit of background on Docker, and the differences between containers and virtual machines, please see my post here:&nbsp;<a title="So Long Virtual Machines Hello Containers" href="http://www.cloudlifeconsulting.com/long-virtual-machines-hello-containers/">So Long Virtual Machines Hello Containers</a></p>
-                              <p>&nbsp;</p>
-                              <p>As with all Ubuntu projects make sure that your install is properly updated.</p>
-                              <pre class="x-code"><code>
-                        <p>sudo apt-get update</p>
-                        <p>sudo apt-get upgrade</p>
-                        </code></pre>
-                              <p>&nbsp;</p>
-                              <p>So once we have Ubuntu upgraded, we will want to install Docker. We are going to install the most recent version of Docker. In order to do this we will need to add the Docker repository. But, before we do that we need to make sure that our APT system can handle secure repositories:</p>
-                              <pre class="x-code"><code>
-                        ls /usr/lib/apt/methods/<p></p>
-                        </code></pre>
-                              <p>&nbsp;</p>
-                              <p>Make sure that the file named https is there. If it isn’t you will need to add it:</p>
-                              <pre class="x-code"><code>
-                        sudo apt-get install apt-transport-https<p></p>
-                        </code></pre>
-                              <p>&nbsp;</p>
-                              <p>Once that is done, or if you already have https present you can add the Docker repository:</p>
-                              <pre class="x-code"><code>
-                        </code><p><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9<br>
-                        </code></p></pre>
-                              <pre class="x-code"><code>
-                        <p class="prettyprint well"><span style="color: #000000;"><code style="color: inherit;"><span class="pun">sudo sh -</span><span class="pln">c </span><span class="str">"echo deb https://get.docker.io/ubuntu docker main\ </span></code></span></p>
-                        <p class="prettyprint well"><span style="color: #000000;"><code style="color: inherit;"><span class="str">&gt;/etc/apt/sources.list.d/docker.list"</span></code></span></p>
-                        </code></pre>
-                              <p>Once the repository is added we can install the latest Docker package:</p>
-                              <pre class="x-code"><code>
-                        sudo apt-get update<p></p>
-                        </code><p><code>sudo apt-get install lxc-docker<br>
-                        </code></p></pre>
-                              <p>&nbsp;</p>
-                              <p>Finally, let’s check our work:</p>
-                              <pre class="x-code"><code>
-                        <p><code style="font-weight: 400; color: inherit;"><span class="pln" style="font-weight: 400; color: #48484c;">sudo docker run </span><span class="pun" style="font-weight: 400; color: #93a1a1;">-</span><span class="pln" style="font-weight: 400; color: #48484c;">i </span><span class="pun" style="font-weight: 400; color: #93a1a1;">-</span><span class="pln" style="font-weight: 400; color: #48484c;">t ubuntu </span><span class="pun" style="font-weight: 400; color: #93a1a1;">/</span><span class="pln" style="font-weight: 400; color: #48484c;">bin</span><span class="pun" style="font-weight: 400; color: #93a1a1;">/</span><span class="pln" style="font-weight: 400; color: #48484c;">bash</span></code></p>
-                        </code></pre>
-                              <p>&nbsp;</p>
-                              <p>These are the basic steps needed to install Docker on AWS.</p>
-                              <p>If you need additional information on Docker it can be found <a href="https://www.docker.com/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://www.docker.com/', 'here&nbsp;');">here&nbsp;</a></p>
-                              <p>Also, if you need any help with anything contained in this post, or with the Cloud in general, we are always glad to help. <a title="Contact Us" href="http://www.cloudlifeconsulting.com/contact-us/">Contact Us</a></p>
-                              <p><code style="font-weight: 400; color: inherit;"><span class="pln" style="font-weight: 400; color: #48484c;"><br>
-                                 </span></code>
-                              </p>
-                           </div>
-                        </div>
+                               <div class="x-author-box cf">
+                                  <h6 class="h-about-the-author">About the Author</h6>
+                                  <img alt="" src="http://0.gravatar.com/avatar/f31d7f6030a8b052718cf1dd57ebbc5d?s=180&amp;d=mm&amp;r=g" srcset="http://0.gravatar.com/avatar/f31d7f6030a8b052718cf1dd57ebbc5d?s=360&amp;d=mm&amp;r=g 2x" class="avatar avatar-180 photo" height="180" width="180">
+                                  <div class="x-author-info">
+                                     <h4 class="h-author mtn">Ryan Ryke</h4>
+                                     <a href="http://twitter.com/itsacloudlife99" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://twitter.com/itsacloudlife99', ' Twitter');" class="x-author-social" title="Visit the Twitter Profile for Ryan Ryke" target="_blank"><i class="x-icon-twitter-square"></i> Twitter</a><a href="https://plus.google.com/u/0/105922719332670658556/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://plus.google.com/u/0/105922719332670658556/', ' Google+');" class="x-author-social" title="Visit the Google+ Profile for Ryan Ryke" target="_blank"><i class="x-icon-google-plus-square"></i> Google+</a>
+                                     <p class="p-author mbn"></p>
+                                  </div>
+                               </div>
+                               As I’m sure many of you have heard , Comcast is currently in the final stages of acquiring one of its largest competitors Time Warner. This has made a lot of waves in not only the subscriber television market, but also in the consumer internet market. &nbsp;Netflix has recently written a very telling blog post on the case against isp tolls, and I wanted to share it with&nbsp;as many people as possible.
+                               <p></p>
+                               <p>It’s an alarming trend that threatens the internet and all of the services that travel over it. Essentially, what Comcast is doing is charging providers a fee to deliver their services to you. So now, they are charging you for your internet access. Then they are charging companies for the right to deliver content to you. It’s a double dip of epic&nbsp;proportions. Not to mention, the increase in costs for Netflix that will be passed along to the consumers eventually.</p>
+                               <p>This is a graph that shows the increase in quality once Netflix paid up and the direct connection was established.</p>
+                               <p><a href="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/NetflixQualityOnComcast.png"><img class="alignnone  wp-image-301" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/NetflixQualityOnComcast-300x300.png" alt="NetflixQualityOnComcast" width="340" height="340"></a></p>
+                               <p>&nbsp;</p>
+                               <p>If you have a spare second head over to Netflix’s blog to check out all the details. It’s a very educational look at how Net Neutrality is &nbsp;a dream, and how corporations will soon be controlling the content we consume on the internet more than ever.</p>
+                               <p><a href="http://blog.netflix.com/2014/04/the-case-against-isp-tolls.html?m=0" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://blog.netflix.com/2014/04/the-case-against-isp-tolls.html?m=0', 'The Case Against ISP Tolls');">The Case Against ISP Tolls</a></p>
+                               <p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class="youtube-player" type="text/html" width="742" height="448" src="http://www.youtube.com/embed/wtt2aSV8wdw?version=3&amp;rel=1&amp;fs=1&amp;autohide=2&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent&amp;wmode=transparent" frameborder="0" allowfullscreen="true" wmode="Opaque"></iframe></span></p>
+                               <p>&nbsp;</p>
+                               <p>It’s crucially important to make sure that we do everything in our power to let our elected officials know that we are for net neutrality.</p>
+                               <p>&nbsp;</p>
+                               <p>&nbsp;</p>
+                               <h6 class="zemanta-related-title" style="font-size: 1em;">Related articles</h6>
+                               <ul class="zemanta-article-ul zemanta-article-ul-image" style="margin: 0; padding: 0; overflow: hidden;">
+                                  <li class="zemanta-article-ul-li-image zemanta-article-ul-li" style="padding: 0; background: none; list-style: none; display: block; float: left; vertical-align: top; text-align: left; width: 84px; font-size: 11px; margin: 2px 10px 10px 2px;"><a href="http://www.wired.com/2014/04/netflix-economics/" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://www.wired.com/2014/04/netflix-economics/', '');" style="box-shadow: 0px 0px 4px #999; padding: 2px; display: block; border-radius: 2px; text-decoration: none;" target="_blank"><img style="padding: 0; margin: 0; border: 0; display: block; width: 80px; max-width: 100%;" src="http://i.zemanta.com/267710540_80_80.jpg" alt=""></a><a href="http://www.wired.com/2014/04/netflix-economics/" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://www.wired.com/2014/04/netflix-economics/', 'How Netflix Is Transforming the Economics of the Web');" style="display: block; overflow: hidden; text-decoration: none; line-height: 12pt; height: 83px; padding: 5px 2px 0 2px; background-image: none;" target="_blank">How Netflix Is Transforming the Economics of the Web</a></li>
+                                  <li class="zemanta-article-ul-li-image zemanta-article-ul-li" style="padding: 0; background: none; list-style: none; display: block; float: left; vertical-align: top; text-align: left; width: 84px; font-size: 11px; margin: 2px 10px 10px 2px;"><a href="http://io9.com/the-internet-is-about-to-become-worse-than-television-1569504174" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://io9.com/the-internet-is-about-to-become-worse-than-television-1569504174', '');" style="box-shadow: 0px 0px 4px #999; padding: 2px; display: block; border-radius: 2px; text-decoration: none;" target="_blank"><img style="padding: 0; margin: 0; border: 0; display: block; width: 80px; max-width: 100%;" src="http://i.zemanta.com/267458465_80_80.jpg" alt=""></a><a href="http://io9.com/the-internet-is-about-to-become-worse-than-television-1569504174" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://io9.com/the-internet-is-about-to-become-worse-than-television-1569504174', 'The Internet Is About to Become Worse Than Television');" style="display: block; overflow: hidden; text-decoration: none; line-height: 12pt; height: 83px; padding: 5px 2px 0 2px; background-image: none;" target="_blank">The Internet Is About to Become Worse Than Television</a></li>
+                                  <li class="zemanta-article-ul-li-image zemanta-article-ul-li" style="padding: 0; background: none; list-style: none; display: block; float: left; vertical-align: top; text-align: left; width: 84px; font-size: 11px; margin: 2px 10px 10px 2px;"><a href="http://blog.netflix.com/2014/04/the-case-against-isp-tolls.html?m=0" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://blog.netflix.com/2014/04/the-case-against-isp-tolls.html?m=0', '');" style="box-shadow: 0px 0px 4px #999; padding: 2px; display: block; border-radius: 2px; text-decoration: none;" target="_blank"><img style="padding: 0; margin: 0; border: 0; display: block; width: 80px; max-width: 100%;" src="http://i.zemanta.com/266433700_80_80.jpg" alt=""></a><a href="http://blog.netflix.com/2014/04/the-case-against-isp-tolls.html?m=0" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://blog.netflix.com/2014/04/the-case-against-isp-tolls.html?m=0', 'Netflix: The Case Against ISP Tolls');" style="display: block; overflow: hidden; text-decoration: none; line-height: 12pt; height: 83px; padding: 5px 2px 0 2px; background-image: none;" target="_blank">Netflix: The Case Against ISP Tolls</a></li>
+                               </ul>
+                               <div class="zemanta-pixie" style="margin-top: 10px; height: 15px;"><a href="http://www.zemanta.com/?px" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://www.zemanta.com/?px', '');" class="zemanta-pixie-a" title="Enhanced by Zemanta"><img class="zemanta-pixie-img" style="border: none; float: right;" src="http://img.zemanta.com/zemified_e.png?x-id=0b8945fc-e508-4b82-a0a6-647cfe3bdc15" alt="Enhanced by Zemanta"></a></div>
+                            </div>
+
                             
                         </div>
 
