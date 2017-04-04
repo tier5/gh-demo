@@ -87,7 +87,7 @@
     </nav>
     <div class="blog-banner">
     <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Google Cloud Platform <br>Reduces Pricing</div>
+    <div class="banner-txt">USING A VPN WITH AWS</div>
     </div>
     <div class="container">
         <div class="row">
@@ -120,24 +120,26 @@
                             </div>
                         </div>
                         <div class="col-md-9 col-sm-9">
-
-
-                            <div class="entry-wrap">
-       
-
-<div class="entry-content content">
-  <p><span>Today Google Cloud Platform live streamed a bunch of really exciting news. It’s going to increase pressure on all the big cloud players. I’ve been a firm believer in Amazon Web Services for a very long time, but some solid competition will be good for the marketplace. </span></p>
-<p><span>Here are a couple of key points about how the Google cloud platform reduces pricing </span>:</p>
-<p>– Compute Engine pricing is reduced by 32% across all sizes, regions, and classes</p>
-<p>– App Engine pricing is being simplified and reduced by 37.5%, dedicated memcache is being reduced by 50% and datastore writes by 33%</p>
-<p>– Cloud Storage pricing is being reduced to 2.6 cents per GB. That’s 68%</p>
-<p>– BigQuery pricing is being reduced 85%</p>
-<p>On top of all that they’ve reduced the pricing on the Sustained-Use discounts up to an additional 30%.</p>
-<p>Even if you don’t understand all of the various terms, or what exactly is being reduced.&nbsp;I think it goes without saying that the lower cost for cloud resources is going to increase the amount of start ups that can utilize cloud resources.</p>
-<p>Not to mention that I don’t think Amazon is going to take this sitting down. AWS has an event today that I think will drastically reduce pricing as well. This is shaping up to be a quite a year for cloud computing. Check out the article on Google’s Blog <a href="http://googlecloudplatform.blogspot.com/2014/03/google-cloud-platform-live-blending-iaas-and-paas-moores-law-for-the-cloud.html">Here</a>.</p>
-  </div>  </div>
-                            
-                             
+                           
+                            <p>
+                                I’ve seen a few posts with questions regarding different scenarios for using a vpn with AWS. So, I figured I would write about 3 different scenarios that I come across and how I deal with them. My hope is that you guys will add some information on how you guys deal with them as well.
+                            </p>
+                            <div class="blog-point">
+                                <ol>
+                                    <li>
+                                        Basic connection back to your office(s) – So this scenario is when you are connecting to networks that you control. In other words, you know there are no overlapping CIDR blocks. This is a perfect use case for the traditional AWS VPN service. I’ve found that once you are able to configure your local router, it’s a pretty bullet proof solution. I would recommend making sure that you have both tunnels configured. I’ve had AWS take them down periodically for maintenance on me before.
+                                    </li>
+                                    <li>
+                                        DEV access to private subnet – So I’m sure that there will be plenty of people chime in on this. Sometimes when we have developers that need access to odd backend ports I will install a OpenVPN solution. I will use the marketplace AMI and put it in the public subnet. You will need to make sure that you are allowing traffic into the private subnets with your OpenVPN setup. You will also need to allow traffic inbound on your NAT instance from your local subnet. This is a pretty popular solution with developers as it allows them carte blanche access and still keeps the stack secure. The OpenVPN documentation is pretty complete as well.
+                                    </li>
+                                    <li>
+                                        Site to Site VPN to outside parties – So I have a couple of customers that need secure connections to third parties. Also, this could apply to you if you have existing offices that may have overlapping CIDR blocks. In this scenario I use a Public / Private Subnet configuration in a VPC. Instead of using a AWS NAT AMI I will use the marketplace AMI from pfSense. There are some other solutions out there, openswan, vyatta, etc. I like pfSense because its pretty easy to use out of the box, and there is quite a bit of documentation out there for it. This setup mirrors a regular corporate network. Also, most importantly it allows you to use NAT-T, meaning I can assign a virtual ip address to my ipsec interface. I’ve had very good luck connecting this to multiple overlapping networks.
+                                    </li>
+                                </ol>    
+                            </div>
+                            <p>
+                                Those are the main scenarios that I have run across and my typical answer to them. Please let me know what feedback you have
+                            </p>
                         </div>
 
                     </div>
