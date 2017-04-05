@@ -1591,7 +1591,7 @@ font-size: 20px; margin-bottom: 20px; font-weight: 600;}
 .chat1{background: url(../../img/chat-white.png) no-repeat left; padding-left: 20px;}
 
 .blog-box-main ul li a{color: #333;}
-.blog-side-pic {margin-top: 50px; position: relative;}
+.blog-side-pic {margin-top: 50px; position: relative; margin-bottom: 25px;}
 .blog-side-txt{position: absolute; width: 100%; bottom: 0; padding: 25px;}
 .blog-side-txt p{color: #fff; font-size: 19px; }
 
@@ -1749,6 +1749,38 @@ table.easy-table-cuscosky, .easy-table-cuscosky th, .easy-table-cuscosky td {
 }
 
 
+.x-dropcap {
+  background-color: #ed6933;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 3.3em;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0.175em 0.215em 0 0;
+  padding: 0.105em 0.2em 0.135em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.x-recent-posts a {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  box-shadow: 0 0.125em 0.275em 0 rgba(0, 0, 0, 0.075);
+  color: #999;
+  display: block;
+  margin: 0 4% 0 0;
+  overflow: hidden;
+  padding: 5px 5px 0;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+
+
+
 
 
 
@@ -1773,11 +1805,17 @@ table.easy-table-cuscosky, .easy-table-cuscosky th, .easy-table-cuscosky td {
 	.contact-info-sec{display: none;}
 	.blog-side-pic img{width: 100%;}
 	.blog-left2-pic img{width: 100%;}
+	.banner-txt{font-size: 36px;}
 
 
 }
 
+@media screen and (max-width: 480px) {
 
+	.banner-txt{font-size: 26px;}
+	.blog-banner{min-height: 498px;}
+
+}
 
 
 
