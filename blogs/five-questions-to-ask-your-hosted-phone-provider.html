@@ -31,9 +31,10 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
-     <style type="text/css">
+    
+    <style type="text/css">
         .blog-banner {
-  background: rgba(0, 0, 0, 0) url("../img/blog-banner.jpg") no-repeat scroll center top / cover ;
+  background: rgba(0, 0, 0, 0) url("../img/Five_Questions_to_Ask_Your_Hosted_Phone_Provider.jpg") no-repeat scroll center top / cover ;
 }
 
     </style>
@@ -86,7 +87,7 @@
     </nav>
     <div class="blog-banner">
     <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Using SoftNAS for Docker</div>
+    <div class="banner-txt">Five Questions to Ask Your Hosted Phone Provider</div>
     </div>
     <div class="container">
         <div class="row">
@@ -118,74 +119,137 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-9 col-sm-9">
-                           <div class="align-center blog-logo">
-                                <img src="../img/Attachment-1.png" alt="img">
-                           </div>
-                           <hr>
-                            <p>
-                                So I’ve been doing some testing with Docker and <a target="blank" href="http://www.softnas.com">SoftNAS</a>. This brief tutorial will show you how to connect docker to SoftNAS. This will give you a couple of pretty neat options for storage while using Docker.
-                            </p>
-                            <p>
-                                First a couple of cool things you can do with SoftNAS and Docker:
-                            </p>
-                            <div class="blog-normal-list">
-                                <ul>
-                                    <li>Share persistent storage between Docker containers.</li>
-                                    <li>
-                                    Snapshot storage to S3 or elsewhere to save after Docker container has exited.
-                                    </li>    
-                                </ul>
-                            </div>
-                            <p>
-                            Before I start, I’m going to assume you have a SoftNAS instance running from the <a href="https://aws.amazon.com/marketplace/pp/B00EQE493U/ref=_ptnr_web_prodpage">AWS Marketplace</a>. In my case, I used the ephemeral storage to run the storage pool (obviously persistent storage like EBS or S3 should be used for production deployments). The ephemeral storage is free :) There’s also a free micro instance available to DevOps, along with AWS Free Tier support.  There are two important parts of setting up this instance in AWS.
-                            </p>
-                            <div class="blog-normal-list">
-                                <ul>
-                                    <li>Make sure you write down the storage share</li>
-                                    <li>Make sure you pay attention to the security groups. In my testing scenario I allowed all traffic between the two instances. This is not ideal for production at all. But, it allowed me to build in a test scenario quickly.</li>
-                                    <li>When you create a volume, make sure that you have the “Export NFS Share” check box selected</li>
-                                </ul>    
-                            </div>
-                            <p>
-                              I used the SoftNAS installation instructions located <a href="https://www.softnas.com/wp/support/documentation/" target="blank">here</a>.  
-                            </p>
-                            <p>
-                               Once the SoftNAS instance is set up and running, make sure to launch another instance to run Docker on. In my case, I used Ubuntu. Once Ubuntu is up and running, we will want to create a folder to mount the NFS storage from SoftNAS to. 
-                            </p>
-                            <pre class="x-code"><code>sudo mkdir /softnas</code></pre>
-                            <p>
-                                Once the directory is made, I will mount the NFS share from SoftNAS to my Ubuntu instance.
-                            </p>
-                            <pre class="x-code"><code>sudo mount SOFTNAS_IP_ADDRESS:/SOFTNAS_SHARE&nbsp; /softnas </code></pre>
-                            <p>
-                                At this point, its good to test that you are connected between both the SoftNAS instance and your Ubuntu instance.
-                            </p>
-                            <pre class="x-code"><code>sudo touch /softnas/touch.file</code></pre>
-                            <p>
-                                Make sure that the file is written without a problem, then look through the SoftNAS File System to make sure that the file is where it’s supposed to be.
-                            </p>
-                            <p>
-                            If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a href="http://www.cloudlifeconsulting.com/install-docker-on-aws/">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:
-                            </p>
-                            <pre class="x-code"><code>sudo apt-get update<p></p>
-<p>sudo apt-get install docker.io</p>
-<p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p>
-<p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p>
-<p>source /etc/bash_completion.d/docker.io</p>
-</code></pre>
-                            <p>You can find a link to the Docker instructions here</p>
-                            <p>
-                            It’s easy to test to make sure you have Docker installed correctly by running the following command
-                            </p>
-                            <pre class="x-code"><code>docker --version.</code></pre>
-                            <p>Finally, to make sure we can access the NFS SoftNAS share, we are going to run an Ubuntu container, and mount the /softnas directory from our host Ubuntu server to our Docker container.</p>
-                            <pre class="x-code"><code>sudo docker run -i -t --name ubuntu -v /softnas:/softnas ubuntu /bin/bash </code></pre>
-                            <p>This command will launch a Docker container based on the Ubuntu image. It’s going to name it Ubuntu. It is going to mount the volume /softnas from the local host to the /softnas container file system. Last, it’s going to automatically log us in to a bash command. At that point we can cd to our directory, and test again. Just for reference the -v command is structured host filesystem: container file system.</p>
-                            <p>More on attaching host volumes to Docker containers
-                            <a target="blank" href="https://docs.docker.com/userguide/dockervolumes/"> here.</a></p>
-                            <p>At this point &nbsp;you have a running Docker container that can share data across containers, but also across hosts. This data can be snapshot for later use, or any multitude of other things.</p>
-                            
+                        <div class="col-md-9 col-sm-9"> 
+                           <div class="entry-wrap">
+   <div class="entry-content content">
+      <p>
+         The technology behind Hosted VoIP is essentially the same regardless of which provider you
+         choose for your business. The major difference comes in how the technology is delivered:
+         every hosted provider will have its own strengths and weaknesses. To further complicate
+         the issue, each provider uses its own keywords and phrases making comparing your available
+         options more difficult. When choosing a company to provide you with the best solution,
+         it's important to have some basic questions to ask so that your research will be based on
+         level ground. So, with that being said, here are five questions to ask your hosted phone
+         provider.
+      </p>
+         <hr>
+         <p><strong>1. &nbsp;How is Call Quality Controlled?</strong></p>
+      <p>
+         Call quality is king. There isn't much use to any hosted provider if you can't understand
+         the person on the other end. Some of the sub-standard providers have given hosted voice
+         products a bad name. Echo (hearing yourself) or jitter (only hearing parts and pieces) are
+         two of the most common problems you can have with typical providers. They have given
+         hosted voice products a bad name. As I mentioned in a <a href=
+         "http://www.itsacloudlife.com/comparing-main-types-hosted-voip-service/" title=
+         "Comparing The Three Main Types of Hosted VoIP Service">previous post</a> there are
+         several different ways to try and guarantee quality. It is vitally important that any
+         hosted provider not only provides a quality call, but also has the ability to monitor that
+         quality in an ongoing fashion.
+      </p>
+
+
+      <p>
+         <strong>2. When was the last time you were down, and how long were you down
+         for?&nbsp;</strong>
+      </p>
+
+      <p>
+         It's important to know the details of the past performance of your provider. Asking
+         questions about the frequency and duration of past outages will give you an idea of what
+         to expect. Also, you may want to know about planned maintenance as well. A lot of times
+         planned maintenance may take longer than expected and carriers will not count this against
+         their service level agreements. Another thing you may want to look at is options for fail
+         over in the event your internet connection goes down. Some hosted providers allow options
+         to keep your office connected through alternative methods. For example <a href=
+         "http://www.star2star.com">Star2Star</a> phones allow you to use plain telephone lines in
+         case of an outage.
+      </p>
+
+      <p>
+         Also, you could fail over to alternative connectivity such as fixed wireless as well. This
+         allows you to get around local loop issues or inside wiring problems.
+      </p>
+
+
+      <p>
+         <strong>3. What disaster recovery do you have in place?</strong>
+      </p>
+
+      <p>
+         In the event of a disaster, what options do you have? It's important to plan for the
+         inevitable. Most carriers will have at least two data centers. These are essential to
+         continue to operate at least in a reduced manner should a disaster strike. Some carriers
+         have an even larger foot print with additional data centers. In the event that a natural
+         disaster hits the east coast, the west coast servers would be able to handle your calls.
+         In the event that your office is down for the count, or even one of the data centers is
+         down. The alternative data center would take over handling your calls. You would be able
+         to have an automated attendant answer and route your calls to any available numbers. So
+         for example, someone calls your main number during a natural disaster. A message would
+         come on saying "Thank you for calling ABC Company, press 1 for sales, 2 for support" etc.
+         They could press the number of who they would like to get, and then instead of routing to
+         a desk phone, it could route to a cell phone. Alternatively, it could also route to
+         another office, or perhaps a copper land line.
+      </p>
+
+      <p>
+         <strong>4. Who provisions and installs your equipment?</strong>
+      </p>
+
+      <p>
+         Do you want to spend the time to install your own telephone equipment? Do you know where
+         to plug everything in?&nbsp;Do you know how to troubleshoot your network if something goes
+         wrong? The best technology in the world is nothing more than a expensive door stop if it
+         isn't installed properly. There are an incredible amount of considerations that must be
+         taken into account. Network switching, and the appropriate configuration of VLAN's would
+         be one of the less thought of yet incredibly important install considerations that most
+         DIY installers would not be able to do. There are also a lot of follow up options that are
+         equally important. Training is typically not done, or not done well in a DIY install. Even
+         if it is done, its pretty tough to be trained by someone that has no more experience than
+         you do. Finally, managing the porting (transferring your numbers from the old carrier)
+         takes a bit of knowledge.
+      </p>
+
+      <p>
+         Also, taking the time to make sure that the old lines are terminated with the previous
+         carrier is important and a very big potential pitfall.
+      </p>
+
+      <p>
+         <strong>5. How much bandwidth do you use per call?</strong>
+      </p>
+
+      <p>
+         This is pretty self-explanatory the more bandwidth required per call the more bandwidth
+         you need to have. Often times any savings you may have from switching to a hosted phone
+         system, is lost on additional bandwidth.
+      </p>
+
+
+      <p>
+         Please do not hesitate <a href="http://www.itsacloudlife.com/contactme/" title=
+         "Contact Me">Contact Me&nbsp;</a>
+      </p>
+    <hr>
+      <h6>
+         Related articles
+      </h6>
+
+      <div class="row">
+        <div class="col-md-2 col-sm-2">
+            <img src="http://i.zemanta.com/263256840_80_80.jpg" alt="img"><br>
+            <a href="#">How Cloud Based Services are Beneficial to your Small Business: by Scott Seltzer</a>
+        </div>
+
+      </div>
+
+      <div>
+         <a href="http://www.zemanta.com/?px" title="Enhanced by Zemanta"><img alt=
+         "Enhanced by Zemanta" class="zemanta-pixie-img" scale="0" src=
+         "http://img.zemanta.com/zemified_e.png?x-id=aebe6967-b786-468f-9c7f-94bbd299aae6"></a>
+      </div>
+   </div>
+</div>
+                       
                         </div>
 
                     </div>

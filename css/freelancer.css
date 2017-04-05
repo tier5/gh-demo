@@ -1435,6 +1435,8 @@ fieldset[disabled] .btn-success.active {
   width: 100%;
   z-index: 8888;
   padding: 20px;
+  height: 1238px;
+  overflow-y: auto;
 }
 .main-pull-area .blog-area-main .blog-box {
   border: 6px solid #F8F8F8;

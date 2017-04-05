@@ -31,11 +31,11 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
-     <style type="text/css">
-        .blog-banner {
-  background: rgba(0, 0, 0, 0) url("../img/blog-banner.jpg") no-repeat scroll center top / cover ;
-}
 
+    <style type="text/css">
+        .blog-banner {
+            background: rgba(0, 0, 0, 0) url("../img/Top_5_Reasons_to_Consider_Hosted_Phones.jpg") no-repeat scroll center top / cover;
+        }
     </style>
 
 </head>
@@ -85,123 +85,96 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="blog-banner">
-    <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Using SoftNAS for Docker</div>
+        <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
+        <div class="banner-txt">Top 5 Reasons to Consider <br>Hosted Phones
+        </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="main-pull-area blog-pull-area">
-                <div class="blog-area-main">
-                    <div class="relative-area">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="blog-box">
-                                <div class="blog-box-main">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <div class="blog-area-main">
+                            <div class="relative-area">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="blog-box">
+                                        <div class="blog-box-main">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                        </div>
+                                        <ul>
+                                            <li><a class="love" href="#">47</a></li>
+                                            <li><a class="chat" href="#">9</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-side-pic">
+                                        <img src="../img/blog-side.png" alt="img">
+                                        <div class="blog-side-txt">
+                                            <p>
+                                                Lorem ipsum sit amet since
+                                            </p>
+                                            <ul>
+                                                <li><a href="#" class="love1">47</a></li>
+                                                <li><a href="#" class="chat1">9</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul>
-                                    <li><a class="love" href="#">47</a></li>
-                                    <li><a class="chat" href="#">9</a></li>
-                                </ul>
-                            </div>
-                            <div class="blog-side-pic">
-                            <img src="../img/blog-side.png" alt="img">
-                                <div class="blog-side-txt">
-                                <p>
-                                    Lorem ipsum sit amet since
-                                </p>
-                                <ul>
-                                    <li><a href="#" class="love1">47</a></li>
-                                    <li><a href="#" class="chat1">9</a></li>
-                                </ul>    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-9 col-sm-9">
-                           <div class="align-center blog-logo">
-                                <img src="../img/Attachment-1.png" alt="img">
-                           </div>
-                           <hr>
-                            <p>
-                                So I’ve been doing some testing with Docker and <a target="blank" href="http://www.softnas.com">SoftNAS</a>. This brief tutorial will show you how to connect docker to SoftNAS. This will give you a couple of pretty neat options for storage while using Docker.
-                            </p>
-                            <p>
-                                First a couple of cool things you can do with SoftNAS and Docker:
-                            </p>
-                            <div class="blog-normal-list">
-                                <ul>
-                                    <li>Share persistent storage between Docker containers.</li>
-                                    <li>
-                                    Snapshot storage to S3 or elsewhere to save after Docker container has exited.
-                                    </li>    
-                                </ul>
-                            </div>
-                            <p>
-                            Before I start, I’m going to assume you have a SoftNAS instance running from the <a href="https://aws.amazon.com/marketplace/pp/B00EQE493U/ref=_ptnr_web_prodpage">AWS Marketplace</a>. In my case, I used the ephemeral storage to run the storage pool (obviously persistent storage like EBS or S3 should be used for production deployments). The ephemeral storage is free :) There’s also a free micro instance available to DevOps, along with AWS Free Tier support.  There are two important parts of setting up this instance in AWS.
-                            </p>
-                            <div class="blog-normal-list">
-                                <ul>
-                                    <li>Make sure you write down the storage share</li>
-                                    <li>Make sure you pay attention to the security groups. In my testing scenario I allowed all traffic between the two instances. This is not ideal for production at all. But, it allowed me to build in a test scenario quickly.</li>
-                                    <li>When you create a volume, make sure that you have the “Export NFS Share” check box selected</li>
-                                </ul>    
-                            </div>
-                            <p>
-                              I used the SoftNAS installation instructions located <a href="https://www.softnas.com/wp/support/documentation/" target="blank">here</a>.  
-                            </p>
-                            <p>
-                               Once the SoftNAS instance is set up and running, make sure to launch another instance to run Docker on. In my case, I used Ubuntu. Once Ubuntu is up and running, we will want to create a folder to mount the NFS storage from SoftNAS to. 
-                            </p>
-                            <pre class="x-code"><code>sudo mkdir /softnas</code></pre>
-                            <p>
-                                Once the directory is made, I will mount the NFS share from SoftNAS to my Ubuntu instance.
-                            </p>
-                            <pre class="x-code"><code>sudo mount SOFTNAS_IP_ADDRESS:/SOFTNAS_SHARE&nbsp; /softnas </code></pre>
-                            <p>
-                                At this point, its good to test that you are connected between both the SoftNAS instance and your Ubuntu instance.
-                            </p>
-                            <pre class="x-code"><code>sudo touch /softnas/touch.file</code></pre>
-                            <p>
-                                Make sure that the file is written without a problem, then look through the SoftNAS File System to make sure that the file is where it’s supposed to be.
-                            </p>
-                            <p>
-                            If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a href="http://www.cloudlifeconsulting.com/install-docker-on-aws/">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:
-                            </p>
-                            <pre class="x-code"><code>sudo apt-get update<p></p>
-<p>sudo apt-get install docker.io</p>
-<p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p>
-<p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p>
-<p>source /etc/bash_completion.d/docker.io</p>
-</code></pre>
-                            <p>You can find a link to the Docker instructions here</p>
-                            <p>
-                            It’s easy to test to make sure you have Docker installed correctly by running the following command
-                            </p>
-                            <pre class="x-code"><code>docker --version.</code></pre>
-                            <p>Finally, to make sure we can access the NFS SoftNAS share, we are going to run an Ubuntu container, and mount the /softnas directory from our host Ubuntu server to our Docker container.</p>
-                            <pre class="x-code"><code>sudo docker run -i -t --name ubuntu -v /softnas:/softnas ubuntu /bin/bash </code></pre>
-                            <p>This command will launch a Docker container based on the Ubuntu image. It’s going to name it Ubuntu. It is going to mount the volume /softnas from the local host to the /softnas container file system. Last, it’s going to automatically log us in to a bash command. At that point we can cd to our directory, and test again. Just for reference the -v command is structured host filesystem: container file system.</p>
-                            <p>More on attaching host volumes to Docker containers
-                            <a target="blank" href="https://docs.docker.com/userguide/dockervolumes/"> here.</a></p>
-                            <p>At this point &nbsp;you have a running Docker container that can share data across containers, but also across hosts. This data can be snapshot for later use, or any multitude of other things.</p>
-                            
-                        </div>
+                                <div class="col-md-9 col-sm-9">
+                                    <div class="entry-wrap">
 
-                    </div>
-                    <div class="clearfix">
-                    <!-- <div class="blog-graphics">
-                    
+                                        <div class="entry-content content">
+                                            <p>
+                                                There are many reasons to consider hosted phones. These are the top five reasons our customer consider hosted phones.
+                                            </p>
+                                            <p>
+                                                <strong>1. Pay for what you use:</strong>
+                                            </p>
+                                            <p>
+                                                 The busy signal is your enemy. Traditional phone systems must always have available phone lines for your customers to dial in. If you don't that means they will receive a busy signal. Typically phone lines are sized by using a 2:1 ratio of handsets to lines. Meaning a typical recommendation for a 10 extension office would be 5 lines. The problem with this traditional methodology is that it does not account for any "high volume" days that could potentially lead to the dreaded busy signal. Most hosted VoIP solutions will allow you to handle a much higher volume of calls in what are called "call queues". This would allow you to handle a much larger volume of calls.
+                                            </p>
+                                            <p><strong>2. Utilize Enterprise functionality without the cost:</strong></p>
+                                            <p>
+                                                 Most companies let their technology dictate how they handle calls. Only the companies that spend large sums of money are allowed the flexibility modern features provide. Even though most business's may not currently use these features, they can have a very large benefit. I've found that ring groups (ring multiple phones at once), and automatic call distribution (distribute incoming calls based on phone trees) have an unexpected significant positive impact.
+                                            </p>
+                                            <p>
+                                                <strong>3. Provide your employees the tools they need to be efficient and
+         effective:</strong>
+                                            </p>
+                                            <p>
+                                                 More than ever your work force needs to be mobile. They need access to company resources in an ever increasing amount of locations on an ever increasing number of devices. Functionality such as extension dialing, transferring, or even calling from cell phones and tablets is an under-utilized yet extremely valuable tool.
+                                            </p>
+                                            <p>
+                                            <strong>4. Scale your systems as you grow:</strong>
+                                            </p>
+
+                                            <p>
+                                                 In a traditional phone system you must have enough available "ports" to add phone lines or extensions. In a hosted environment you are able to add extensions as your needs change without any hefty investments in infrastructure. You only need one phone per person and in some cases not even that. Like I mentioned in point 3, you can use software to access most hosted resources without ever needing an actual handset.
+                                            </p>
+                                            <p>
+                                                <strong>5. Disaster recovery capabilities:</strong>
+                                            </p>
+                                            <p>
+                                                 Why put your business on hold? Whether or not you are out of power, flooded, or unable to conduct business for any reason. Being available for your customer should be your first priority. With hosted solutions you are able to reroute your call volume to any number of locations or devices to ensure your customer needs are met.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="clearfix">
+                                <!-- <div class="blog-graphics">
+
                         <div class="col-md-12 col-sm-12 blog-graphics-main">
                             <div class="blog-left2-pic">
                             <img src="../img/blog-graphics.jpg" alt="img">
                             </div>
                         </div>
-                       
-                    </div> --> 
 
-                </div>
-                    <!-- <div class="row1">
+                    </div> -->
+
+                            </div>
+                            <!-- <div class="row1">
                         <div class="col-md-3 col-sm-3">
                             <div class="blog-left2-pic">
                             <img src="../img/blog-graphics2.png" alt="img">
@@ -250,12 +223,12 @@
                         </div>
 
                     </div> -->
-                    <div class="comment-sec">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="comment-head">Comments <span>(0)</span></div>
-                            <div class="comment-block">
-                                <div class="row">
-                                    <!-- <div class="single-block">
+                            <div class="comment-sec">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="comment-head">Comments <span>(0)</span></div>
+                                    <div class="comment-block">
+                                        <div class="row">
+                                            <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -271,11 +244,11 @@
                                         <p><a class="reply" href="#"> Reply</a></p>
                                     </div>
                                     </div> -->
-                                    <div class="clearfix"></div>
-                                    <div class="reply-sec">
-                                        <div class="col-md-1 col-sm-1">&nbsp;</div>
-                                        <div class="col-md-11 col-sm-11">
-                                <!-- <div class="single-block">
+                                            <div class="clearfix"></div>
+                                            <div class="reply-sec">
+                                                <div class="col-md-1 col-sm-1">&nbsp;</div>
+                                                <div class="col-md-11 col-sm-11">
+                                                    <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -292,9 +265,9 @@
                                     </div>
                                 </div> -->
 
-                                        </div>
+                                                </div>
 
-                                <!-- <div class="single-block">
+                                                <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -310,31 +283,30 @@
                                         <p><a class="reply" href="#"> Reply</a></p>
                                     </div>
                                 </div> -->
-                                    <div class="single-block">
-                                    <div class="col-md-1 col-sm-1">
-                                        <div class="blog-commenter">
-                                        <img src="../img/demo-pic.png" alt="img">
+                                                <div class="single-block">
+                                                    <div class="col-md-1 col-sm-1">
+                                                        <div class="blog-commenter">
+                                                            <img src="../img/demo-pic.png" alt="img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-11 col-sm-11">
+                                                        <textarea class="form-control put-comments"></textarea>
+                                                        <input class="add-comment" value="ADD COMMENT" type="submit" name="">
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-11 col-sm-11">
-                                       <textarea class="form-control put-comments"></textarea>
-                                       <input class="add-comment" value="ADD COMMENT" type="submit" name="">
-                                    </div>
-                                    </div>
-
-
-                                    </div>    
                                 </div>
                             </div>
-                        </div>    
-                    </div>    
+                        </div>
                     </div>
-                </div> 
-                
+
+                </div>
             </div>
-        </div>    
-    </div>    
-</div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
@@ -394,7 +366,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        ©2015 CloudLife Consulting All rights reserved. 
+                        ©2015 CloudLife Consulting All rights reserved.
                     </div>
                     <div class="col-md-6 text-right">
                         <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
@@ -420,5 +392,5 @@
     <script src="../js/freelancer.min.js"></script>
     <script type="text/javascript" src="../js/custom.js"></script>
 </body>
-    
+
 </html>

@@ -1678,6 +1678,7 @@ border-top-left-radius:10px;
   background: rgba(0, 0, 0, 0) url("../../img/right-arrow.png") no-repeat scroll left top 2px;
   font-size: 14px;
   padding: 0 0 4px 23px;
+  display: block !important;
 }
 .blog-logo{padding-top: 20px;}
 pre {

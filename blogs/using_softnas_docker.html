@@ -87,7 +87,7 @@
     </nav>
     <div class="blog-banner">
     <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">USING A VPN WITH AWS</div>
+    <div class="banner-txt">Using SoftNAS for Docker</div>
     </div>
     <div class="container">
         <div class="row">
@@ -120,26 +120,56 @@
                             </div>
                         </div>
                         <div class="col-md-9 col-sm-9">
-                           
-                            <p>
-                                I’ve seen a few posts with questions regarding different scenarios for using a vpn with AWS. So, I figured I would write about 3 different scenarios that I come across and how I deal with them. My hope is that you guys will add some information on how you guys deal with them as well.
-                            </p>
-                            <div class="blog-point">
-                                <ol>
-                                    <li>
-                                        Basic connection back to your office(s) – So this scenario is when you are connecting to networks that you control. In other words, you know there are no overlapping CIDR blocks. This is a perfect use case for the traditional AWS VPN service. I’ve found that once you are able to configure your local router, it’s a pretty bullet proof solution. I would recommend making sure that you have both tunnels configured. I’ve had AWS take them down periodically for maintenance on me before.
-                                    </li>
-                                    <li>
-                                        DEV access to private subnet – So I’m sure that there will be plenty of people chime in on this. Sometimes when we have developers that need access to odd backend ports I will install a OpenVPN solution. I will use the marketplace AMI and put it in the public subnet. You will need to make sure that you are allowing traffic into the private subnets with your OpenVPN setup. You will also need to allow traffic inbound on your NAT instance from your local subnet. This is a pretty popular solution with developers as it allows them carte blanche access and still keeps the stack secure. The OpenVPN documentation is pretty complete as well.
-                                    </li>
-                                    <li>
-                                        Site to Site VPN to outside parties – So I have a couple of customers that need secure connections to third parties. Also, this could apply to you if you have existing offices that may have overlapping CIDR blocks. In this scenario I use a Public / Private Subnet configuration in a VPC. Instead of using a AWS NAT AMI I will use the marketplace AMI from pfSense. There are some other solutions out there, openswan, vyatta, etc. I like pfSense because its pretty easy to use out of the box, and there is quite a bit of documentation out there for it. This setup mirrors a regular corporate network. Also, most importantly it allows you to use NAT-T, meaning I can assign a virtual ip address to my ipsec interface. I’ve had very good luck connecting this to multiple overlapping networks.
-                                    </li>
-                                </ol>    
-                            </div>
-                            <p>
-                                Those are the main scenarios that I have run across and my typical answer to them. Please let me know what feedback you have
-                            </p>
+                            http://www.cloudlifeconsulting.com/using-softnas-docker/
+
+                                                <div class="entry-wrap">
+                       <header class="entry-header">
+                          <h1 class="entry-title">Using SoftNAS for Docker</h1>
+                       </header>
+                       <div class="entry-content content">
+                          <p>So I’ve been doing some testing with Docker and <a href="http://www.softnas.com" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://www.softnas.com', 'SoftNAS');">SoftNAS</a>. This brief tutorial will show you how to connect docker to SoftNAS. This will give you a couple of pretty neat options for storage while using Docker.</p>
+                          <p>First a couple of cool things you can do with&nbsp;SoftNAS and Docker:</p>
+                          <ul>
+                             <li>Share persistent storage between Docker containers.</li>
+                             <li>Snapshot storage to S3 or elsewhere to save after Docker container has exited.</li>
+                          </ul>
+                          <p>&nbsp;</p>
+                          <p>Before I start, I’m going to assume you have a SoftNAS instance running from the&nbsp;<a href="https://t.yesware.com/tl/80be50543eb81a33ff17556e39c670c2af094af7/bfbdac1312d37a26de951e227b3d023f/a769d4c0b0a875fcee083b7a7bd712e8?ytl=https%3A%2F%2Faws.amazon.com%2Fmarketplace%2Fpp%2FB00EQE493U%2Fref%3D_ptnr_web_prodpage" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://t.yesware.com/tl/80be50543eb81a33ff17556e39c670c2af094af7/bfbdac1312d37a26de951e227b3d023f/a769d4c0b0a875fcee083b7a7bd712e8?ytl=https%3A%2F%2Faws.amazon.com%2Fmarketplace%2Fpp%2FB00EQE493U%2Fref%3D_ptnr_web_prodpage', 'AWS Marketplace');" target="_blank">AWS Marketplace</a>. In my case, I used the ephemeral storage to run the storage pool&nbsp;(obviously persistent storage like EBS or S3 should be used for production deployments). The&nbsp;ephemeral&nbsp;storage is free <img src="http://www.cloudlifeconsulting.com/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;">&nbsp;There’s also a free micro instance available to DevOps, along with AWS Free Tier support.&nbsp;&nbsp;There are two&nbsp;important parts of setting up this instance in AWS.</p>
+                          <ul>
+                             <li>Make sure you write down the storage share</li>
+                             <li>Make sure you pay attention to the security groups. In my testing scenario I allowed all traffic between the two instances. This is not ideal for production at all. But, it allowed me to build in a test scenario quickly.</li>
+                             <li>When you create a volume, make sure that you have the “Export NFS Share” check box selected</li>
+                          </ul>
+                          <p>I used the SoftNAS installation instructions located <a href="https://www.softnas.com/wp/support/documentation/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://www.softnas.com/wp/support/documentation/', 'here');">here</a>.</p>
+                          <p>Once the SoftNAS instance is set up and running, make sure to launch another instance to run Docker on. In my case, I used Ubuntu. Once Ubuntu is up and running, we will want to create a folder to mount the NFS storage from SoftNAS to.</p>
+                          <pre class="x-code"><code>sudo mkdir /softnas</code></pre>
+                          <p>&nbsp;</p>
+                          <p>Once the directory is made, I will mount the NFS share from SoftNAS to my Ubuntu instance.</p>
+                          <pre class="x-code"><code>sudo mount SOFTNAS_IP_ADDRESS:/SOFTNAS_SHARE&nbsp; /softnas </code></pre>
+                          <p>&nbsp;</p>
+                          <p>At this point, its good to test that you are connected between both the SoftNAS instance and your Ubuntu instance.</p>
+                          <pre class="x-code"><code>sudo touch /softnas/touch.file</code></pre>
+                          <p>Make sure that the file is&nbsp;written without a problem, then look through the SoftNAS File System to make sure that the file is where it’s supposed to be.</p>
+                          <p>If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a title="Install Docker on AWS" href="http://www.cloudlifeconsulting.com/install-docker-on-aws/">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:</p>
+                          <pre class="x-code"><code>sudo apt-get update<p></p>
+                    <p>sudo apt-get install docker.io</p>
+                    <p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p>
+                    <p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p>
+                    <p>source /etc/bash_completion.d/docker.io</p>
+                    </code></pre>
+                          <p>You can find a link to the Docker instructions <a href="https://docs.docker.com/installation/ubuntulinux/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://docs.docker.com/installation/ubuntulinux/', 'here');">here</a></p>
+                          <p>It’s easy to test to make sure you have Docker installed correctly by running the following command</p>
+                          <pre class="x-code"><code>docker --version.</code></pre>
+                          <p>&nbsp;</p>
+                          <p>Finally, to make sure we can access the NFS SoftNAS share, we are going to run an Ubuntu container, and mount the /softnas directory from our host Ubuntu server to our Docker container.</p>
+                          <pre class="x-code"><code>sudo docker run -i -t --name ubuntu -v /softnas:/softnas ubuntu /bin/bash </code></pre>
+                          <p>This command will launch a Docker container based on the Ubuntu image. It’s going to name it Ubuntu. It is going to mount the volume /softnas from the local host to the /softnas container file system. Last, it’s going to automatically log us in to a bash command. At that point we can cd to our directory, and test again. Just for reference the -v command is structured host filesystem: container file system.</p>
+                          <p>More on attaching host volumes to Docker containers<a href="https://docs.docker.com/userguide/dockervolumes/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://docs.docker.com/userguide/dockervolumes/', ' here.');"> here.</a></p>
+                          <p>At this point &nbsp;you have a running Docker container that can share data across containers, but also across hosts. This data can be snapshot for later use, or any multitude of other things.</p>
+                          <p>&nbsp;</p>
+                       </div>
+                    </div>
+
                         </div>
 
                     </div>

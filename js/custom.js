@@ -132,19 +132,20 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('.categories ul li:first-child a').addClass("visible");
-    $('.carousel.aws').hide();
+   
+    $('.carousel.cool').hide();
     $('.carousel.docker').hide();
+    $('.carousel.general').hide();
+    $('.carousel.hosted-email').hide();
+    $('.carousel.hosted-voip').hide();
     $('.carousel.howto').hide();
     $('.carousel.iaas').hide();
+    $('.carousel.news').hide();
+    $('.carousel.troubleshooting').hide();
 
 
-    $('.categories ul li .allcat').click(function(e){
-        $('.carousel.allcat').fadeIn();
-        $(this).addClass("visible");
-        $('.categories ul li a').not($(this)).removeClass("visible");
-        $('.blog .carousel').not($('.allcat')).fadeOut();
-        e.preventDefault();
-    });
+  
+
 
     $('.categories ul li .aws').click(function(e){
         $('.carousel.aws').fadeIn();
@@ -154,11 +155,43 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.categories ul li .cool').click(function(e){
+        $('.carousel.cool').fadeIn();
+        $(this).addClass("visible");
+        $('.categories ul li a').not($(this)).removeClass("visible");
+        $('.blog .carousel').not($('.cool')).fadeOut();
+        e.preventDefault();
+    });
+
     $('.categories ul li .docker').click(function(e){
         $('.carousel.docker').fadeIn();
         $(this).addClass("visible");
         $('.categories ul li a').not($(this)).removeClass("visible");
         $('.blog .carousel').not($('.docker')).fadeOut();
+        e.preventDefault();
+    });
+
+    $('.categories ul li .general').click(function(e){
+        $('.carousel.general').fadeIn();
+        $(this).addClass("visible");
+        $('.categories ul li a').not($(this)).removeClass("visible");
+        $('.blog .carousel').not($('.general')).fadeOut();
+        e.preventDefault();
+    });
+
+    $('.categories ul li .hosted-email').click(function(e){
+        $('.carousel.hosted-email').fadeIn();
+        $(this).addClass("visible");
+        $('.categories ul li a').not($(this)).removeClass("visible");
+        $('.blog .carousel').not($('.hosted-email')).fadeOut();
+        e.preventDefault();
+    });
+
+    $('.categories ul li .hosted-voip').click(function(e){
+        $('.carousel.hosted-voip').fadeIn();
+        $(this).addClass("visible");
+        $('.categories ul li a').not($(this)).removeClass("visible");
+        $('.blog .carousel').not($('.hosted-voip')).fadeOut();
         e.preventDefault();
     });
 
@@ -175,6 +208,22 @@ $(document).ready(function() {
         $(this).addClass("visible");
         $('.categories ul li a').not($(this)).removeClass("visible");
         $('.blog .carousel').not($('.iaas')).fadeOut();
+        e.preventDefault();
+    });
+
+    $('.categories ul li .news').click(function(e){
+        $('.carousel.news').fadeIn();
+        $(this).addClass("visible");
+        $('.categories ul li a').not($(this)).removeClass("visible");
+        $('.blog .carousel').not($('.news')).fadeOut();
+        e.preventDefault();
+    });
+
+    $('.categories ul li .troubleshooting').click(function(e){
+        $('.carousel.troubleshooting').fadeIn();
+        $(this).addClass("visible");
+        $('.categories ul li a').not($(this)).removeClass("visible");
+        $('.blog .carousel').not($('.troubleshooting')).fadeOut();
         e.preventDefault();
     });
 
