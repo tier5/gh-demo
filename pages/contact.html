@@ -105,33 +105,34 @@
                                     <div class="row form-group">
                                         <div class="col-sm-2">Name:</div>
                                         <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="name">
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">Phone:</div>
                                         <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="phone">
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">Email:</div>
                                         <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="email">
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">Comments:</div>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control"></textarea>
+                                            <textarea class="form-control" id="msg"></textarea>
                                         </div>    
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-sm-2">&nbsp;</div>
                                         <div class="col-sm-10">
-                                            <input class="btn submit-btn" value="Send" type="submit" name="submit">
-                                        </div>    
-                                    </div>    
+                                            <input class="btn submit-btn" value="Send" type="submit" name="submit" id="submit">
+                                        </div>
+                                    </div>
+                                    <div id="success" class="alert alert-success"> Thank you for contacting us!</div>    
                                 </div>
                             </div>  
                         </div>
@@ -220,7 +221,7 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>who we are</h3>
                         <ul>
                             <li class="active"><a href="our_history.html">our history</a></li>
@@ -228,7 +229,7 @@
                             <li class="active"><a href="our-team.html">our team</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>what we do</h3>
                         <ul>
                             <li class="active"><a href="cloud_architecture.html">cloud architecture</a></li>
@@ -237,15 +238,7 @@
                             <li class="active"><a href="managed_services.html">managed services</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
-                        <h3>blog</h3>
-                        <ul>
-                            <li><a href="#">categories</a></li>
-                            <li><a href="#">tags</a></li>
-                            <li><a href="#">by date</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>Info</h3>
                         <ul>
                             <li class="active"><a href="healthcare.html">healthcare in the cloud</a></li>
@@ -255,17 +248,11 @@
                             <li class="active"><a href="legal_directory.html">applications for the legal industry</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>contact us</h3>
                         <ul>
                             <li class="active"><a href="contact.html">Get in touch</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-12">
-                        <h3>subscribe newsletter</h3>
-                        <form>
-                            <input type="email" placeholder="Email address" class="form-control">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -277,9 +264,10 @@
                         ©2017 CloudLife Consulting All rights reserved. 
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
-                        <a href="#"><img src="../img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
-                        <a href="#"><img src="../img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
+                        <a href="#"><img src="img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
+                        <a href="#"><img src="img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
+                        <a href="#"><img src="img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
+
                     </div>
                 </div>
             </div>
@@ -299,7 +287,62 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/freelancer.min.js"></script>
-    <!-- <script type="text/javascript" src="../js/custom.js"></script> -->
+    <script type="text/javascript">
+        /* Contact form */
+
+        $(document).ready(function(){
+            $('#success').hide();
+            $("#submit").click(function(){
+                $(this).attr('disabled','disabled');
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var msg = $("#msg").val();
+
+                // Returns successful data submission message when the entered information is stored in database.
+                var dataString = 'name1='+ name + '&email1='+ email + '&phone1='+ phone + '&msg1=' + msg ;
+
+                if(name==''||email==''||phone=='' ||msg == '')
+                    {
+                        alert("Please Fill All Fields");
+                    }
+                else
+                {
+                
+                // AJAX Code To Submit Form.
+                    $.ajax({
+                        url: "https://e3q50rznqj.execute-api.us-east-1.amazonaws.com/prod",
+                        type: "POST",
+                        contentType: 'application/json',
+                        crossDomain: true,
+                        dataType: "json",
+                        data : JSON.stringify({
+                            name: name,
+                            phone: phone,
+                            email: email,
+                            msg: msg
+                        }),
+                        cache: false,
+                        success: function(result){
+                            $('#success').show();
+                            $("#name").val('');
+                            $("#email").val('');
+                            $("#phone").val('');
+                            $("#msg").val('');
+                            $("#submit").removeAttr('disabled');
+                            setTimeout(function(){
+                                $('#success').hide();
+                            }, 5000);
+                        },
+                        error: function(err){
+                                console.log(err);
+                        }
+                    });
+                }
+                return false;
+            });
+        });
+    </script>
 </body>
     
 </html>
