@@ -132,7 +132,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('.categories ul li:first-child a').addClass("visible");
-    $('.carousel.aws').hide();
+    //$('.carousel.aws').hide();
     $('.carousel.cool').hide();
     $('.carousel.docker').hide();
     $('.carousel.general').hide();
@@ -144,13 +144,13 @@ $(document).ready(function() {
     $('.carousel.troubleshooting').hide();
 
 
-    $('.categories ul li .allcat').click(function(e){
-        $('.carousel.allcat').fadeIn();
-        $(this).addClass("visible");
-        $('.categories ul li a').not($(this)).removeClass("visible");
-        $('.blog .carousel').not($('.allcat')).fadeOut();
-        e.preventDefault();
-    });
+    // $('.categories ul li .allcat').click(function(e){
+    //     $('.carousel.allcat').fadeIn();
+    //     $(this).addClass("visible");
+    //     $('.categories ul li a').not($(this)).removeClass("visible");
+    //     $('.blog .carousel').not($('.allcat')).fadeOut();
+    //     e.preventDefault();
+    // });
 
 
 
