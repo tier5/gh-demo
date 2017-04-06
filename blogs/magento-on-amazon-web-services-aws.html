@@ -31,12 +31,10 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
-    
     <style type="text/css">
         .blog-banner {
-  background: rgba(0, 0, 0, 0) url("../img/blog-banner.jpg") no-repeat scroll center top / cover ;
-}
-
+            background: rgba(0, 0, 0, 0) url("../img/Magento_on_Amazon_Web_Services_(AWS).jpg") no-repeat scroll center top / cover;
+        }
     </style>
 
 </head>
@@ -86,74 +84,98 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="blog-banner">
-    <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Google Cloud Platform <br>Reduces Pricing</div>
+        <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
+        <div class="banner-txt">Magento on Amazon Web Services (AWS)
+        </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="main-pull-area blog-pull-area">
-                <div class="blog-area-main">
-                    <div class="relative-area">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="blog-box">
-                                <div class="blog-box-main">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <div class="blog-area-main">
+                            <div class="relative-area">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="blog-box">
+                                        <div class="blog-box-main">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                        </div>
+                                        <ul>
+                                            <li><a class="love" href="#">47</a></li>
+                                            <li><a class="chat" href="#">9</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-side-pic">
+                                        <img src="../img/blog-side.png" alt="img">
+                                        <div class="blog-side-txt">
+                                            <p>
+                                                Lorem ipsum sit amet since
+                                            </p>
+                                            <ul>
+                                                <li><a href="#" class="love1">47</a></li>
+                                                <li><a href="#" class="chat1">9</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul>
-                                    <li><a class="love" href="#">47</a></li>
-                                    <li><a class="chat" href="#">9</a></li>
-                                </ul>
-                            </div>
-                            <div class="blog-side-pic">
-                            <img src="../img/blog-side.png" alt="img">
-                                <div class="blog-side-txt">
-                                <p>
-                                    Lorem ipsum sit amet since
-                                </p>
-                                <ul>
-                                    <li><a href="#" class="love1">47</a></li>
-                                    <li><a href="#" class="chat1">9</a></li>
-                                </ul>    
+                                <div class="col-md-9 col-sm-9">
+
+                                    http://www.cloudlifeconsulting.com/magento-on-amazon-web-services-aws/
+
+                                    <div class="entry-wrap">
+                                        <div class="entry-content content">
+                                            <p>Magento is quickly becoming the e-commerce site of choice for most online retailers. The flexibility as well as the extensibility have opened up a large amount of options in how we have deployed the service. I’m going to use this post as a reference of where we are as well as outline some of the plans moving forward. Currently our Magento site has roughly 6-7k SKUS with roughly 100-200 users daily. The challenge we have is the amount of product data, not necessarily the amount of user traffic. <span id="more-99"></span> When we started testing with Magento we used a single Amazon EC2 instance. &nbsp;(I’m not going to describe that setup too much <img alt=":)" class="wp-smiley" src="http://www.cloudlifeconsulting.com/wp-includes/images/smilies/simple-smile.png"> )&nbsp;We noticed that the large size of the database was burdening the CPU to the point it was slow delivering the web requests via Apache. With the amount of records in the MySQL database, it was clear that we needed to have better solution to deliver that information. This leads us to our current design:</p>
+
+                                            <p>
+                                                <a href="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/mag1.jpg"><img alt="Magento on AWS" height="269" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/mag1-300x269.jpg" width="300"></a>
+                                            </p>
+
+                                            <ol>
+                                                <li>We moved our MySQL database to an RDS instance. This gives us the opportunity to move a read replica across to another availability zone. Also, we are now automating the backup of our database with the built in RDS snapshots.</li>
+
+                                                <li>Using a plug in from <a href="http://www.freelunchlabs.com/cloudfront-cdn-for-magento" target="_blank" title="Free Lunch Labs">Free Lunch Labs</a>&nbsp;we moved all of our static content out to Amazon Cloud Front. This dramatically increased load time for all of our product photography etc.
+                                                </li>
+
+                                                <li>Lastly we automated our EBS snapshots to S3. This gives us the capability to launch an instance in another availability zone if anything happens to the &nbsp;zone we are currently in.</li>
+                                            </ol>
+
+                                            <p>There are several problems with this design still.</p>
+
+                                            <ol>
+                                                <li>This does not utilize scaling. This is important for several reason that I have outlined <a href="http://www.itsacloudlife.com/what-is-an-elastic-cloud/">here</a>.
+                                                </li>
+
+                                                <li>In the event of an outage in a single availability zone we do not have an automatic fail over plan. &nbsp;While the current setup will allow us to continue service in the event of a zone failure, it does not do so automatically.</li>
+                                            </ol>
+
+                                            <p>So this leads me to the next design we will be transitioning to:</p>
+
+                                            <p>
+                                                <a href="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/AWS-on-Magentov2.jpg"><img alt="Magento on AWS" height="300" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/AWS-on-Magentov2-216x300.jpg" width="216"></a>
+                                            </p>
+
+                                            <p>There are several notable differences in this case. 1. The Amazon DNS service Route 53 will allows us for future expansion into additional regions. 2.&nbsp;The Elastic Load Balancer will allow us to to scale across availability zones. <a href="http://www.itsacloudlife.com/what-is-an-elastic-cloud/" target="_blank" title="What is an Elastic Cloud?">Explained here</a> 3. Similar to the previous design, this one will have an RDS hot spare&nbsp;so that in case of failure we will be able to fail over to the other availability zone &nbsp; <span>I hope this
+        helps&nbsp;</span>briefly<span>&nbsp;describe the process we have used to build out
+        our&nbsp;</span>e-commerce<span>&nbsp;presence.&nbsp;</span> I will continue to add to this post and update it as we accomplish these goals. &nbsp; <a href="http://www.itsacloudlife.com/contactme/" title="Contact Me">Contact Me</a> for some help with your Magento installation</p>
+                                        </div>
+                                    </div>
+
                                 </div>
+
                             </div>
-                        </div>
-                        <div class="col-md-9 col-sm-9">
+                            <div class="clearfix">
+                                <!-- <div class="blog-graphics">
 
-
-                            <div class="entry-wrap">
-       
-
-<div class="entry-content content">
-  <p><span>Today Google Cloud Platform live streamed a bunch of really exciting news. It’s going to increase pressure on all the big cloud players. I’ve been a firm believer in Amazon Web Services for a very long time, but some solid competition will be good for the marketplace. </span></p>
-<p><span>Here are a couple of key points about how the Google cloud platform reduces pricing </span>:</p>
-<p>– Compute Engine pricing is reduced by 32% across all sizes, regions, and classes</p>
-<p>– App Engine pricing is being simplified and reduced by 37.5%, dedicated memcache is being reduced by 50% and datastore writes by 33%</p>
-<p>– Cloud Storage pricing is being reduced to 2.6 cents per GB. That’s 68%</p>
-<p>– BigQuery pricing is being reduced 85%</p>
-<p>On top of all that they’ve reduced the pricing on the Sustained-Use discounts up to an additional 30%.</p>
-<p>Even if you don’t understand all of the various terms, or what exactly is being reduced.&nbsp;I think it goes without saying that the lower cost for cloud resources is going to increase the amount of start ups that can utilize cloud resources.</p>
-<p>Not to mention that I don’t think Amazon is going to take this sitting down. AWS has an event today that I think will drastically reduce pricing as well. This is shaping up to be a quite a year for cloud computing. Check out the article on Google’s Blog <a href="http://googlecloudplatform.blogspot.com/2014/03/google-cloud-platform-live-blending-iaas-and-paas-moores-law-for-the-cloud.html">Here</a>.</p>
-  </div>  </div>
-                            
-                             
-                        </div>
-
-                    </div>
-                    <div class="clearfix">
-                    <!-- <div class="blog-graphics">
-                    
                         <div class="col-md-12 col-sm-12 blog-graphics-main">
                             <div class="blog-left2-pic">
                             <img src="../img/blog-graphics.jpg" alt="img">
                             </div>
                         </div>
-                       
-                    </div> --> 
 
-                </div>
-                    <!-- <div class="row1">
+                    </div> -->
+
+                            </div>
+                            <!-- <div class="row1">
                         <div class="col-md-3 col-sm-3">
                             <div class="blog-left2-pic">
                             <img src="../img/blog-graphics2.png" alt="img">
@@ -202,12 +224,12 @@
                         </div>
 
                     </div> -->
-                    <div class="comment-sec">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="comment-head">Comments <span>(0)</span></div>
-                            <div class="comment-block">
-                                <div class="row">
-                                    <!-- <div class="single-block">
+                            <div class="comment-sec">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="comment-head">Comments <span>(0)</span></div>
+                                    <div class="comment-block">
+                                        <div class="row">
+                                            <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -223,11 +245,11 @@
                                         <p><a class="reply" href="#"> Reply</a></p>
                                     </div>
                                     </div> -->
-                                    <div class="clearfix"></div>
-                                    <div class="reply-sec">
-                                        <div class="col-md-1 col-sm-1">&nbsp;</div>
-                                        <div class="col-md-11 col-sm-11">
-                                <!-- <div class="single-block">
+                                            <div class="clearfix"></div>
+                                            <div class="reply-sec">
+                                                <div class="col-md-1 col-sm-1">&nbsp;</div>
+                                                <div class="col-md-11 col-sm-11">
+                                                    <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -244,9 +266,9 @@
                                     </div>
                                 </div> -->
 
-                                        </div>
+                                                </div>
 
-                                <!-- <div class="single-block">
+                                                <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -262,31 +284,30 @@
                                         <p><a class="reply" href="#"> Reply</a></p>
                                     </div>
                                 </div> -->
-                                    <div class="single-block">
-                                    <div class="col-md-1 col-sm-1">
-                                        <div class="blog-commenter">
-                                        <img src="../img/demo-pic.png" alt="img">
+                                                <div class="single-block">
+                                                    <div class="col-md-1 col-sm-1">
+                                                        <div class="blog-commenter">
+                                                            <img src="../img/demo-pic.png" alt="img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-11 col-sm-11">
+                                                        <textarea class="form-control put-comments"></textarea>
+                                                        <input class="add-comment" value="ADD COMMENT" type="submit" name="">
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-11 col-sm-11">
-                                       <textarea class="form-control put-comments"></textarea>
-                                       <input class="add-comment" value="ADD COMMENT" type="submit" name="">
-                                    </div>
-                                    </div>
-
-
-                                    </div>    
                                 </div>
                             </div>
-                        </div>    
-                    </div>    
+                        </div>
                     </div>
-                </div> 
-                
+
+                </div>
             </div>
-        </div>    
-    </div>    
-</div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
@@ -346,7 +367,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        ©2015 CloudLife Consulting All rights reserved. 
+                        ©2015 CloudLife Consulting All rights reserved.
                     </div>
                     <div class="col-md-6 text-right">
                         <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
@@ -372,5 +393,5 @@
     <script src="../js/freelancer.min.js"></script>
     <script type="text/javascript" src="../js/custom.js"></script>
 </body>
-    
+
 </html>
