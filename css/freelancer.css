@@ -1485,3 +1485,30 @@ fieldset[disabled] .btn-success.active {
   font-size: 18px;
   color: #333;
 }
+.main-pull-area .blog-area-main .tags h2 {
+  font-size: 15px;
+  text-align: center;
+  font-family: OpenSans-Bold;
+  padding: 10px 5px;
+  border-bottom: 3px solid #0087b7;
+  display: inline-block;
+  background: 0 0;
+}
+.main-pull-area .blog-area-main .tags ul {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+.main-pull-area .blog-area-main .tags ul li {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+.main-pull-area .blog-area-main .tags ul li:hover {
+  text-decoration: none;
+  background: #eee;
+  border: 1px solid #eee;
+  border-left: 3px solid #0086bb;
+}
