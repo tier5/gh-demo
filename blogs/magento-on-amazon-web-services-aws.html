@@ -31,12 +31,10 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
-    
     <style type="text/css">
         .blog-banner {
-  background: rgba(0, 0, 0, 0) url("../img/Using_a_VPN_with_AWS.jpg") no-repeat scroll center top / cover ;
-}
-
+            background: rgba(0, 0, 0, 0) url("../img/Magento_on_Amazon_Web_Services_(AWS).jpg") no-repeat scroll center top / cover;
+        }
     </style>
 
 </head>
@@ -86,83 +84,105 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="blog-banner">
-    <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">USING A VPN WITH AWS</div>
+        <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
+        <div class="banner-txt">Magento on Amazon Web Services (AWS)
+        </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <div class="main-pull-area blog-pull-area">
-                <div class="blog-area-main">
-                    <div class="relative-area">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="tags">
-                                <h2>Tags</h2>
-                                <ul>
-                                    <li>AWS</li>
-                                    <li>GENERAL</li>
-                                </ul>
-                            </div>
-                            <!-- <div class="blog-box">
-                                <div class="blog-box-main">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                                </div>
-                                <ul>
-                                    <li><a class="love" href="#">47</a></li>
-                                    <li><a class="chat" href="#">9</a></li>
-                                </ul>
-                            </div>
-                            <div class="blog-side-pic">
-                                <img src="../img/blog-side.png" alt="img">
-                                <div class="blog-side-txt">
-                                <p>
-                                    Lorem ipsum sit amet since
-                                </p>
-                                <ul>
-                                    <li><a href="#" class="love1">47</a></li>
-                                    <li><a href="#" class="chat1">9</a></li>
-                                </ul>    
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="col-md-9 col-sm-9">
-                           
-                            <p>
-                                I’ve seen a few posts with questions regarding different scenarios for using a vpn with AWS. So, I figured I would write about 3 different scenarios that I come across and how I deal with them. My hope is that you guys will add some information on how you guys deal with them as well.
-                            </p>
-                            <div class="blog-point">
-                                <ol>
-                                    <li>
-                                        Basic connection back to your office(s) – So this scenario is when you are connecting to networks that you control. In other words, you know there are no overlapping CIDR blocks. This is a perfect use case for the traditional AWS VPN service. I’ve found that once you are able to configure your local router, it’s a pretty bullet proof solution. I would recommend making sure that you have both tunnels configured. I’ve had AWS take them down periodically for maintenance on me before.
-                                    </li>
-                                    <li>
-                                        DEV access to private subnet – So I’m sure that there will be plenty of people chime in on this. Sometimes when we have developers that need access to odd backend ports I will install a OpenVPN solution. I will use the marketplace AMI and put it in the public subnet. You will need to make sure that you are allowing traffic into the private subnets with your OpenVPN setup. You will also need to allow traffic inbound on your NAT instance from your local subnet. This is a pretty popular solution with developers as it allows them carte blanche access and still keeps the stack secure. The OpenVPN documentation is pretty complete as well.
-                                    </li>
-                                    <li>
-                                        Site to Site VPN to outside parties – So I have a couple of customers that need secure connections to third parties. Also, this could apply to you if you have existing offices that may have overlapping CIDR blocks. In this scenario I use a Public / Private Subnet configuration in a VPC. Instead of using a AWS NAT AMI I will use the marketplace AMI from pfSense. There are some other solutions out there, openswan, vyatta, etc. I like pfSense because its pretty easy to use out of the box, and there is quite a bit of documentation out there for it. This setup mirrors a regular corporate network. Also, most importantly it allows you to use NAT-T, meaning I can assign a virtual ip address to my ipsec interface. I’ve had very good luck connecting this to multiple overlapping networks.
-                                    </li>
-                                </ol>    
-                            </div>
-                            <p>
-                                Those are the main scenarios that I have run across and my typical answer to them. Please let me know what feedback you have
-                            </p>
-                        </div>
+                        <div class="blog-area-main">
+                            <div class="relative-area">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="tags">
+                                        <h2>Tags</h2>
+                                        <ul> 
+                                            <li>CLOUD</li>
+                                            <li>HOSTED</li>
+                                            <li>IAAS</li>
+                                            <li>MAGENTO</li>
+                                        </ul>
+                                    </div>
+                                   <!--  <div class="blog-box">
+                                        <div class="blog-box-main">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                        </div>
+                                        <ul>
+                                            <li><a class="love" href="#">47</a></li>
+                                            <li><a class="chat" href="#">9</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-side-pic">
+                                        <img src="../img/blog-side.png" alt="img">
+                                        <div class="blog-side-txt">
+                                            <p>
+                                                Lorem ipsum sit amet since
+                                            </p>
+                                            <ul>
+                                                <li><a href="#" class="love1">47</a></li>
+                                                <li><a href="#" class="chat1">9</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+ -->                                </div>
+                                <div class="col-md-9 col-sm-9">
 
-                    </div>
-                    <div class="clearfix">
-                    <!-- <div class="blog-graphics">
-                    
+                                    http://www.cloudlifeconsulting.com/magento-on-amazon-web-services-aws/
+
+                                    <div class="entry-wrap">
+                                        <div class="entry-content content">
+                                            <p>Magento is quickly becoming the e-commerce site of choice for most online retailers. The flexibility as well as the extensibility have opened up a large amount of options in how we have deployed the service. I’m going to use this post as a reference of where we are as well as outline some of the plans moving forward. Currently our Magento site has roughly 6-7k SKUS with roughly 100-200 users daily. The challenge we have is the amount of product data, not necessarily the amount of user traffic. <span id="more-99"></span> When we started testing with Magento we used a single Amazon EC2 instance. &nbsp;(I’m not going to describe that setup too much <img alt=":)" class="wp-smiley" src="http://www.cloudlifeconsulting.com/wp-includes/images/smilies/simple-smile.png"> )&nbsp;We noticed that the large size of the database was burdening the CPU to the point it was slow delivering the web requests via Apache. With the amount of records in the MySQL database, it was clear that we needed to have better solution to deliver that information. This leads us to our current design:</p>
+
+                                            <p>
+                                                <a href="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/mag1.jpg"><img alt="Magento on AWS" height="269" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/mag1-300x269.jpg" width="300"></a>
+                                            </p>
+
+                                            <ol>
+                                                <li>We moved our MySQL database to an RDS instance. This gives us the opportunity to move a read replica across to another availability zone. Also, we are now automating the backup of our database with the built in RDS snapshots.</li>
+
+                                                <li>Using a plug in from <a href="http://www.freelunchlabs.com/cloudfront-cdn-for-magento" target="_blank" title="Free Lunch Labs">Free Lunch Labs</a>&nbsp;we moved all of our static content out to Amazon Cloud Front. This dramatically increased load time for all of our product photography etc.
+                                                </li>
+
+                                                <li>Lastly we automated our EBS snapshots to S3. This gives us the capability to launch an instance in another availability zone if anything happens to the &nbsp;zone we are currently in.</li>
+                                            </ol>
+
+                                            <p>There are several problems with this design still.</p>
+
+                                            <ol>
+                                                <li>This does not utilize scaling. This is important for several reason that I have outlined <a href="/blogs/what-is-an-elastic-cloud.html">here</a>.
+                                                </li>
+
+                                                <li>In the event of an outage in a single availability zone we do not have an automatic fail over plan. &nbsp;While the current setup will allow us to continue service in the event of a zone failure, it does not do so automatically.</li>
+                                            </ol>
+
+                                            <p>So this leads me to the next design we will be transitioning to:</p>
+
+                                            <p>
+                                                <a href="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/AWS-on-Magentov2.jpg"><img alt="Magento on AWS" height="300" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/05/AWS-on-Magentov2-216x300.jpg" width="216"></a>
+                                            </p>
+
+                                            <p>There are several notable differences in this case. 1. The Amazon DNS service Route 53 will allows us for future expansion into additional regions. 2.&nbsp;The Elastic Load Balancer will allow us to to scale across availability zones. <a href="/blogs/what-is-an-elastic-cloud.html" target="_blank" title="What is an Elastic Cloud?">Explained here</a> 3. Similar to the previous design, this one will have an RDS hot spare&nbsp;so that in case of failure we will be able to fail over to the other availability zone &nbsp; <span>I hope this helps&nbsp;</span>briefly<span>&nbsp;describe the process we have used to build out our&nbsp;</span>e-commerce<span>&nbsp;presence.&nbsp;</span> I will continue to add to this post and update it as we accomplish these goals. &nbsp; <a href="/pages/contact.html" title="Contact Me">Contact Me</a> for some help with your Magento installation</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="clearfix">
+                                <!-- <div class="blog-graphics">
+
                         <div class="col-md-12 col-sm-12 blog-graphics-main">
                             <div class="blog-left2-pic">
                             <img src="../img/blog-graphics.jpg" alt="img">
                             </div>
                         </div>
-                       
-                    </div> --> 
 
-                </div>
-                    <!-- <div class="row1">
+                    </div> -->
+
+                            </div>
+                            <!-- <div class="row1">
                         <div class="col-md-3 col-sm-3">
                             <div class="blog-left2-pic">
                             <img src="../img/blog-graphics2.png" alt="img">
@@ -211,12 +231,12 @@
                         </div>
 
                     </div> -->
-                    <div class="comment-sec">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="comment-head">Comments <span>(0)</span></div>
-                            <div class="comment-block">
-                                <div class="row">
-                                    <!-- <div class="single-block">
+                            <div class="comment-sec">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="comment-head">Comments <span>(0)</span></div>
+                                    <div class="comment-block">
+                                        <div class="row">
+                                            <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -232,11 +252,11 @@
                                         <p><a class="reply" href="#"> Reply</a></p>
                                     </div>
                                     </div> -->
-                                    <div class="clearfix"></div>
-                                    <div class="reply-sec">
-                                        <div class="col-md-1 col-sm-1">&nbsp;</div>
-                                        <div class="col-md-11 col-sm-11">
-                                <!-- <div class="single-block">
+                                            <div class="clearfix"></div>
+                                            <div class="reply-sec">
+                                                <div class="col-md-1 col-sm-1">&nbsp;</div>
+                                                <div class="col-md-11 col-sm-11">
+                                                    <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -253,9 +273,9 @@
                                     </div>
                                 </div> -->
 
-                                        </div>
+                                                </div>
 
-                                <!-- <div class="single-block">
+                                                <!-- <div class="single-block">
                                     <div class="col-md-1 col-sm-1">
                                         <div class="blog-commenter">
                                         <img src="../img/blog-commenter.jpg" alt="img">
@@ -271,33 +291,32 @@
                                         <p><a class="reply" href="#"> Reply</a></p>
                                     </div>
                                 </div> -->
-                                    <div class="single-block">
-                                    <div class="col-md-1 col-sm-1">
-                                        <div class="blog-commenter">
-                                        <img src="../img/demo-pic.png" alt="img">
+                                                <div class="single-block">
+                                                    <div class="col-md-1 col-sm-1">
+                                                        <div class="blog-commenter">
+                                                            <img src="../img/demo-pic.png" alt="img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-11 col-sm-11">
+                                                        <textarea class="form-control put-comments"></textarea>
+                                                        <input class="add-comment" value="ADD COMMENT" type="submit" name="">
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-11 col-sm-11">
-                                       <textarea class="form-control put-comments"></textarea>
-                                       <input class="add-comment" value="ADD COMMENT" type="submit" name="">
-                                    </div>
-                                    </div>
-
-
-                                    </div>    
                                 </div>
                             </div>
-                        </div>    
-                    </div>    
+                        </div>
                     </div>
-                </div> 
-                
+
+                </div>
             </div>
-        </div>    
-    </div>    
-</div>
-    
-    <!-- Footer -->
+        </div>
+    </div>
+   
+       <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
             <div class="container">
@@ -353,7 +372,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -369,5 +388,5 @@
     <script src="../js/freelancer.min.js"></script>
     <script type="text/javascript" src="../js/custom.js"></script>
 </body>
-    
+
 </html>

@@ -97,7 +97,18 @@
                         <div class="blog-area-main">
                             <div class="relative-area">
                                 <div class="col-md-3 col-sm-3">
-                                    <div class="blog-box">
+                                    <div class="tags">
+                                        <h2>Tags</h2>
+                                        <ul>
+                                            <li>AWS</li>
+                                            <li>CLOUD</li>
+                                            <li>DOCKER</li>
+                                            <li>EC2</li>
+                                            <li>HOW TO</li>
+                                            <li>IAAS</li>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="blog-box">
                                         <div class="blog-box-main">
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                         </div>
@@ -117,7 +128,7 @@
                                                 <li><a href="#" class="chat1">9</a></li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-md-9 col-sm-9">
                                     <h6 class="h-about-the-author">About Me</h6>
@@ -141,7 +152,7 @@
                                     </div>
                                     <hr>
                                     <p>
-                                        This post will cover how to install docker on AWS using Ubuntu 14.04. Overall the process is pretty simple, but we will go over a couple of parts that are good to know. This is assuming you know the basics about Amazon Web Services enough so that you can setup a basic instance. This will be the first building block in a series of posts on how to utilize Docker. If you need a little bit of background on Docker, and the differences between containers and virtual machines, please see my post here: <a href="http://www.cloudlifeconsulting.com/long-virtual-machines-hello-containers/">So Long Virtual Machines Hello Containers</a>
+                                        This post will cover how to install docker on AWS using Ubuntu 14.04. Overall the process is pretty simple, but we will go over a couple of parts that are good to know. This is assuming you know the basics about Amazon Web Services enough so that you can setup a basic instance. This will be the first building block in a series of posts on how to utilize Docker. If you need a little bit of background on Docker, and the differences between containers and virtual machines, please see my post here: <a href="/blogs/long-virtual-machines-hello-containers.html">So Long Virtual Machines Hello Containers</a>
                                     </p>
                                     <p>
                                         As with all Ubuntu projects make sure that your install is properly updated.
@@ -163,87 +174,16 @@
                                     </p>
                                     <pre class="x-code"><p><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9<br></code></p></pre>
 
-                                    <pre class="x-code">
-                                    <code><p class="prettyprint well"><span style="color: #000000;"><code style="color: inherit;"><span class="pun">sudo sh -</span><span class="pln">c </span><span class="str">"echo deb https://get.docker.io/ubuntu docker main\ </span></code></span></p>
-                            <p class="prettyprint well"><span style="color: #000000;"><code style="color: inherit;"><span class="str">&gt;/etc/apt/sources.list.d/docker.list"</span></code></span></p>
-                            </code></pre>
+                                    <pre class="x-code"><code><p class="prettyprint well"><span><code style="color: inherit;"><span class="pun">sudo sh -</span><span class="pln">c </span><span class="str">"echo deb https://get.docker.io/ubuntu docker main\ </span></code></span></p><p class="prettyprint well"><span><code style="color: inherit;"><span class="str">&gt;/etc/apt/sources.list.d/docker.list"</span></code></span></p></code></pre>
                                     <p>
                                         Once the repository is added we can install the latest Docker package:
                                     </p>
 
-                                    <pre class="x-code"><code><p>sudo apt-get update</p><p>sudo apt-get install lxc-docker</p></code>
-                                    <p>Finally, let’s check our work:</p>
-                                    <pre class="x-code"><code>sudo docker run -i -t ubuntu /bin/bash</code></pre><p>These are the basic steps needed to install Docker on AWS.
-                                    </p>
-                                    <p>If you need additional information on Docker it can be found <a href="https://www.docker.com/">here </a>
-                                    </p>
+                                    <pre class="x-code"><code><p>sudo apt-get update</p><p>sudo apt-get install lxc-docker</p></code><p>Finally, let’s check our work:</p><pre class="x-code"><code>sudo docker run -i -t ubuntu /bin/bash</code></pre><p>These are the basic steps needed to install Docker on AWS.</p><p>If you need additional information on Docker it can be found <a href="https://www.docker.com/">here </a></p>
                                 </div>
 
                             </div>
-
-                        </div>
-                        <div class="clearfix">
-                            <!-- <div class="blog-graphics">
-
-                        <div class="col-md-12 col-sm-12 blog-graphics-main">
-                            <div class="blog-left2-pic">
-                            <img src="../img/blog-graphics.jpg" alt="img">
-                            </div>
-                        </div>
-
-                    </div> -->
-
-                        </div>
-                        <!-- <div class="row1">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="blog-left2-pic">
-                            <img src="../img/blog-graphics2.png" alt="img">
-                            </div>
-                            <div class="blog-left2-main">
-                            <p>
-                                It is a long established fact that a reader will be distracted by the readable content lookinout. 
-                            </p>
-                            </div>
-                        </div>
-                        <div class="col-md-9 col-sm-9 blog-right">
-                            <h2>Lorem Ipsum is simply dummy text of the printing 
-                            </h2>
-                            <br>
-                            <p>
-                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                            </p>
-                            <div class="testimonial-part">
-                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it The point of using Lorem Ipsum is that it
-                            <div class="testimonial-name">David Guetta</div>
-                            </div> 
-                            <p>
-                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
-                            </p>
-                            <div class="blog-share">
-                                <ul>
-                                    <li>Share</li>
-                                    <li>
-                                    <a href="#">    
-                                        <img src="../img/tweet.jpg" alt="img">
-                                    </a>
-                                    </li>
-                                    <li>
-                                    <a href="#">    
-                                        <img src="../img/facebook.jpg" alt="img">
-                                    </a>
-                                    </li>
-                                    <li>
-                                    <a href="#">    
-                                        <img src="../img/google.jpg" alt="img">
-                                    </a>
-                                    </li>
-                                </ul>    
-                            </div>
-
-                        </div>
-
-                    </div> -->
-                        <div class="comment-sec">
+                            <div class="comment-sec">
                             <div class="col-md-12 col-sm-12">
                                 <div class="comment-head">Comments <span>(0)</span></div>
                                 <div class="comment-block">
@@ -320,6 +260,70 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="clearfix">
+                        </div>
+
+                            <!-- <div class="blog-graphics">
+
+                        <div class="col-md-12 col-sm-12 blog-graphics-main">
+                            <div class="blog-left2-pic">
+                            <img src="../img/blog-graphics.jpg" alt="img">
+                            </div>
+                        </div>
+
+                    </div> -->
+
+                        </div>
+                        <!-- <div class="row1">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="blog-left2-pic">
+                            <img src="../img/blog-graphics2.png" alt="img">
+                            </div>
+                            <div class="blog-left2-main">
+                            <p>
+                                It is a long established fact that a reader will be distracted by the readable content lookinout. 
+                            </p>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 blog-right">
+                            <h2>Lorem Ipsum is simply dummy text of the printing 
+                            </h2>
+                            <br>
+                            <p>
+                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
+                            </p>
+                            <div class="testimonial-part">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it The point of using Lorem Ipsum is that it
+                            <div class="testimonial-name">David Guetta</div>
+                            </div> 
+                            <p>
+                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s 
+                            </p>
+                            <div class="blog-share">
+                                <ul>
+                                    <li>Share</li>
+                                    <li>
+                                    <a href="#">    
+                                        <img src="../img/tweet.jpg" alt="img">
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">    
+                                        <img src="../img/facebook.jpg" alt="img">
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#">    
+                                        <img src="../img/google.jpg" alt="img">
+                                    </a>
+                                    </li>
+                                </ul>    
+                            </div>
+
+                        </div>
+
+                    </div> -->
+                        
                     </div>
                 </div>
 
@@ -327,7 +331,8 @@
         </div>
     </div>
     </div>
-    <!-- Footer -->
+    
+        <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
             <div class="container">
@@ -335,34 +340,34 @@
                     <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>who we are</h3>
                         <ul>
-                            <li class="active"><a href="/pages/our_history.html">our history</a></li>
-                            <li class="active"><a href="/pages/our_mission.html">our mission</a></li>
-                            <li class="active"><a href="/pages/our-team.html">our team</a></li>
+                            <li class="active"><a href="pages/our_history.html">our history</a></li>
+                            <li class="active"><a href="pages/our_mission.html">our mission</a></li>
+                            <li class="active"><a href="pages/our-team.html">our team</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>what we do</h3>
                         <ul>
-                            <li class="active"><a href="/pages/cloud_architecture.html">cloud architecture</a></li>
-                            <li class="active"><a href="/pages/cloud_migration.html">cloud migrations</a></li>
-                            <li class="active"><a href="/pages/cloud_automation.html">cloud automation</a></li>
-                            <li class="active"><a href="/pages/managed_services.html">managed services</a></li>
+                            <li class="active"><a href="pages/cloud_architecture.html">cloud architecture</a></li>
+                            <li class="active"><a href="pages/cloud_migration.html">cloud migrations</a></li>
+                            <li class="active"><a href="pages/cloud_automation.html">cloud automation</a></li>
+                            <li class="active"><a href="pages/managed_services.html">managed services</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>Info</h3>
                         <ul>
-                            <li class="active"><a href="/pages/healthcare.html">healthcare in the cloud</a></li>
-                            <li class="active"><a href="/pages/critical_system.html">backup & recovery of mission critical systems</a></li>
-                            <li class="active"><a href="/pages/driving_manufacturing.html">driving manufacturing efficiency</a></li>
-                            <li class="active"><a href="/pages/fleet_management.html">revolutionizing fleet management</a></li>
-                            <li class="active"><a href="/pages/legal_directory.html">applications for the legal industry</a></li>
+                            <li class="active"><a href="pages/healthcare.html">healthcare in the cloud</a></li>
+                            <li class="active"><a href="pages/critical_system.html">backup & recovery of mission critical systems</a></li>
+                            <li class="active"><a href="pages/driving_manufacturing.html">driving manufacturing efficiency</a></li>
+                            <li class="active"><a href="pages/fleet_management.html">revolutionizing fleet management</a></li>
+                            <li class="active"><a href="pages/legal_directory.html">applications for the legal industry</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>contact us</h3>
                         <ul>
-                            <li class="active"><a href="/pages/contact.html">Get in touch</a></li>
+                            <li class="active"><a href="pages/contact.html">Get in touch</a></li>
                         </ul>
                     </div>
                 </div>
@@ -372,17 +377,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        ©2017 CloudLife Consulting All rights reserved. 
+                        ©2017 CloudLife Consulting All rights reserved.
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="#"><img src="img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
-                        <a href="#"><img src="img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
-                        <a href="#"><img src="img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
+                        <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
+                        <a href="#"><img src="../img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
+                        <a href="#"><img src="../img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
