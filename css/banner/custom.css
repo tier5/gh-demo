@@ -1571,7 +1571,7 @@ font-family: 'OpenSans-Regular'; color: #000;
 background-size: cover;}
 
 .blog-area-main h2{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';
-font-size: 27px;}
+font-size: 27px; height: 55px;}
 
 .blog-area-main h3{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';
 font-size: 20px; margin-bottom: 20px; font-weight: 600;}
@@ -1771,8 +1771,8 @@ table.easy-table-cuscosky, .easy-table-cuscosky th, .easy-table-cuscosky td {
   transform: translate3d(0px, 0px, 0px);
 }
 
-
-
+.blog .blog-details ul li:first-child{border: none;}
+.blog-area-main h2 span{padding-top: 12px; vertical-align: middle;}
 
 
 

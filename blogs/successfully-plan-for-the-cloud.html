@@ -153,11 +153,13 @@
                             <hr>
                             <p>Obviously, a pretty key part of any plan. In this phase I try to document as much as possible. This includes IP schemes and security groups and features that will be used. For example if I’m using AWS I will document if RDS, EC2, ElastiCache, S3 etc. are going to be used. This helps to understand how the different products will interact, and how they are going to scale, and how you are going to build in some fault tolerance. I generally leave instance sizes out in the scenario because those will change in the proof of concept phase.</p>
                             <p>When I’m in the planning stages there are a couple of things that I try to make sure are accounted for:</p>
+                            <div class="blog-point">
                             <ol>
                             <li><strong>Modular –</strong> I want to be able to add and remove pieces of the infrastructure without effecting anything else, functionality or otherwise. Also, we want to be able to easily duplicate our production environment into a development environment as well. We will explore our options, such as cloud formation in a separate post.</li>
                             <li><strong>Scalable –</strong> This goes hand in hand with the modular piece above. We have to build a core group of products that is easily scaled. We want the opportunity to scale horizontally rather than scale vertically. Meaning, we want to add more small instances rather than needing to have large high-priced instances.</li>
                             <li><strong>Simple –</strong> With the amount of features that are available it is really easy to think we need to utilize them all. Cloud computing by nature can be very complex. I try to build in basic simplicity whenever its possible. While documentation is imperative, I want others to be able to understand the basics behind the design by simply viewing a diagram, or even just the management console.</li>
                             </ol>
+                            </div>
                             <p>&nbsp;</p>
                             <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Pilot&nbsp;</span></h2>
                             <hr>
@@ -172,17 +174,21 @@
                             <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Optimize&nbsp;</span></h2>
                             <hr>
                             <p>In this phase of development, I will fine tune my design with actual data. This way we have a better idea how the data will affect performance. There are a couple of things we want to optimize.</p>
+                            <div class="blog-point">
                             <ol>
                             <li><strong>Performance –</strong> Obviously user experience is the ultimate goal here. There are several tools to test user load.</li>
                             <li><strong>Cost –</strong> This is a very important step to make sure that you do. There are a couple of things to do without ever even touching the actual design. For example moving instances from On-Demand, to Reserved will typically save as much as 50% of your monthly bill. You don’t have to change anything other than tell Amazon that you want to have reserved instances, This is an accounting function only.</li>
                             </ol>
+                            </div>
                             <p>&nbsp;</p>
                             <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Maintenance and Review&nbsp;</span></h2>
                             <p>This phase&nbsp;is pretty basic in nature, it is&nbsp;has two distinct goal</p>
+                            <div class="blog-point">
                             <ol>
                             <li><strong>Support</strong> – Maintaining user experience throughout the product life cycle is very important. Not to mention reducing customer churn will make the higher-ups happy. It’s important to document issues. Knowing which ones are recurring are vital to continuing to increase customer satisfaction.</li>
                             <li><strong>Reporting –</strong>&nbsp;Quality reporting is what will bring this entire timeline full circle. Getting accurate and up to date reporting will allow changes to be made moving forward. Fine tuning is imperative to keeping the project current. For example, as new instance types are available it will often times save money and increase performance &nbsp;by upgrading.</li>
                             </ol>
+                            </div>
                             <p>&nbsp;</p>
                             <p>Regardless of the phase of your project, it’s important to not let the design or infrastructure go stagnant. Features, and updates are constantly changing, and if you don’t stay on top of them you stand a good chance of losing customer satisfaction.</p>
                             <p>Please <a title="Contact Us" href="http://www.cloudlifeconsulting.com/contact-us/">contact us </a>at any time to help you on your project.</p>

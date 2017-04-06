@@ -136,28 +136,25 @@
                                         The error log /usr/local/psa/admin/logs/panel.log was similar to the following:
                                     </p>
                                     <hr>
-                                    <pre>
-                                        2013-07-28T08:48:19-04:00 ERR (3) [panel]: Session expired:
-                                        0: Session.php:410
-                                        Session->init()
-                                        1: cmd_loginup.php:135
-                                        createSessionCommon(integer '1', string 'admin', boolean true, string '1.2.3.4', NULL null, NULL null)
-                                        2: cmd_loginup.php:278
-                                        createSessionAdmin(string 'admin', string '******', boolean false, NULL null, boolean true)
-                                        3: cmd_loginup.php:68
-                                        createSession(string 'admin', string '******', boolean false, boolean false)
-                                        4: login_up.php3:45
-                                        [28-Jul-2013 08:48:19 America/New_York] Session_Exception: Session expired
-                                        file: /opt/psa/admin/plib/Session.php
-                                        line: 410
-                                        code: 0
-                                        trace: #0 /opt/psa/admin/plib/cmd_loginup.php(135): Session->init()
-                                        #1 /opt/psa/admin/plib/cmd_loginup.php(278): createSessionCommon(1, 'admin', true, '1.2.3.4', NULL, NULL)
-                                        #2 /opt/psa/admin/plib/cmd_loginup.php(68): createSessionAdmin('admin', 'V***********G', false, NULL, true)
-                                        #3 /opt/psa/admin/htdocs/login_up.php3(45): createSession('admin', 'V***********G', false, false)
-                                        #4 {main}
-
-                                    </pre>
+                                    <pre>2013-07-28T08:48:19-04:00 ERR (3) [panel]: Session expired:
+0: Session.php:410
+Session-&gt;init()
+1: cmd_loginup.php:135
+createSessionCommon(integer '1', string 'admin', boolean true, string '1.2.3.4', NULL null, NULL null)
+2: cmd_loginup.php:278
+createSessionAdmin(string 'admin', string '******', boolean false, NULL null, boolean true)
+3: cmd_loginup.php:68
+createSession(string 'admin', string '******', boolean false, boolean false)
+4: login_up.php3:45
+[28-Jul-2013 08:48:19 America/New_York] Session_Exception: Session expired
+file: /opt/psa/admin/plib/Session.php
+line: 410
+code: 0
+trace: #0 /opt/psa/admin/plib/cmd_loginup.php(135): Session-&gt;init()
+#1 /opt/psa/admin/plib/cmd_loginup.php(278): createSessionCommon(1, 'admin', true, '1.2.3.4', NULL, NULL)
+#2 /opt/psa/admin/plib/cmd_loginup.php(68): createSessionAdmin('admin', 'V***********G', false, NULL, true)
+#3 /opt/psa/admin/htdocs/login_up.php3(45): createSession('admin', 'V***********G', false, false)
+#4 {main}</pre>
                                     <hr>
                                     <p>
                                         The problem is that the solution in the KB article did nothing.

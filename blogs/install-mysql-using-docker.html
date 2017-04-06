@@ -155,20 +155,8 @@
                             <p>This post is going to assume that you have already installed Docker on Ubuntu. It’s important to note here: I usually prefer using a PaaS service for databases in general such as AWS RDS. But, this is a very good lesson on easily installing MySQL.</p>
                             <p>&nbsp;</p>
                             <p>Keep us logged in as root</p>
-                            <pre class="x-code"><code>
-                            <p>sudo&nbsp;su</p>
-                            </code></pre>
-                            <p>&nbsp;</p>
-                            <p>Download&nbsp;the MySql image from Docker</p>
-                            <pre class="x-code"><code>
-                            <p>docker pull mysql:latest</p>
-                            </code></pre>
-                            <p>&nbsp;</p>
-                            <p>Next we want to start MySQL</p>
-                            <pre class="x-code"><code>
-                            <p>docker run --name test-mysql -e MYSQL_ROOT_PASSWORD='test'&nbsp;-d mysql</p>
-                            </code></pre>
-                            <p>This is pretty self explanatory, everything behind the –name tag is the name of the container that will be created. The -d tag allows us to choose which image we want to run.</p>
+                            <pre class="x-code"><code><p>sudo&nbsp;su</p></code></pre><p>&nbsp;</p><p>Download&nbsp;the MySql image from Docker</p><pre class="x-code"><code><p>docker pull mysql:latest</p></code></pre><p>Next we want to start MySQL</p>
+                            <pre class="x-code"><code><p>docker run --name test-mysql -e MYSQL_ROOT_PASSWORD='test'&nbsp;-d mysql</p></code></pre><p>This is pretty self explanatory, everything behind the –name tag is the name of the container that will be created. The -d tag allows us to choose which image we want to run.</p>
                             <p>Once the you get the MySQL container running, you can double check the status and container ID</p>
                             <pre class="x-code"><code> docker ps -l </code></pre>
                             <p>&nbsp;</p>
