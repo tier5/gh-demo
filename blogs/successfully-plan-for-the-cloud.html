@@ -98,7 +98,15 @@
                 <div class="blog-area-main">
                     <div class="relative-area">
                         <div class="col-md-3 col-sm-3">
-                            <div class="blog-box">
+                            <div class="tags">
+                                <h2>Tags</h2>
+                                <ul>
+                                    <li>AWS</li>
+                                    <li>HOW TO</li>
+                                    <li>IAAS</li>
+                                </ul>
+                            </div>
+                           <!--  <div class="blog-box">
                                 <div class="blog-box-main">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                 </div>
@@ -118,7 +126,7 @@
                                     <li><a href="#" class="chat1">9</a></li>
                                 </ul>    
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-md-9 col-sm-9">
                             <div class="entry-content content">
@@ -141,56 +149,62 @@
                                     </span>
                                 </div>
                            </div>
-<hr>
-<span class="x-dropcap"> T </span>here are many different ways to approach moving to a cloud infrastructure provider such as Amazon. Over the past couple of years, &nbsp;and many different cloud projects, I have come up with a bit of a road map. I consider these my steps to successfully plan for the cloud. Most of the steps will make you say “no duh” . But, they are important to know and follow because when you have the whole plan in mind, you will know what to look for later on.<p></p>
-<p><img class="aligncenter size-medium wp-image-7199" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/08/Planning-Stages-300x69.jpg" alt="Successful Cloud Server Planning" width="300" height="69" scale="0"></p>
-<hr>
-<h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Plan&nbsp;</span></h2>
-<hr>
-<p>Obviously, a pretty key part of any plan. In this phase I try to document as much as possible. This includes IP schemes and security groups and features that will be used. For example if I’m using AWS I will document if RDS, EC2, ElastiCache, S3 etc. are going to be used. This helps to understand how the different products will interact, and how they are going to scale, and how you are going to build in some fault tolerance. I generally leave instance sizes out in the scenario because those will change in the proof of concept phase.</p>
-<p>When I’m in the planning stages there are a couple of things that I try to make sure are accounted for:</p>
-<ol>
-<li><strong>Modular –</strong> I want to be able to add and remove pieces of the infrastructure without effecting anything else, functionality or otherwise. Also, we want to be able to easily duplicate our production environment into a development environment as well. We will explore our options, such as cloud formation in a separate post.</li>
-<li><strong>Scalable –</strong> This goes hand in hand with the modular piece above. We have to build a core group of products that is easily scaled. We want the opportunity to scale horizontally rather than scale vertically. Meaning, we want to add more small instances rather than needing to have large high-priced instances.</li>
-<li><strong>Simple –</strong> With the amount of features that are available it is really easy to think we need to utilize them all. Cloud computing by nature can be very complex. I try to build in basic simplicity whenever its possible. While documentation is imperative, I want others to be able to understand the basics behind the design by simply viewing a diagram, or even just the management console.</li>
-</ol>
-<p>&nbsp;</p>
-<h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Pilot&nbsp;</span></h2>
-<hr>
-<p>In this phase, I want to establish the fact that our new design is going to actually work. I will build out the servers as small as possible to keep costs down, or free if possible. We document any steps that we take to make sure that the design is working as planned. This step is not meant to establish capacity planning. Typically, I will build the network groups such as the VPC, subnets, and autoscaling across multiple availability zones. However in the early stages I will only add the compute instances to a single AZ. I’ve found that this helps keep the cost down and allows for quick scaling when needed.</p>
-<p>&nbsp;</p>
-<h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Build&nbsp;</span></h2>
-<hr>
-<p>In this phase, I will build out the infrastructure. It’s important to make sure that every step of this process is documented. Any changes that you made to the proof of concept will come into play here as well.</p>
-<p>We will also want to move the data over at this point. Typically a database snapshot from the old infrastructure will be moved to the new design to make sure you have an equal database load.</p>
-<p>The <a href="http://aws.amazon.com/importexport/" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://aws.amazon.com/importexport/', 'AWS Import/Export Tool');">AWS Import/Export Tool</a> comes in handy in this step as well if you are moving from on premise infrastructure.</p>
-<p>&nbsp;</p>
-<h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Optimize&nbsp;</span></h2>
-<hr>
-<p>In this phase of development, I will fine tune my design with actual data. This way we have a better idea how the data will affect performance. There are a couple of things we want to optimize.</p>
-<ol>
-<li><strong>Performance –</strong> Obviously user experience is the ultimate goal here. There are several tools to test user load.</li>
-<li><strong>Cost –</strong> This is a very important step to make sure that you do. There are a couple of things to do without ever even touching the actual design. For example moving instances from On-Demand, to Reserved will typically save as much as 50% of your monthly bill. You don’t have to change anything other than tell Amazon that you want to have reserved instances, This is an accounting function only.</li>
-</ol>
-<p>&nbsp;</p>
-<h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Maintenance and Review&nbsp;</span></h2>
-<p>This phase&nbsp;is pretty basic in nature, it is&nbsp;has two distinct goal</p>
-<ol>
-<li><strong>Support</strong> – Maintaining user experience throughout the product life cycle is very important. Not to mention reducing customer churn will make the higher-ups happy. It’s important to document issues. Knowing which ones are recurring are vital to continuing to increase customer satisfaction.</li>
-<li><strong>Reporting –</strong>&nbsp;Quality reporting is what will bring this entire timeline full circle. Getting accurate and up to date reporting will allow changes to be made moving forward. Fine tuning is imperative to keeping the project current. For example, as new instance types are available it will often times save money and increase performance &nbsp;by upgrading.</li>
-</ol>
-<p>&nbsp;</p>
-<p>Regardless of the phase of your project, it’s important to not let the design or infrastructure go stagnant. Features, and updates are constantly changing, and if you don’t stay on top of them you stand a good chance of losing customer satisfaction.</p>
-<p>Please <a title="Contact Us" href="http://www.cloudlifeconsulting.com/contact-us/">contact us </a>at any time to help you on your project.</p>
-<p>&nbsp;</p>
-<hr>
-<div class="x-recent-posts cf horizontal, vertical" data-fade="true"><a class="x-recent-post1, 2, 3, 4 no-image" href="http://www.cloudlifeconsulting.com/using-softnas-docker/" title="Permalink to: &quot;Using SoftNAS for Docker&quot;" style="opacity: 1;">
+                            <hr>
+                            <span class="x-dropcap"> T </span>here are many different ways to approach moving to a cloud infrastructure provider such as Amazon. Over the past couple of years, &nbsp;and many different cloud projects, I have come up with a bit of a road map. I consider these my steps to successfully plan for the cloud. Most of the steps will make you say “no duh” . But, they are important to know and follow because when you have the whole plan in mind, you will know what to look for later on.<p></p>
+                            <p><img class="aligncenter size-medium wp-image-7199" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/08/Planning-Stages-300x69.jpg" alt="Successful Cloud Server Planning" width="300" height="69" scale="0"></p>
+                            <hr>
+                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Plan&nbsp;</span></h2>
+                            <hr>
+                            <p>Obviously, a pretty key part of any plan. In this phase I try to document as much as possible. This includes IP schemes and security groups and features that will be used. For example if I’m using AWS I will document if RDS, EC2, ElastiCache, S3 etc. are going to be used. This helps to understand how the different products will interact, and how they are going to scale, and how you are going to build in some fault tolerance. I generally leave instance sizes out in the scenario because those will change in the proof of concept phase.</p>
+                            <p>When I’m in the planning stages there are a couple of things that I try to make sure are accounted for:</p>
+                            <div class="blog-point">
+                            <ol>
+                            <li><strong>Modular –</strong> I want to be able to add and remove pieces of the infrastructure without effecting anything else, functionality or otherwise. Also, we want to be able to easily duplicate our production environment into a development environment as well. We will explore our options, such as cloud formation in a separate post.</li>
+                            <li><strong>Scalable –</strong> This goes hand in hand with the modular piece above. We have to build a core group of products that is easily scaled. We want the opportunity to scale horizontally rather than scale vertically. Meaning, we want to add more small instances rather than needing to have large high-priced instances.</li>
+                            <li><strong>Simple –</strong> With the amount of features that are available it is really easy to think we need to utilize them all. Cloud computing by nature can be very complex. I try to build in basic simplicity whenever its possible. While documentation is imperative, I want others to be able to understand the basics behind the design by simply viewing a diagram, or even just the management console.</li>
+                            </ol>
+                            </div>
+                            <p>&nbsp;</p>
+                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Pilot&nbsp;</span></h2>
+                            <hr>
+                            <p>In this phase, I want to establish the fact that our new design is going to actually work. I will build out the servers as small as possible to keep costs down, or free if possible. We document any steps that we take to make sure that the design is working as planned. This step is not meant to establish capacity planning. Typically, I will build the network groups such as the VPC, subnets, and autoscaling across multiple availability zones. However in the early stages I will only add the compute instances to a single AZ. I’ve found that this helps keep the cost down and allows for quick scaling when needed.</p>
+                            <p>&nbsp;</p>
+                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Build&nbsp;</span></h2>
+                            <hr>
+                            <p>In this phase, I will build out the infrastructure. It’s important to make sure that every step of this process is documented. Any changes that you made to the proof of concept will come into play here as well.</p>
+                            <p>We will also want to move the data over at this point. Typically a database snapshot from the old infrastructure will be moved to the new design to make sure you have an equal database load.</p>
+                            <p>The <a href="http://aws.amazon.com/importexport/" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://aws.amazon.com/importexport/', 'AWS Import/Export Tool');">AWS Import/Export Tool</a> comes in handy in this step as well if you are moving from on premise infrastructure.</p>
+                            <p>&nbsp;</p>
+                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Optimize&nbsp;</span></h2>
+                            <hr>
+                            <p>In this phase of development, I will fine tune my design with actual data. This way we have a better idea how the data will affect performance. There are a couple of things we want to optimize.</p>
+                            <div class="blog-point">
+                            <ol>
+                            <li><strong>Performance –</strong> Obviously user experience is the ultimate goal here. There are several tools to test user load.</li>
+                            <li><strong>Cost –</strong> This is a very important step to make sure that you do. There are a couple of things to do without ever even touching the actual design. For example moving instances from On-Demand, to Reserved will typically save as much as 50% of your monthly bill. You don’t have to change anything other than tell Amazon that you want to have reserved instances, This is an accounting function only.</li>
+                            </ol>
+                            </div>
+                            <p>&nbsp;</p>
+                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Maintenance and Review&nbsp;</span></h2>
+                            <p>This phase&nbsp;is pretty basic in nature, it is&nbsp;has two distinct goal</p>
+                            <div class="blog-point">
+                            <ol>
+                            <li><strong>Support</strong> – Maintaining user experience throughout the product life cycle is very important. Not to mention reducing customer churn will make the higher-ups happy. It’s important to document issues. Knowing which ones are recurring are vital to continuing to increase customer satisfaction.</li>
+                            <li><strong>Reporting –</strong>&nbsp;Quality reporting is what will bring this entire timeline full circle. Getting accurate and up to date reporting will allow changes to be made moving forward. Fine tuning is imperative to keeping the project current. For example, as new instance types are available it will often times save money and increase performance &nbsp;by upgrading.</li>
+                            </ol>
+                            </div>
+                            <p>&nbsp;</p>
+                            <p>Regardless of the phase of your project, it’s important to not let the design or infrastructure go stagnant. Features, and updates are constantly changing, and if you don’t stay on top of them you stand a good chance of losing customer satisfaction.</p>
+                            <p>Please <a title="Contact Us" href="/pages/contact.html">contact us </a>at any time to help you on your project.</p>
+                            <p>&nbsp;</p>
+                            <hr>
+                            <div class="x-recent-posts cf horizontal, vertical" data-fade="true"><a class="x-recent-post1, 2, 3, 4 no-image" href="/blogs/using-softnas-for-docker.html" title="Permalink to: &quot;Using SoftNAS for Docker&quot;" style="opacity: 1;">
 
-<article><div class="entry-wrap"><div class="x-recent-posts-content">
-<h4 class="h-recent-posts">Using SoftNAS for Docker</h4>
-<span class="x-recent-posts-date">October 20, 2014</span></div></div></article></a></div>
-<p>&nbsp;</p>
-  </div>
+                            <article><div class="entry-wrap"><div class="x-recent-posts-content">
+                            <h4 class="h-recent-posts">Using SoftNAS for Docker</h4>
+                            <span class="x-recent-posts-date">October 20, 2014</span></div></div></article></a></div>
+                            <p>&nbsp;</p>
+                              </div>
                         </div>
 
                     </div>
@@ -340,57 +354,44 @@
         </div>    
     </div>    
 </div>
+   
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>who we are</h3>
                         <ul>
-                            <li><a href="#">our history</a></li>
-                            <li class="active"><a href="our_mission.html">our mission</a></li>
-                            <li><a href="#">our team</a></li>
+                            <li class="active"><a href="pages/our_history.html">our history</a></li>
+                            <li class="active"><a href="pages/our_mission.html">our mission</a></li>
+                            <li class="active"><a href="pages/our-team.html">our team</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>what we do</h3>
                         <ul>
-                            <li class="active"><a href="cloud_architecture.html">cloud architecture</a></li>
-                            <li><a href="#">cloud migrations</a></li>
-                            <li class="active"><a href="cloud_automation.html">cloud automation</a></li>
-                            <li><a href="#">managed services</a></li>
+                            <li class="active"><a href="pages/cloud_architecture.html">cloud architecture</a></li>
+                            <li class="active"><a href="pages/cloud_migration.html">cloud migrations</a></li>
+                            <li class="active"><a href="pages/cloud_automation.html">cloud automation</a></li>
+                            <li class="active"><a href="pages/managed_services.html">managed services</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
-                        <h3>blog</h3>
-                        <ul>
-                            <li><a href="#">categories</a></li>
-                            <li><a href="#">tags</a></li>
-                            <li><a href="#">by date</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>Info</h3>
                         <ul>
-                            <li class="active"><a href="healthcare.html">healthcare in the cloud</a></li>
-                            <li class="active"><a href="critical_system.html">backup & recovery of mission critical systems</a></li>
-                            <li class="active"><a href="driving_manufacturing.html">driving manufacturing efficiency</a></li>
-                            <li class="active"><a href="fleet_management.html">revolutionizing fleet management</a></li>
-                            <li class="active"><a href="legal_directory.html">applications for the legal industry</a></li>
+                            <li class="active"><a href="pages/healthcare.html">healthcare in the cloud</a></li>
+                            <li class="active"><a href="pages/critical_system.html">backup & recovery of mission critical systems</a></li>
+                            <li class="active"><a href="pages/driving_manufacturing.html">driving manufacturing efficiency</a></li>
+                            <li class="active"><a href="pages/fleet_management.html">revolutionizing fleet management</a></li>
+                            <li class="active"><a href="pages/legal_directory.html">applications for the legal industry</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>contact us</h3>
                         <ul>
-                            <li class="active"><a href="contact.html">Get in touch</a></li>
+                            <li class="active"><a href="pages/contact.html">Get in touch</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-12">
-                        <h3>subscribe newsletter</h3>
-                        <form>
-                            <input type="email" placeholder="Email address" class="form-control">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -399,7 +400,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        ©2015 CloudLife Consulting All rights reserved. 
+                        ©2017 CloudLife Consulting All rights reserved.
                     </div>
                     <div class="col-md-6 text-right">
                         <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
@@ -410,6 +411,7 @@
             </div>
         </div>
     </footer>
+   
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>

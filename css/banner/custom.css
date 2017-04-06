@@ -1006,7 +1006,7 @@ section.cloud-inner .learn-history .content-block h4 {
 	}
 
 	.scroller,.categories{
-		display: none;
+		display: block;
 	}
 
 	.demo-1 {
@@ -1571,7 +1571,7 @@ font-family: 'OpenSans-Regular'; color: #000;
 background-size: cover;}
 
 .blog-area-main h2{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';
-font-size: 27px;}
+font-size: 27px; height: 55px;}
 
 .blog-area-main h3{font-weight: 600; text-transform: none; font-family: 'OpenSans-Regular';
 font-size: 20px; margin-bottom: 20px; font-weight: 600;}
@@ -1596,7 +1596,7 @@ font-size: 20px; margin-bottom: 20px; font-weight: 600;}
     font-family: OpenSans-Regular;
     margin-bottom: 40px;
     /*min-height: 2792px;*/
-    min-height: 1050px;
+    /*min-height: 1050px;*/
     padding: 15px;
     position: relative;
     width: 100%;
@@ -1665,7 +1665,7 @@ border-top-left-radius:10px;
 
 .blog-point{margin:0; padding:0;}
 .blog-point ol{margin:0; padding:13px;}
-.blog-point ol li{margin-bottom: 7px;}
+.blog-point ol li{margin-bottom: 7px; font-size: 15px;}
 
 .blog-normal-list ul{margin: 0; padding: 10px 0 !important;}
 .blog-normal-list ul li {
@@ -1771,10 +1771,10 @@ table.easy-table-cuscosky, .easy-table-cuscosky th, .easy-table-cuscosky td {
   transform: translate3d(0px, 0px, 0px);
 }
 
-
-
-
-
+.blog .blog-details ul li:first-child{border: none;}
+.blog-area-main h2 span{padding-top: 12px; vertical-align: middle;}
+.blog-sample-txt{height: 129px;}
+.blog-sample-heading{height: 50px;}
 
 
 

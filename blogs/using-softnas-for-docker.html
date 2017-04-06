@@ -96,7 +96,18 @@
                 <div class="blog-area-main">
                     <div class="relative-area">
                         <div class="col-md-3 col-sm-3">
-                            <div class="blog-box">
+                            <div class="tags">
+                                <h2>Tags</h2>
+                                <ul>
+                                    <li>AWS</li>
+                                    <li>DOCKER</li>
+                                    <li>STORAGE</li>
+                                    <li>IAAS</li>
+                                    <li>SOFTNAS</li>
+                                    <li>SOFTNAS STORAGE</li>
+                                </ul>
+                            </div>
+                            <!-- <div class="blog-box">
                                 <div class="blog-box-main">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                 </div>
@@ -106,7 +117,7 @@
                                 </ul>
                             </div>
                             <div class="blog-side-pic">
-                            <img src="../img/blog-side.png" alt="img">
+                                <img src="../img/blog-side.png" alt="img">
                                 <div class="blog-side-txt">
                                 <p>
                                     Lorem ipsum sit amet since
@@ -116,7 +127,7 @@
                                     <li><a href="#" class="chat1">9</a></li>
                                 </ul>    
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-md-9 col-sm-9">
                            <div class="align-center blog-logo">
@@ -166,14 +177,9 @@
                                 Make sure that the file is written without a problem, then look through the SoftNAS File System to make sure that the file is where it’s supposed to be.
                             </p>
                             <p>
-                            If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a href="http://www.cloudlifeconsulting.com/install-docker-on-aws/">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:
+                            If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a href="/blogs/install-docker-on-aws.html">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:
                             </p>
-                            <pre class="x-code"><code>sudo apt-get update<p></p>
-<p>sudo apt-get install docker.io</p>
-<p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p>
-<p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p>
-<p>source /etc/bash_completion.d/docker.io</p>
-</code></pre>
+                            <pre class="x-code"><code>sudo apt-get update<p></p><p>sudo apt-get install docker.io</p><p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p><p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p><p>source /etc/bash_completion.d/docker.io</p></code></pre>
                             <p>You can find a link to the Docker instructions here</p>
                             <p>
                             It’s easy to test to make sure you have Docker installed correctly by running the following command
@@ -335,57 +341,44 @@
         </div>    
     </div>    
 </div>
+  
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>who we are</h3>
                         <ul>
-                            <li><a href="#">our history</a></li>
-                            <li class="active"><a href="our_mission.html">our mission</a></li>
-                            <li><a href="#">our team</a></li>
+                            <li class="active"><a href="pages/our_history.html">our history</a></li>
+                            <li class="active"><a href="pages/our_mission.html">our mission</a></li>
+                            <li class="active"><a href="pages/our-team.html">our team</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>what we do</h3>
                         <ul>
-                            <li class="active"><a href="cloud_architecture.html">cloud architecture</a></li>
-                            <li><a href="#">cloud migrations</a></li>
-                            <li class="active"><a href="cloud_automation.html">cloud automation</a></li>
-                            <li><a href="#">managed services</a></li>
+                            <li class="active"><a href="pages/cloud_architecture.html">cloud architecture</a></li>
+                            <li class="active"><a href="pages/cloud_migration.html">cloud migrations</a></li>
+                            <li class="active"><a href="pages/cloud_automation.html">cloud automation</a></li>
+                            <li class="active"><a href="pages/managed_services.html">managed services</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
-                        <h3>blog</h3>
-                        <ul>
-                            <li><a href="#">categories</a></li>
-                            <li><a href="#">tags</a></li>
-                            <li><a href="#">by date</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>Info</h3>
                         <ul>
-                            <li class="active"><a href="healthcare.html">healthcare in the cloud</a></li>
-                            <li class="active"><a href="critical_system.html">backup & recovery of mission critical systems</a></li>
-                            <li class="active"><a href="driving_manufacturing.html">driving manufacturing efficiency</a></li>
-                            <li class="active"><a href="fleet_management.html">revolutionizing fleet management</a></li>
-                            <li class="active"><a href="legal_directory.html">applications for the legal industry</a></li>
+                            <li class="active"><a href="pages/healthcare.html">healthcare in the cloud</a></li>
+                            <li class="active"><a href="pages/critical_system.html">backup & recovery of mission critical systems</a></li>
+                            <li class="active"><a href="pages/driving_manufacturing.html">driving manufacturing efficiency</a></li>
+                            <li class="active"><a href="pages/fleet_management.html">revolutionizing fleet management</a></li>
+                            <li class="active"><a href="pages/legal_directory.html">applications for the legal industry</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>contact us</h3>
                         <ul>
-                            <li class="active"><a href="contact.html">Get in touch</a></li>
+                            <li class="active"><a href="pages/contact.html">Get in touch</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-12">
-                        <h3>subscribe newsletter</h3>
-                        <form>
-                            <input type="email" placeholder="Email address" class="form-control">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -394,7 +387,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        ©2015 CloudLife Consulting All rights reserved. 
+                        ©2017 CloudLife Consulting All rights reserved.
                     </div>
                     <div class="col-md-6 text-right">
                         <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
@@ -405,6 +398,7 @@
             </div>
         </div>
     </footer>
+  
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
