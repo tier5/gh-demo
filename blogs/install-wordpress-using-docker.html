@@ -155,7 +155,7 @@
                               This post will show you how to install WordPress using Docker. We will also link our WordPress container to the MySQL container that we created in the previous post. This will give us the capabilities to scale each group of containers separately. Meaning we can scale the database, as well as the WordPress front end separately giving us much more flexibility.  
                            </p>
                            <p>
-                              In order to follow along in this post please review my post showing how to <a target="blank" href="http://www.cloudlifeconsulting.com/install-mysql-using-docker/">install MySQL using Docker</a>  
+                              In order to follow along in this post please review my post showing how to <a target="blank" href="/blogs/install-mysql-using-docker.html">install MySQL using Docker</a>  
                            </p>
                            <h2 class="h-feature-headline h3"><span><i class="x-icon-cloud"></i> Install WordPress using Docker</span></h2>
                            <p>
@@ -166,11 +166,11 @@
                            <pre class="x-code"><code>docker pull wordpress:latest</code></pre>
                            <p>This next step is very simple, but can require a little bit of research if you want to get very customized.</p>
                            <pre class="x-code"><code>docker run --name test-wordpress --link test-mysql:mysql -p 80:80 -d wordpress</code></pre>
-                           <p>The &ndash;name option is going to name our container. The &ndash;link option is going to tell this container to link with the container we created <a href="http://www.cloudlifeconsulting.com/install-mysql-using-docker/" title="Install MySQL Using Docker">previously</a>. The -p option is going to map the internal port with the external port (-p host port:container port). So in my case, I used 80:80 to tell it that I want to map my host port 80 to the internal container port 80.</p>
+                           <p>The &ndash;name option is going to name our container. The &ndash;link option is going to tell this container to link with the container we created <a href="/blogs/install-mysql-using-docker.html" title="Install MySQL Using Docker">previously</a>. The -p option is going to map the internal port with the external port (-p host port:container port). So in my case, I used 80:80 to tell it that I want to map my host port 80 to the internal container port 80.</p>
                            <p>The options for this particular image can be located <a href="https://registry.hub.docker.com/_/wordpress/">here&nbsp;</a></p>
                            <p>If you haven’t previously installed MySQL, I recommend using the <a href="https://registry.hub.docker.com/u/tutum/wordpress/">Tutum Image</a></p>
 
-                           <div data-fade="true" class="x-recent-posts cf horizontal"><a href="http://www.cloudlifeconsulting.com/install-wordpress-using-docker/" class="x-recent-post1,2, 3 with-image" style="opacity: 1;">
+                           <div data-fade="true" class="x-recent-posts cf horizontal"><a href="/blogs/install-wordpress-using-docker.html" class="x-recent-post1,2, 3 with-image" style="opacity: 1;">
                            <article class="">
                            <div class="entry-wrap"><div class="x-recent-posts-img"><img alt="install wordpress using docker" class="attachment-entry-integrity-cropped wp-post-image" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/08/wordpress-logo-680x400.png" scale="0"></div><div class="x-recent-posts-content"><h3 class="h-recent-posts">Install WordPress Using Docker</h3><span class="x-recent-posts-date">August 11, 2014</span></div>
                            </div>

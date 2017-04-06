@@ -1006,7 +1006,7 @@ section.cloud-inner .learn-history .content-block h4 {
 	}
 
 	.scroller,.categories{
-		display: none;
+		display: block;
 	}
 
 	.demo-1 {
