@@ -31,11 +31,9 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../css/banner/integrity-light.css" />
-    
-    <style type="text/css">
+     <style type="text/css">
         .blog-banner {
-  background: rgba(0, 0, 0, 0) url("../img/successfully-plan-for-the-cloud.jpg") no-repeat scroll center top / cover ;
+  background: rgba(0, 0, 0, 0) url("../img/Install_Docker_on_AWS.jpg") no-repeat scroll center top / cover ;
 }
 
     </style>
@@ -88,7 +86,7 @@
     </nav>
     <div class="blog-banner">
     <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Successfully Plan for the Cloud</div>
+    <div class="banner-txt">Install Docker On AWS</div>
     </div>
     <div class="container">
         <div class="row">
@@ -98,15 +96,7 @@
                 <div class="blog-area-main">
                     <div class="relative-area">
                         <div class="col-md-3 col-sm-3">
-                            <div class="tags">
-                                <h2>Tags</h2>
-                                <ul>
-                                    <li>AWS</li>
-                                    <li>HOW TO</li>
-                                    <li>IAAS</li>
-                                </ul>
-                            </div>
-                           <!--  <div class="blog-box">
+                            <div class="blog-box">
                                 <div class="blog-box-main">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                 </div>
@@ -126,11 +116,15 @@
                                     <li><a href="#" class="chat1">9</a></li>
                                 </ul>    
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="col-md-9 col-sm-9">
-                            <div class="entry-content content">
- <h6 class="h-about-the-author">About Me</h6>
+
+                            http://www.cloudlifeconsulting.com/install-docker-on-aws/
+
+                        <div class="entry-wrap">
+                           <div class="entry-content content">
+                                <h6 class="h-about-the-author">About Me</h6>
                            <div class="row about-author">
                                 <div class="col-md-2 col-sm-2 col-xs-4">
                                     <img src="../img/ff.jpeg" alt="img">
@@ -149,62 +143,42 @@
                                     </span>
                                 </div>
                            </div>
-                            <hr>
-                            <span class="x-dropcap"> T </span>here are many different ways to approach moving to a cloud infrastructure provider such as Amazon. Over the past couple of years, &nbsp;and many different cloud projects, I have come up with a bit of a road map. I consider these my steps to successfully plan for the cloud. Most of the steps will make you say “no duh” . But, they are important to know and follow because when you have the whole plan in mind, you will know what to look for later on.<p></p>
-                            <p><img class="aligncenter size-medium wp-image-7199" src="http://www.cloudlifeconsulting.com/wp-content/uploads/2014/08/Planning-Stages-300x69.jpg" alt="Successful Cloud Server Planning" width="300" height="69" scale="0"></p>
-                            <hr>
-                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Plan&nbsp;</span></h2>
-                            <hr>
-                            <p>Obviously, a pretty key part of any plan. In this phase I try to document as much as possible. This includes IP schemes and security groups and features that will be used. For example if I’m using AWS I will document if RDS, EC2, ElastiCache, S3 etc. are going to be used. This helps to understand how the different products will interact, and how they are going to scale, and how you are going to build in some fault tolerance. I generally leave instance sizes out in the scenario because those will change in the proof of concept phase.</p>
-                            <p>When I’m in the planning stages there are a couple of things that I try to make sure are accounted for:</p>
-                            <div class="blog-point">
-                            <ol>
-                            <li><strong>Modular –</strong> I want to be able to add and remove pieces of the infrastructure without effecting anything else, functionality or otherwise. Also, we want to be able to easily duplicate our production environment into a development environment as well. We will explore our options, such as cloud formation in a separate post.</li>
-                            <li><strong>Scalable –</strong> This goes hand in hand with the modular piece above. We have to build a core group of products that is easily scaled. We want the opportunity to scale horizontally rather than scale vertically. Meaning, we want to add more small instances rather than needing to have large high-priced instances.</li>
-                            <li><strong>Simple –</strong> With the amount of features that are available it is really easy to think we need to utilize them all. Cloud computing by nature can be very complex. I try to build in basic simplicity whenever its possible. While documentation is imperative, I want others to be able to understand the basics behind the design by simply viewing a diagram, or even just the management console.</li>
-                            </ol>
-                            </div>
-                            <p>&nbsp;</p>
-                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Pilot&nbsp;</span></h2>
-                            <hr>
-                            <p>In this phase, I want to establish the fact that our new design is going to actually work. I will build out the servers as small as possible to keep costs down, or free if possible. We document any steps that we take to make sure that the design is working as planned. This step is not meant to establish capacity planning. Typically, I will build the network groups such as the VPC, subnets, and autoscaling across multiple availability zones. However in the early stages I will only add the compute instances to a single AZ. I’ve found that this helps keep the cost down and allows for quick scaling when needed.</p>
-                            <p>&nbsp;</p>
-                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Build&nbsp;</span></h2>
-                            <hr>
-                            <p>In this phase, I will build out the infrastructure. It’s important to make sure that every step of this process is documented. Any changes that you made to the proof of concept will come into play here as well.</p>
-                            <p>We will also want to move the data over at this point. Typically a database snapshot from the old infrastructure will be moved to the new design to make sure you have an equal database load.</p>
-                            <p>The <a href="http://aws.amazon.com/importexport/" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://aws.amazon.com/importexport/', 'AWS Import/Export Tool');">AWS Import/Export Tool</a> comes in handy in this step as well if you are moving from on premise infrastructure.</p>
-                            <p>&nbsp;</p>
-                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Optimize&nbsp;</span></h2>
-                            <hr>
-                            <p>In this phase of development, I will fine tune my design with actual data. This way we have a better idea how the data will affect performance. There are a couple of things we want to optimize.</p>
-                            <div class="blog-point">
-                            <ol>
-                            <li><strong>Performance –</strong> Obviously user experience is the ultimate goal here. There are several tools to test user load.</li>
-                            <li><strong>Cost –</strong> This is a very important step to make sure that you do. There are a couple of things to do without ever even touching the actual design. For example moving instances from On-Demand, to Reserved will typically save as much as 50% of your monthly bill. You don’t have to change anything other than tell Amazon that you want to have reserved instances, This is an accounting function only.</li>
-                            </ol>
-                            </div>
-                            <p>&nbsp;</p>
-                            <h2 class="h-feature-headline h3"><span><i class="x-icon-lightbulb-o"></i> Maintenance and Review&nbsp;</span></h2>
-                            <p>This phase&nbsp;is pretty basic in nature, it is&nbsp;has two distinct goal</p>
-                            <div class="blog-point">
-                            <ol>
-                            <li><strong>Support</strong> – Maintaining user experience throughout the product life cycle is very important. Not to mention reducing customer churn will make the higher-ups happy. It’s important to document issues. Knowing which ones are recurring are vital to continuing to increase customer satisfaction.</li>
-                            <li><strong>Reporting –</strong>&nbsp;Quality reporting is what will bring this entire timeline full circle. Getting accurate and up to date reporting will allow changes to be made moving forward. Fine tuning is imperative to keeping the project current. For example, as new instance types are available it will often times save money and increase performance &nbsp;by upgrading.</li>
-                            </ol>
-                            </div>
-                            <p>&nbsp;</p>
-                            <p>Regardless of the phase of your project, it’s important to not let the design or infrastructure go stagnant. Features, and updates are constantly changing, and if you don’t stay on top of them you stand a good chance of losing customer satisfaction.</p>
-                            <p>Please <a title="Contact Us" href="/pages/contact.html">contact us </a>at any time to help you on your project.</p>
-                            <p>&nbsp;</p>
-                            <hr>
-                            <div class="x-recent-posts cf horizontal, vertical" data-fade="true"><a class="x-recent-post1, 2, 3, 4 no-image" href="/blogs/using-softnas-for-docker.html" title="Permalink to: &quot;Using SoftNAS for Docker&quot;" style="opacity: 1;">
+                           <hr>
 
-                            <article><div class="entry-wrap"><div class="x-recent-posts-content">
-                            <h4 class="h-recent-posts">Using SoftNAS for Docker</h4>
-                            <span class="x-recent-posts-date">October 20, 2014</span></div></div></article></a></div>
-                            <p>&nbsp;</p>
-                              </div>
+                              <p>This post will cover how to install docker on AWS using <strong>Ubuntu 14.04</strong>. Overall the process is pretty simple, but we will go over a couple of parts that are good to know. This is assuming you know the basics about Amazon Web Services enough so that you can setup a basic instance. This will be the first building block&nbsp;in a series of posts on how to utilize Docker. If you need a little bit of background on Docker, and the differences between containers and virtual machines, please see my post here:&nbsp;<a href="http://www.cloudlifeconsulting.com/long-virtual-machines-hello-containers/">So Long Virtual Machines Hello Containers</a></p>
+                             
+                              <p>As with all Ubuntu projects make sure that your install is properly updated.</p>
+
+
+                              <pre class="x-code"><code><p>sudo apt-get</p><p>update sudo apt-get upgrade</p></code></pre>
+                              
+                              <p>So once we have Ubuntu upgraded, we will want to install Docker. We are going to install the most recent version of Docker. In order to do this we will need to add the Docker repository. But, before we do that we need to make sure that our APT system can handle secure repositories:</p>
+
+                        <pre class="x-code"><code>ls /usr/lib/apt/methods/</code></pre>
+                              
+                              <p>Make sure that the file named https is there. If it isn’t you will need to add it:</p>
+                              <pre class="x-code"><code>sudo apt-get install apt-transport-https</code></pre>
+                              
+                              <p>Once that is done, or if you already have https present you can add the Docker repository:</p>
+
+                              <pre class="x-code"><p><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9</code></p></pre>
+
+                              <pre class="x-code"><code><p><span><code><span class="pun">sudo sh -</span><span class="pln">c </span><span class="str">"echo deb https://get.docker.io/ubuntu docker main\ </span></code></span></p><p class="prettyprint well"><span style="color: #000000;"><code><span class="str">&gt;/etc/apt/sources.list.d/docker.list"</span></code></span></p></code></pre>
+                              <p>Once the repository is added we can install the latest Docker package:</p>
+                              <pre class="x-code"><code>sudo apt-get update
+                        </code><p><code>sudo apt-get install lxc-docker
+                        </code></p></pre>
+                              <p>Finally, let’s check our work:</p>
+                              <pre class="x-code"><code><p><code><span class="pln">sudo docker run </span><span>-</span><span>i </span><span class="pun">-</span><span>t ubuntu </span><span>/</span><span>bin</span><span>/</span><span>bash</span></code></p></code></pre>
+                              
+                              <p>These are the basic steps needed to install Docker on AWS.</p>
+
+                              <p>If you need additional information on Docker it can be found <a href="https://www.docker.com/">here</a></p>
+                              <p>Also, if you need any help with anything contained in this post, or with the Cloud in general, we are always glad to help. <a href="http://www.cloudlifeconsulting.com/contact-us/">Contact Us</a></p>
+                             
+                           </div>
+                        </div>
+                            
                         </div>
 
                     </div>
@@ -354,7 +328,6 @@
         </div>    
     </div>    
 </div>
-   
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-above">
@@ -411,7 +384,6 @@
             </div>
         </div>
     </footer>
-   
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>

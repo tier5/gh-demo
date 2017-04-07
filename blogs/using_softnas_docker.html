@@ -87,7 +87,7 @@
     </nav>
     <div class="blog-banner">
     <!-- <img src="../img/blog-banner.jpg" alt="img"> -->
-    <div class="banner-txt">Happy Eighth Birthday Amazon<br> Web Services</div>
+    <div class="banner-txt">Using SoftNAS for Docker</div>
     </div>
     <div class="container">
         <div class="row">
@@ -120,21 +120,56 @@
                             </div>
                         </div>
                         <div class="col-md-9 col-sm-9">
-                            <p>
-                              Happy Eighth Birthday Amazon Web Services!  
-                            </p>
-                            <p>
-                            Yesterday was Amazon Web Services eighth birthday. Eight years in today’s world of computing seems like an eternity. It really makes me excited to see what the next eight years brings us.
-                            </p>
-                            <p>
-                            Check out all the details over at the <a href="http://aws.typepad.com/aws/2014/03/eight-years-and-counting-of-cloud-computing.html">Amazon Web Services Blog</a>.
-                            </p>
-                            <p>
-                            Also, when you have second check out this really cool video on how AirBnB utilizes amazon web services.
-                            </p>
-                            <hr>
-                            <iframe width="100%" height="500" src="https://www.youtube.com/embed/xQBNn67rL_o" frameborder="0" allowfullscreen></iframe>
-                            
+                            http://www.cloudlifeconsulting.com/using-softnas-docker/
+
+                                                <div class="entry-wrap">
+                       <header class="entry-header">
+                          <h1 class="entry-title">Using SoftNAS for Docker</h1>
+                       </header>
+                       <div class="entry-content content">
+                          <p>So I’ve been doing some testing with Docker and <a href="http://www.softnas.com" onclick="__gaTracker('send', 'event', 'outbound-article', 'http://www.softnas.com', 'SoftNAS');">SoftNAS</a>. This brief tutorial will show you how to connect docker to SoftNAS. This will give you a couple of pretty neat options for storage while using Docker.</p>
+                          <p>First a couple of cool things you can do with&nbsp;SoftNAS and Docker:</p>
+                          <ul>
+                             <li>Share persistent storage between Docker containers.</li>
+                             <li>Snapshot storage to S3 or elsewhere to save after Docker container has exited.</li>
+                          </ul>
+                          <p>&nbsp;</p>
+                          <p>Before I start, I’m going to assume you have a SoftNAS instance running from the&nbsp;<a href="https://t.yesware.com/tl/80be50543eb81a33ff17556e39c670c2af094af7/bfbdac1312d37a26de951e227b3d023f/a769d4c0b0a875fcee083b7a7bd712e8?ytl=https%3A%2F%2Faws.amazon.com%2Fmarketplace%2Fpp%2FB00EQE493U%2Fref%3D_ptnr_web_prodpage" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://t.yesware.com/tl/80be50543eb81a33ff17556e39c670c2af094af7/bfbdac1312d37a26de951e227b3d023f/a769d4c0b0a875fcee083b7a7bd712e8?ytl=https%3A%2F%2Faws.amazon.com%2Fmarketplace%2Fpp%2FB00EQE493U%2Fref%3D_ptnr_web_prodpage', 'AWS Marketplace');" target="_blank">AWS Marketplace</a>. In my case, I used the ephemeral storage to run the storage pool&nbsp;(obviously persistent storage like EBS or S3 should be used for production deployments). The&nbsp;ephemeral&nbsp;storage is free <img src="http://www.cloudlifeconsulting.com/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;">&nbsp;There’s also a free micro instance available to DevOps, along with AWS Free Tier support.&nbsp;&nbsp;There are two&nbsp;important parts of setting up this instance in AWS.</p>
+                          <ul>
+                             <li>Make sure you write down the storage share</li>
+                             <li>Make sure you pay attention to the security groups. In my testing scenario I allowed all traffic between the two instances. This is not ideal for production at all. But, it allowed me to build in a test scenario quickly.</li>
+                             <li>When you create a volume, make sure that you have the “Export NFS Share” check box selected</li>
+                          </ul>
+                          <p>I used the SoftNAS installation instructions located <a href="https://www.softnas.com/wp/support/documentation/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://www.softnas.com/wp/support/documentation/', 'here');">here</a>.</p>
+                          <p>Once the SoftNAS instance is set up and running, make sure to launch another instance to run Docker on. In my case, I used Ubuntu. Once Ubuntu is up and running, we will want to create a folder to mount the NFS storage from SoftNAS to.</p>
+                          <pre class="x-code"><code>sudo mkdir /softnas</code></pre>
+                          <p>&nbsp;</p>
+                          <p>Once the directory is made, I will mount the NFS share from SoftNAS to my Ubuntu instance.</p>
+                          <pre class="x-code"><code>sudo mount SOFTNAS_IP_ADDRESS:/SOFTNAS_SHARE&nbsp; /softnas </code></pre>
+                          <p>&nbsp;</p>
+                          <p>At this point, its good to test that you are connected between both the SoftNAS instance and your Ubuntu instance.</p>
+                          <pre class="x-code"><code>sudo touch /softnas/touch.file</code></pre>
+                          <p>Make sure that the file is&nbsp;written without a problem, then look through the SoftNAS File System to make sure that the file is where it’s supposed to be.</p>
+                          <p>If the share is working, then you should now install docker on your Ubuntu instance. There is a good and quick tutorial <a title="Install Docker on AWS" href="http://www.cloudlifeconsulting.com/install-docker-on-aws/">here</a>, except don’t bother with the last line. In order to install Docker.io from packages follow this:</p>
+                          <pre class="x-code"><code>sudo apt-get update<p></p>
+                    <p>sudo apt-get install docker.io</p>
+                    <p>sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</p>
+                    <p>sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io</p>
+                    <p>source /etc/bash_completion.d/docker.io</p>
+                    </code></pre>
+                          <p>You can find a link to the Docker instructions <a href="https://docs.docker.com/installation/ubuntulinux/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://docs.docker.com/installation/ubuntulinux/', 'here');">here</a></p>
+                          <p>It’s easy to test to make sure you have Docker installed correctly by running the following command</p>
+                          <pre class="x-code"><code>docker --version.</code></pre>
+                          <p>&nbsp;</p>
+                          <p>Finally, to make sure we can access the NFS SoftNAS share, we are going to run an Ubuntu container, and mount the /softnas directory from our host Ubuntu server to our Docker container.</p>
+                          <pre class="x-code"><code>sudo docker run -i -t --name ubuntu -v /softnas:/softnas ubuntu /bin/bash </code></pre>
+                          <p>This command will launch a Docker container based on the Ubuntu image. It’s going to name it Ubuntu. It is going to mount the volume /softnas from the local host to the /softnas container file system. Last, it’s going to automatically log us in to a bash command. At that point we can cd to our directory, and test again. Just for reference the -v command is structured host filesystem: container file system.</p>
+                          <p>More on attaching host volumes to Docker containers<a href="https://docs.docker.com/userguide/dockervolumes/" onclick="__gaTracker('send', 'event', 'outbound-article', 'https://docs.docker.com/userguide/dockervolumes/', ' here.');"> here.</a></p>
+                          <p>At this point &nbsp;you have a running Docker container that can share data across containers, but also across hosts. This data can be snapshot for later use, or any multitude of other things.</p>
+                          <p>&nbsp;</p>
+                       </div>
+                    </div>
+
                         </div>
 
                     </div>
@@ -289,52 +324,38 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>who we are</h3>
                         <ul>
-                            <li><a href="#">our history</a></li>
-                            <li class="active"><a href="our_mission.html">our mission</a></li>
-                            <li><a href="#">our team</a></li>
+                            <li class="active"><a href="/pages/our-history.html">our history</a></li>
+                            <li class="active"><a href="/pages/our-mission.html">our mission</a></li>
+                            <li class="active"><a href="/pages/our-team.html">our team</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>what we do</h3>
                         <ul>
-                            <li class="active"><a href="cloud_architecture.html">cloud architecture</a></li>
-                            <li><a href="#">cloud migrations</a></li>
-                            <li class="active"><a href="cloud_automation.html">cloud automation</a></li>
-                            <li><a href="#">managed services</a></li>
+                            <li><a href="/pages/cloud-architecture.html">cloud architecture</a></li>
+                            <li><a href="/pages/cloud-migration.html">cloud migrations</a></li>
+                            <li><a href="/pages/cloud-automation.html">cloud automation</a></li>
+                            <li><a href="/pages/managed-services.html">managed services</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
-                        <h3>blog</h3>
-                        <ul>
-                            <li><a href="#">categories</a></li>
-                            <li><a href="#">tags</a></li>
-                            <li><a href="#">by date</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>Info</h3>
                         <ul>
-                            <li class="active"><a href="healthcare.html">healthcare in the cloud</a></li>
-                            <li class="active"><a href="critical_system.html">backup & recovery of mission critical systems</a></li>
-                            <li class="active"><a href="driving_manufacturing.html">driving manufacturing efficiency</a></li>
-                            <li class="active"><a href="fleet_management.html">revolutionizing fleet management</a></li>
-                            <li class="active"><a href="legal_directory.html">applications for the legal industry</a></li>
+                            <li><a href="/pages/healthcare.html">healthcare in the cloud</a></li>
+                            <li><a href="/pages/critical-system.html">backup & recovery of mission critical systems</a></li>
+                            <li><a href="/pages/driving-manufacturing.html">driving manufacturing efficiency</a></li>
+                            <li><a href="/pages/fleet-management.html">revolutionizing fleet management</a></li>
+                            <li><a href="/pages/legal-directory.html">applications for the legal industry</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-6">
+                    <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>contact us</h3>
                         <ul>
-                            <li class="active"><a href="contact.html">Get in touch</a></li>
+                            <li><a href="/pages/contact.html">Get in touch</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-2 col-sm-3 footer-col col-xs-12">
-                        <h3>subscribe newsletter</h3>
-                        <form>
-                            <input type="email" placeholder="Email address" class="form-control">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -343,12 +364,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        ©2015 CloudLife Consulting All rights reserved. 
+                        ©2017 CloudLife Consulting All rights reserved.
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="#"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
-                        <a href="#"><img src="../img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
-                        <a href="#"><img src="../img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
+                        <a href="https://twitter.com/itsacloudlife99" target="_blank"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
+                        <a href="https://plus.google.com/u/0/105922719332670658556/about" target="_blank"><img src="../img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
+                        <a href="https://www.linkedin.com/profile/view?id=10828186&trk=spm_pic" target="_blank"><img src="../img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
                     </div>
                 </div>
             </div>

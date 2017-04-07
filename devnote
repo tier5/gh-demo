@@ -10,3 +10,13 @@ Frontend_dev_new branch mergedc to dev
 	3) css modified for all blog pages
 Merged feature_dev_new branch to dev
 	1) Changed tags from no tags
+Modification done on dev branch
+	1) Added content for What we do on home page
+	2) Content added for cloud architecture
+	3) Content added for cloud migration
+	4) Content added for cloud automation
+	5) Content added for managed services
+	6) Footer link color changed to white if content present and if not then orange is given
+	7) Links given for twitter, g+, linkedin profile on footer
+	8) Removed unnecessary files from all folders
+	9) Modified css for who we are section
