@@ -1773,7 +1773,8 @@ table.easy-table-cuscosky, .easy-table-cuscosky th, .easy-table-cuscosky td {
 
 .blog .blog-details ul li:first-child{border: none;}
 .blog-area-main h2 span{padding-top: 12px; vertical-align: middle;}
-.blog-sample-txt{height: 129px;}
+.blog-sample-txt{/*height: 129px; */max-height: 140px !important;
+    overflow-y: hidden;}
 .blog-sample-heading{height: 50px;}
 
 
