@@ -1,31 +1,38 @@
 {
-  "name": "freelancer",
-  "title": "Freelancer",
-  "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/freelancer",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  "name": "gh-demo",
+  "version": "1.0.0",
+  "description": "About The Project << Github Pages >>",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.18.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.2",
+    "gulp-install": "^1.1.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-watch": "^4.3.11",
+    "jit-grunt": "^0.10.0"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "font-awesome": "^4.6.3",
-    "gulp": "~3.9.1",
-    "gulp-clean-css": "~3.0.2",
-    "gulp-header": "^1.8.7",
-    "gulp-less": "^3.1.0",
+    "gulp-header": "^1.8.8",
+    "gulp-install": "^1.1.0",
+    "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "~2.0.1",
-    "jquery": "^1.11.3",
-    "gulp-watch": "~4.3.11"
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer.git"
+    "url": "git+https://github.com/tier5/gh-demo.git"
   },
-  "dependencies": {
-    "browser-sync": "~2.18.7"
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tier5/gh-demo/issues"
+  },
+  "homepage": "https://github.com/tier5/gh-demo#readme"
 }
