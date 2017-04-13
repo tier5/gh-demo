@@ -1688,7 +1688,7 @@ pre {
 }
 
 .put-comments{box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6)}
-.inner-banner{height: 500px; overflow: hidden; text-align: center;}
+/*.inner-banner{height: 500px; overflow: hidden; text-align: center;}*/
 .h-about-the-author {
   border-bottom: 1px solid #f2f2f2;
   color: #ccc;
