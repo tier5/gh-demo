@@ -31,11 +31,17 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../css/banner/custom.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../css/animated-slider.css" />
+    <style type="text/css">
+        .choose_slider {
+            height: 400px;
+            position: relative;
+        }
+    </style> 
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index nan">
 
     <!-- Navigation -->
     <nav id="mainNav" class="inner-nav navbar navbar-default navbar-custom criticalnavi">
@@ -118,7 +124,7 @@
         </div>
         <div class="remote-backup changable">
             <div class="container">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-8 col-sm-8 tab1 show">
                         <div class="col-md-4 col-sm-4">
                             <div class="corner-img">
@@ -185,6 +191,47 @@
                             </ul>
                         </div>
                     </div>
+                </div> -->
+                <div class="col-md-8 col-sm-8">
+                    <div class="choose_slider">
+                        <div class="choose_slider_items">
+                            <ul id="mySlider1">
+                                <li class="current_item">
+                                    <img src="../img/inner-pages/ms2.jpg" />
+                                    <div class="text text-center">
+                                        <strong>security</strong>
+                                        <p>Lorem Ipsum is simply dummy</p>
+                                    </div>
+                                </li>
+                                <li class="current_item">
+                                    <img src="../img/inner-pages/ms33.jpg" />
+                                    <div class="text text-center">
+                                        <strong>Choice</strong>
+                                        <p>Lorem Ipsum is simply dummy</p>
+                                    </div>
+                                </li>
+                                <li class="current_item">
+                                    <img src="../img/inner-pages/ms4.jpg" />
+                                    <div class="text text-center">
+                                        <strong>scalability</strong>
+                                        <p>Lorem Ipsum is simply dummy</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="tabs">
+                        <ul>
+                            <!-- <li id="tab1" class="active">Choice</li>
+                            <li id="tab2">security</li>
+                            <li id="tab3">scalability</li> -->
+                            <li id="choiceButton" class="active">Choice</li>
+                            <li id="securityButton">Security</li>
+                            <li id="scalabilityButton">Scalability</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -227,6 +274,7 @@
             </div>
         </div>
     </section>
+
     
     <!-- Footer -->
     <footer class="footer">
@@ -276,9 +324,9 @@
                         ©2017 CloudLife Consulting All rights reserved. 
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="https://twitter.com/itsacloudlife99" target="_blank"><img src="img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
-                        <a href="https://plus.google.com/u/0/105922719332670658556/about" target="_blank"><img src="img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
-                        <a href="https://www.linkedin.com/profile/view?id=10828186&trk=spm_pic" target="_blank"><img src="img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
+                        <a href="https://twitter.com/itsacloudlife99" target="_blank"><img src="../img/tweet-footer.png" class="img-responsive" alt="twitter"></a>
+                        <a href="https://plus.google.com/u/0/105922719332670658556/about" target="_blank"><img src="../img/gplus-footer.png" class="img-responsive" alt="gplus"></a>
+                        <a href="https://www.linkedin.com/profile/view?id=10828186&trk=spm_pic" target="_blank"><img src="../img/linked-footer.png" class="img-responsive" alt="linkedin"></a>
                     </div>
                 </div>
             </div>
@@ -298,6 +346,10 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/freelancer.min.js"></script>
+
+    <script type="text/javascript" src="../js/jquery.cssslider.js"></script>
+
+
     <script type="text/javascript">
         /* managed tabs */
 
@@ -308,6 +360,21 @@
                 var li_id= $(this).attr("id");
                 $("."+li_id).addClass("show");
                 $(this).addClass("active");
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $("#mySlider1").AnimatedSlider({ 
+                choiceButton: "#choiceButton", 
+                securityButton: "#securityButton",
+                scalabilityButton: "#scalabilityButton",
+                visibleItems: 3,
+                infiniteScroll: true,
+                willChangeCallback: function(obj, item) {
+                    $("#statusText").text("Will change to " + item); },
+                changedCallback: function(obj, item) { 
+                    $("#statusText").text("Changed to " + item); }
             });
         });
     </script>
