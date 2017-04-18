@@ -518,6 +518,12 @@ section.cloud-inner h3 {
   line-height: 45px;
   margin-top: 0;
 }
+section.cloud-inner.tsr h3 {
+  font-family: OpenSans-Regular;
+  font-size: 25px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
 section.cloud-inner .top-statement {
   padding: 25px 45px;
   margin: 50px 0;
@@ -536,6 +542,11 @@ section.cloud-inner .top-statement p {
 }
 section.cloud-inner .top-statement.middle-content {
   margin-bottom: 0;
+}
+section.cloud-inner .top-statement.no-border {
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 section.cloud-inner .top-sec {
   padding: 50px 0;
