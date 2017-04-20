@@ -129,7 +129,7 @@
                                     <div class="row form-group">
                                         <div class="col-sm-2">&nbsp;</div>
                                         <div class="col-sm-10">
-                                            <input class="btn submit-btn" value="Send" type="submit" name="submit" id="submit">
+                                            <button class="btn submit-btn" id="submit">Submit <i class='fa fa-spinner fa-spin spinning'></i></button>
                                         </div>
                                     </div>
                                     <div id="success" class="alert alert-success"> Thank you for contacting us!</div>    
@@ -224,9 +224,9 @@
                     <div class="col-md-3 col-sm-3 footer-col col-xs-6">
                         <h3>who we are</h3>
                         <ul>
-                            <li class="active"><a href="our-history.html">our history</a></li>
+                            <li><a href="our-history.html">our history</a></li>
                             <li><a href="our-mission.html">our mission</a></li>
-                            <li class="active"><a href="our-team.html">our team</a></li>
+                            <li><a href="our-team.html">our team</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 footer-col col-xs-6">
@@ -288,22 +288,24 @@
     <script src="../js/freelancer.min.js"></script>
     <script type="text/javascript">
         /* Contact form */
-
         $(document).ready(function(){
+            $('.spinning').hide();
             $('#success').hide();
+            $('#submit').prop('disabled', false);
             $("#submit").click(function(){
-                $(this).attr('disabled','disabled');
+                $('.spinning').show();
+                $('#submit').prop('disabled', true);
                 var name = $("#name").val();
+                var company = $("#company").val();
                 var email = $("#email").val();
                 var phone = $("#phone").val();
                 var msg = $("#msg").val();
 
-                // Returns successful data submission message when the entered information is stored in database.
-                var dataString = 'name1='+ name + '&email1='+ email + '&phone1='+ phone + '&msg1=' + msg ;
-
-                if(name==''||email==''||phone=='' ||msg == '')
+                if(name=='' || email=='' || phone=='' || msg == '')
                     {
                         alert("Please Fill All Fields");
+                        $('.spinning').hide();
+                        $('#submit').prop('disabled', false);
                     }
                 else
                 {
@@ -323,15 +325,16 @@
                         }),
                         cache: false,
                         success: function(result){
-                            $('#success').show();
-                            $("#name").val('');
-                            $("#email").val('');
-                            $("#phone").val('');
-                            $("#msg").val('');
-                            $("#submit").removeAttr('disabled');
-                            setTimeout(function(){
-                                $('#success').hide();
-                            }, 5000);
+                                $('#success').show();
+                                $('.spinning').hide();
+                                $("#name").val('');
+                                $("#email").val('');
+                                $("#phone").val('');
+                                $("#msg").val('');
+                                $('#submit').prop('disabled', false);
+                                setTimeout(function(){
+                                    $('#success').hide();
+                                }, 5000);
                         },
                         error: function(err){
                                 console.log(err);

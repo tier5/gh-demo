@@ -251,34 +251,38 @@ $(document).ready(function() {
 /* Contact form */
 
 $(document).ready(function(){
+    $('.spinning').hide();
+    $('#submit').prop('disabled', false);
     $("#submit").click(function(){
+        $('.spinning').show();
+        $('#submit').prop('disabled', true);
         var name = $("#name").val();
         var company = $("#company").val();
         var email = $("#email").val();
         var phone = $("#phone").val();
-
-        var value_string='';
-        $("input[name='services[]']").each( function () {
-           var services = $(this).val();
-           
-            if ($(this).is(":checked"))
-            {
-              value_string+=services+",";
-            }
-        });
-
-        value_string_all = value_string.replace(/,\s*$/, "");
-
         var msg = $("#msg").val();
 
+        // var value_string='';
+        // $("input[name='services[]']").each( function () {
+        //    var services = $(this).val();
+           
+        //     if ($(this).is(":checked"))
+        //     {
+        //       value_string+=services+",";
+        //     }
+        // });
+
+        // value_string_all = value_string.replace(/,\s*$/, "");
+
         // Returns successful data submission message when the entered information is stored in database.
-        var dataString = 'name1='+ name + '&company1='+ company + '&email1='+ email + '&phone1='+ phone + '&services=' + value_string_all + '&msg1=' + msg ;
+        // var dataString = 'name1='+ name + '&company1='+ company + '&email1='+ email + '&phone1='+ phone + '&services=' + value_string_all + '&msg1=' + msg ;
+        // var dataString = 'name1='+ name + '&company1='+ company + '&email1='+ email + '&phone1='+ phone + '&msg1=' + msg ;
 
-        console.log(dataString);
-
-        if(name==''||company==''||email==''||phone=='' ||msg == '')
+        if(name=='' || email=='' || phone=='' || msg == '')
             {
                 alert("Please Fill All Fields");
+                $('.spinning').hide();
+                $('#submit').prop('disabled', false);
             }
         else
         {
@@ -299,6 +303,15 @@ $(document).ready(function(){
                 cache: false,
                 success: function(result){
                         $('#success').text("Thank you for contacting us!");
+                        $('.spinning').hide();
+                        $("#name").val('');
+                        $("#email").val('');
+                        $("#phone").val('');
+                        $("#msg").val('');
+                        $('#submit').prop('disabled', false);
+                        setTimeout(function(){
+                            $('#success').text('');
+                        }, 5000);
                 },
                 error: function(err){
                         console.log(err);

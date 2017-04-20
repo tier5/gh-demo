@@ -518,6 +518,12 @@ section.cloud-inner h3 {
   line-height: 45px;
   margin-top: 0;
 }
+section.cloud-inner.tsr h3 {
+  font-family: OpenSans-Regular;
+  font-size: 25px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
 section.cloud-inner .top-statement {
   padding: 25px 45px;
   margin: 50px 0;
@@ -536,6 +542,11 @@ section.cloud-inner .top-statement p {
 }
 section.cloud-inner .top-statement.middle-content {
   margin-bottom: 0;
+}
+section.cloud-inner .top-statement.no-border {
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 section.cloud-inner .top-sec {
   padding: 50px 0;
@@ -873,18 +884,21 @@ section.cloud-inner .remote-backup.changable .tabs ul {
   text-transform: uppercase;
 }
 section.cloud-inner .remote-backup.changable .tabs ul li {
-  color: #666;
   font-size: 14px;
   cursor: pointer;
-}
-section.cloud-inner .remote-backup.changable .tabs ul li.active {
-  color: #000;
 }
 section.cloud-inner .remote-backup.changable .tabs ul li.tab2 {
   display: block;
 }
 section.cloud-inner .remote-backup.changable .tabs ul li.tab3 {
   display: block;
+}
+section.cloud-inner .remote-backup.changable .tabs ul li a {
+  color: #666;
+  text-decoration: none;
+}
+section.cloud-inner .remote-backup.changable .tabs ul li.active a {
+  color: #000;
 }
 section.cloud-inner .remote-backup.slas {
   background: none;
@@ -1507,4 +1521,14 @@ fieldset[disabled] .btn-success.active {
   background: #eee;
   border: 1px solid #eee;
   border-left: 3px solid #0086bb;
+}
+.contact button {
+  background: #dc5194 none repeat scroll 0 0;
+  border: 1px solid #dc5194;
+  border-radius: 30px;
+  color: #fff;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  padding: 17px 60px;
+  text-transform: uppercase;
 }
