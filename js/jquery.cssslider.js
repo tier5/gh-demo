@@ -86,9 +86,9 @@
                         if (pluginThis.options.changedCallback)
                             pluginThis.options.changedCallback(pluginThis, pluginThis.currentItem);
 
-                        setTimeout(function() {
-                            pluginThis.doCommandQueue();
-                        }, 50);
+                        // setTimeout(function() {
+                        //     pluginThis.doCommandQueue();
+                        // }, 50);
 
 
 
@@ -101,26 +101,24 @@
 
         if (this.options.choiceButton) {
             $(this.options.choiceButton).on('click', function(e) {
-                e.preventDefault();
                 pluginThis.showChoiceItem();
+                e.preventDefault();
                 // pluginThis.prevItem();
             });
         }
 
         if (this.options.securityButton) {
             $(this.options.securityButton).on('click', function(e) {
-
-                e.preventDefault();
                 pluginThis.showSecurityItem();
+                e.preventDefault();
                 // pluginThis.nextItem();
             });
         }
 
         if (this.options.scalabilityButton) {
             $(this.options.scalabilityButton).on('click', function(e) {
-
-                e.preventDefault();
                 pluginThis.showScalabilityItem();
+                e.preventDefault();
                 // pluginThis.nextItem();
             });
         }
@@ -237,7 +235,7 @@
             if (this.commandQueue.length < 3) {
                 this.commandQueue.push("prevItem");
             }
-            return;
+            //return;
         }
 
         if (this.options.infiniteScroll || this.currentItem >= 1) {
@@ -256,7 +254,7 @@
             if (this.commandQueue.length < 3) {
                 this.commandQueue.push("prevItem");
             }
-            return;
+           // return;
         }
 
         if (this.options.infiniteScroll || this.currentItem >= 1) {
@@ -275,7 +273,7 @@
             if (this.commandQueue.length < 3) {
                 this.commandQueue.push("prevItem");
             }
-            return;
+           // return;
         }
 
         if (this.options.infiniteScroll || this.currentItem >= 1) {
@@ -313,14 +311,14 @@
         this.commandQueue = [];
     }
 
-    Plugin.prototype.doCommandQueue = function() {
-        if (this.commandQueue.length == 0)
-            return;
+    // Plugin.prototype.doCommandQueue = function() {
+    //     if (this.commandQueue.length == 0)
+    //         return;
 
-        var cmd = this.commandQueue.splice(0, 1)[0];
+    //     var cmd = this.commandQueue.splice(0, 1)[0];
 
-        this[cmd]();
-    }
+    //     this[cmd]();
+    // }
 
 
     Plugin.prototype.refresh = function() {
